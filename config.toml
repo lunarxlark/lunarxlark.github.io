@@ -1,0 +1,52 @@
+newContentEditor = "vim"
+baseURL = "https://lunarxlark.github.io/"
+languageCode = "en-us"
+title = "/home/lunarxlark/.config/blog"
+themes = "archie"
+copyright = "© lunarxlark"
+
+# Code Highlight
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+paginate=5
+
+[params]
+	mode="dark"
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/lunarxlark/"
+
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://twitter.com/lunarxlark/"
+
+[[params.social]]
+name = "Instagram"
+icon = "instagram"
+url = "https://instagram.com/lunarxlark/"
+
+# Main menu Items
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 2
+
+[[menu.main]]
+name = "Posts"
+url = "/posts"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
