@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Error 'undefined' when go run - /home/lunarxlark/.config/blog</title><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:description" content><meta name=twitter:description content><meta name=description content><meta name=description content><meta property="og:title" content="Error 'undefined' when go run | /home/lunarxlark/.config/blog"><meta name=twitter:title content="Error 'undefined' when go run | /home/lunarxlark/.config/blog"><meta property="og:image" content><meta itemprop=name content="Error 'undefined' when go run | /home/lunarxlark/.config/blog"><meta name=application-name content="Error 'undefined' when go run | /home/lunarxlark/.config/blog"><meta property="og:site_name" content><meta property="og:title" content="Error 'undefined' when go run"><meta property="og:description" content="x…motemen/ghqを写経している時、 go run main.go 出来ないことに気付いた。 下記が実行時のエラーになる。ちなみに、 go build は出来る。
+~/d/s/g/x/ghq >>> go run main.go # command-line-arguments ./main.go:38:17: undefined: commands ~/d/s/g/x/ghq >>> commands が見つからない？同じ階層の commands.go には下記記述がちゃんとあるのに、どうして見つからない&mldr;。
+var commands = []*cli.Command{ commandGet, commandList, commandRoot, commandCreate, } 理由は、go runの引数に指定したファイル(+ importされるパッケージ)しか読み込まないから。
+実際、go run main.go commands.goに変更すると上記エラーは解消される&mldr;が、別のエラーとなる。 今度は違うのが見つからないって言われる。
+~/d/s/g/x/ghq master >>> go run main.go commands.go # command-line-arguments ./commands.go:25:10: undefined: doGet ./commands.go:50:10: undefined: doList ./commands.go:62:10: undefined: doRoot ./commands.go:71:10: undefined: doCreate 同じ階層で必要なファイルを引数に全て指定すればいいのだけど、そんなことはしたくない。 正規表現で指定してもいいけど、_test.goがあるとgo runで実行出来ないってエラーになる。
+~/d/s/g/x/ghq master >>> go run *."><meta property="og:type" content="article"><meta property="og:url" content="https://lunarxlark.github.io/post/golang/how-to-go-run/"><meta property="article:published_time" content="2020-02-04T00:00:00+00:00"><meta property="article:modified_time" content="2020-02-04T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Error 'undefined' when go run"><meta name=twitter:description content="x…motemen/ghqを写経している時、 go run main.go 出来ないことに気付いた。 下記が実行時のエラーになる。ちなみに、 go build は出来る。
+~/d/s/g/x/ghq >>> go run main.go # command-line-arguments ./main.go:38:17: undefined: commands ~/d/s/g/x/ghq >>> commands が見つからない？同じ階層の commands.go には下記記述がちゃんとあるのに、どうして見つからない&mldr;。
+var commands = []*cli.Command{ commandGet, commandList, commandRoot, commandCreate, } 理由は、go runの引数に指定したファイル(+ importされるパッケージ)しか読み込まないから。
+実際、go run main.go commands.goに変更すると上記エラーは解消される&mldr;が、別のエラーとなる。 今度は違うのが見つからないって言われる。
+~/d/s/g/x/ghq master >>> go run main.go commands.go # command-line-arguments ./commands.go:25:10: undefined: doGet ./commands.go:50:10: undefined: doList ./commands.go:62:10: undefined: doRoot ./commands.go:71:10: undefined: doCreate 同じ階層で必要なファイルを引数に全て指定すればいいのだけど、そんなことはしたくない。 正規表現で指定してもいいけど、_test.goがあるとgo runで実行出来ないってエラーになる。
+~/d/s/g/x/ghq master >>> go run *."><script src=https://lunarxlark.github.io/js/feather.min.js></script><link href=https://lunarxlark.github.io/css/fonts.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://lunarxlark.github.io/css/main.css><link rel=stylesheet type=text/css href=https://lunarxlark.github.io/css/dark.css></head><body><div class=content><header><div class=main><a href=https://lunarxlark.github.io/>/home/lunarxlark/.config/blog</a></div><nav><a href=/>Home</a>
+<a href=/about>About</a>
+<a href=/posts>Posts</a>
+<a href=/tags>Tags</a></nav></header><main><article><div class=title><h1 class=title>Error 'undefined' when go run</h1><div class=meta>Posted on Feb 4, 2020</div></div><section class=body><p>x…motemen/ghqを写経している時、 <code>go run main.go</code> 出来ないことに気付いた。
+下記が実行時のエラーになる。ちなみに、 <code>go build</code> は出来る。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>~/d/s/g/x/ghq  &gt;&gt;&gt; go run main.go
+<span style=color:#75715e># command-line-arguments</span>
+./main.go:38:17: undefined: commands
+~/d/s/g/x/ghq  &gt;&gt;&gt;
+</code></pre></div><p><code>commands</code> が見つからない？同じ階層の <code>commands.go</code> には下記記述がちゃんとあるのに、どうして見つからない&mldr;。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>commands</span> = []<span style=color:#f92672>*</span><span style=color:#a6e22e>cli</span>.<span style=color:#a6e22e>Command</span>{
+	<span style=color:#a6e22e>commandGet</span>,
+	<span style=color:#a6e22e>commandList</span>,
+	<span style=color:#a6e22e>commandRoot</span>,
+	<span style=color:#a6e22e>commandCreate</span>,
+}
+</code></pre></div><p>理由は、<code>go run</code>の引数に指定したファイル(+ importされるパッケージ)しか読み込まないから。</p><p>実際、<code>go run main.go commands.go</code>に変更すると上記エラーは解消される&mldr;が、別のエラーとなる。
+今度は違うのが見つからないって言われる。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>~/d/s/g/x/ghq master &gt;&gt;&gt; go run main.go commands.go
+<span style=color:#75715e># command-line-arguments</span>
+./commands.go:25:10: undefined: doGet
+./commands.go:50:10: undefined: doList
+./commands.go:62:10: undefined: doRoot
+./commands.go:71:10: undefined: doCreate
+</code></pre></div><p>同じ階層で必要なファイルを引数に全て指定すればいいのだけど、そんなことはしたくない。
+正規表現で指定してもいいけど、<code>_test.go</code>があると<code>go run</code>で実行出来ないってエラーになる。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>~/d/s/g/x/ghq master &gt;&gt;&gt; go run *.go
+go run: cannot run *_test.go files <span style=color:#f92672>(</span>cmd_create_test.go<span style=color:#f92672>)</span>
+</code></pre></div><p>正規表現<code>(?!._test).go</code>でファイル指定も出来ない。shellには書きたくない。</p><p>どうすれば&mldr;答えは <code>go run .</code></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>~/d/s/g/x/ghq master &gt;&gt;&gt; go run .
+NAME:
+   ghq - Manage remote repository clones
+...
+</code></pre></div><p>パッとググっても複数ファイル指定の記事ばかり出てきたし、下記stackoverflowのvote数も低かったので迷った&mldr;</p><p><a href=https://stackoverflow.com/questions/21293000/go-build-works-fine-but-go-run-fails>stackoverflow: go build works fine but go run fails</a></p></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/golang>golang</a></li></ul></nav></div></article></main><footer><hr><a class=soc href=https://github.com/lunarxlark/ title=GitHub><i data-feather=github></i></a>|<a class=soc href=https://twitter.com/lunarxlark/ title=Twitter><i data-feather=twitter></i></a>|<a class=soc href=https://instagram.com/lunarxlark/ title=Instagram><i data-feather=instagram></i></a>|⚡️
+2020 © lunarxlark | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></footer><script>feather.replace()</script></div></body></html>
