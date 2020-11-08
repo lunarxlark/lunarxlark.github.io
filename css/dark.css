@@ -1,6 +1,6 @@
 body {
-  color: white;
-  background-color: #202124;
+  color: #ebdbb2;
+  background-color: #3c3b36;
 }
 
 ::-moz-selection {
@@ -19,8 +19,8 @@ hr {
   border-top: 3px dotted blue;
 }
 code {
-  background-color: lightblue;
-  color: black;
+  background-color: #282828;
+  color: #fabd2f;
   text-decoration: bold;
   padding: 0.1em 0.2em;
 }
@@ -40,7 +40,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #ddd;
+  color: #fe8029;
 }
 h1::before {
   color: var(--darkMaincolor);
@@ -92,7 +92,7 @@ a:hover {
 }
 
 .site-title a {
-  color: white;
+  color: #ebdbb2;
   text-decoration: none !important;
 }
 
@@ -133,7 +133,7 @@ a:hover {
 .highlight pre code[class*='language-json']::before{
   content: 'json';
   background: dodgerblue;
-   color: #000000 
+   color: #000000
 }
 .highlight pre code[class*='language-python']::before,
 .highlight pre code[class*='language-py']::before {
