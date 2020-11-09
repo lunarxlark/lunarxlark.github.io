@@ -1,6 +1,6 @@
 +++
 title = "Custome Logger using LoggerWithConfig in Echo"
-date = 2020-11-10
+date = 2020-11-10T02:51:09+09:00
 tags = ["go", "echo"]
 draft = false
 +++
