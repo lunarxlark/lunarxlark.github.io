@@ -1,12 +1,9 @@
----
-title: "Error 'undefined' when go run"
-date: 2020-02-04
-categories:
-  - memo
-tags:
-  - golang
-draft: false
----
++++
+title = "Error 'undefined' when go run"
+date = 2020-02-04
+tags = ["go"]
+draft = false
++++
 
 x…motemen/ghqを写経している時、 `go run main.go` 出来ないことに気付いた。
 下記が実行時のエラーになる。ちなみに、 `go build` は出来る。

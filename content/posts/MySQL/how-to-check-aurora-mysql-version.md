@@ -1,13 +1,9 @@
----
-title: "Aurora MySQLの確認方法"
-date: 2018-05-15
-categories:
-  - memo
-tags:
-  - Aurora
-  - MySQL
-draft: false
----
++++
+title = "Aurora MySQLの確認方法"
+date = 2018-05-15
+tags = ["MySQL", "AuroraMySQL"]
+draft = false
++++
 
 
 ```sql

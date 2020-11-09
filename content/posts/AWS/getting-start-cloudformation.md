@@ -1,14 +1,9 @@
----
-title: "aws-cliで始めるCloudFormation"
-date: 2019-03-05
-categories:
-  - memo
-tags:
-  - AWS
-  - aws-cli
-  - CloudFormation
-draft: false
----
++++
+title = "aws-cliで始めるCloudFormation"
+date = 2019-03-05
+tags = ["AWS", "aws-cli", "CloudFormation"]
+draft = false
++++
 
 #### 目的
 

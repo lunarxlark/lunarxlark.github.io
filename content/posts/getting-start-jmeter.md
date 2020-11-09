@@ -1,13 +1,9 @@
----
-title: "JMeterことはじめ"
-date: 2018-05-01
-categories:
-  - memo
-tags:
-  - memo
-  - JMeter
-draft: false
----
++++
+title = "JMeterことはじめ"
+date = 2018-05-01
+tags = ["memo", "JMeter"]
+draft = false
++++
 
 
 ## 参考

@@ -1,13 +1,9 @@
----
-title: "AWSでのシェルスクリプト集"
-date: 2018-05-02
-categories:
-  - memo
-tags:
-  - AWS
-  - ShellScript
-draft: false
----
++++
+title = "AWSでのシェルスクリプト集"
+date = 2018-05-02
+tags = ["AWS", "ShellScript"]
+draft = false
++++
 
 便利なシェルスクリプト@AWS
 

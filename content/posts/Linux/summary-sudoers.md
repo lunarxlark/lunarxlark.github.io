@@ -1,14 +1,9 @@
----
-title: "sudoの設定ファイル:sudoersのまとめ"
-date: 2018-11-14
-categories:
-  - memo
-tags:
-  - Linux
-  - sudoer
-  - visudo
-draft: false
----
++++
+title = "sudoの設定ファイル:sudoersのまとめ"
+date = 2018-11-14
+tags = ["Linux", "sudoer", "visudo"]
+draft = false
++++
 
 
 - sudoers ... sudoに関する設定ファイル

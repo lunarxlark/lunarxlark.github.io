@@ -1,12 +1,9 @@
----
-title: "Ansibleでよく使うモジュール"
-date: 2018-09-30
-categories:
-  - memo
-tags:
-  - Ansible
-draft: false
----
++++
+title = "Ansibleでよく使うモジュール"
+date = 2018-09-30
+tags = ["Ansible"]
+draft = false
++++
 
 <!--more-->
 

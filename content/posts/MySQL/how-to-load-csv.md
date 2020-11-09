@@ -1,12 +1,9 @@
----
-title: "MySQLへcsvをloadする方法"
-date: 2018-06-15
-categories:
-  - memo
-tags:
-  - MySQL
-draft: false
----
++++
+title = "MySQLへcsvをloadする方法"
+date = 2018-06-15
+tags = ["MySQL"]
+draft = false
++++
 
 
 ```sql

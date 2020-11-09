@@ -1,12 +1,9 @@
----
-title: "Javaのチューニングオプション"
-date: 2018-12-02
-categories:
-  - memo
-tags:
-  - Java
-draft: false
----
++++
+title = "Javaのチューニングオプション"
+date = 2018-12-02
+tags = ["Java"]
+draft = false
++++
 
 ### Options
 

@@ -1,12 +1,9 @@
----
-title: "My Favorite Usage urfave/cli"
-date: 2020-02-06T02:47:11+09:00
-categories:
-  - memo 
-tags:
-  - golang
-draft: false
----
++++
+title = "My Favorite Usage urfave/cli"
+date = 2020-02-06T02:47:11+09:00
+tags = ["go"]
+draft = false
++++
 
 参加しているプロジェクトで`urfave/cli`を使っている。使い方は[Example](https://github.com/urfave/cli/blob/master/docs/v2/manual.md#examples)にあるのと同じ書き方で使っている。
 大半のバッチ処理をコマンドとして記述しているので、Exampleの書き方だとだいぶ見辛くなってきた。縦長のコマンド定義とオプション説明で目的の処理を探すのにもページ送りを何度もする。なんとかしたい。

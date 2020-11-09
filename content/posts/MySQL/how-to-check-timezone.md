@@ -1,12 +1,9 @@
----
-title: "MySQLでのtimezone確認"
-date: 2018-05-26
-categories:
-  - memo
-tags:
-  - MySQL
-draft: false
----
++++
+title = "MySQLでのtimezone確認"
+date = 2018-05-26
+tags = ["MySQL"]
+draft = false
++++
 
 
 ```sql

@@ -1,12 +1,9 @@
----
-title: "ElasticsearchのIndexをAPIで操作"
-date: 2019-01-14
-categories:
-  - memo
-tags:
-  - ElasticSearch 
-draft: false
----
++++
+title = "ElasticsearchのIndexをAPIで操作"
+date = 2019-01-14
+tags = ["ElasticSearch"]
+draft = false
++++
 
 
 ## GET Indecies

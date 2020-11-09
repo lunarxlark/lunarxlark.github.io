@@ -1,13 +1,9 @@
----
-title: "SQL*Plusでviを使う"
-date: 2018-12-01
-categories:
-  - memo
-tags:
-  - SQL*PLUS
-  - vim
-draft: false
----
++++
+title = "SQL*Plusでviを使う"
+date = 2018-12-01
+tags = ["SQL*PLUS", "vim"]
+draft = false
++++
 
 ```sql
 SQL> DEFINE _EDITOR = vi

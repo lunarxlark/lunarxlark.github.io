@@ -1,13 +1,9 @@
----
-title: "LSP(Language Server Protocol)のドキュメントを読む"
-date: 2019-02-23T10:07:17+09:00
-categories:
-  - diary
-tags:
-  - lsp
-  - json_rpc
-draft: false
----
++++
+title = "LSP(Language Server Protocol)のドキュメントを読む"
+date = 2019-02-23T10:07:17+09:00
+tags = ["lsp", "jsonRPC"]
+draft = false
++++
 
 
 golangコミュニティが[gopls](https://godoc.org/golang.org/x/tools/cmd/gopls)を開発し始めたり、Microsoftが提唱したこともあって`Language Server Protocol (以後,LSP)`が注目され始めた。

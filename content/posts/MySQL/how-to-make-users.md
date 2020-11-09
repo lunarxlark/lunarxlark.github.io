@@ -1,12 +1,9 @@
----
-title: "MySQLでのuser作成"
-date: 2018-04-28
-categoreis:
-  - memo
-tags:
-  - MySQL
-draft: false
----
++++
+title = "MySQLでのuser作成"
+date = 2018-04-28
+tags = ["MySQL"]
+draft = false
++++
 
 
 ```sql

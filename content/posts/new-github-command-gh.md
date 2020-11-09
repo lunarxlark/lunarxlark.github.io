@@ -1,10 +1,9 @@
----
-title: "New Github Official CLI `gh`"
-date: 2020-02-14T02:28:12+09:00
-tags:
-  - gh
-draft: false
----
++++
+title =  "New Github Official CLI `gh`"
+date = 2020-02-14T02:28:12+09:00
+tags = ["gh"]
+draft = false
++++
 
 [github.com/cli/cli/cmd/gh](https://github.com/cli/cli/cmd/gh) is new official command for GitHub.
 

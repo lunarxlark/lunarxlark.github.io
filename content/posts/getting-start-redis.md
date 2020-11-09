@@ -1,12 +1,9 @@
----
-title: "Redisを始める時に参考になりそうなサイト"
-date: 2018-11-30
-categories:
-  - memo
-tags:
-  - Redis
-draft: false
----
++++
+title = "Redisを始める時に参考になりそうなサイト"
+date = 2018-11-30
+tags = ["Redis"]
+draft = false
++++
 
 
 ## ref

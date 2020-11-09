@@ -1,13 +1,9 @@
----
-title: "AuroraのUpgradeでの注意点"
-date: 2018-05-03
-categories:
-  - memo
-tags:
-  - AWS
-  - Aurora
-draft: false
----
++++
+title = "AuroraのUpgradeでの注意点"
+date = 2018-05-03
+tags = ["AWS", "AuroraMySQL"]
+draft = false
++++
 
 Auroraのアップグレードには何種類かあり、それぞれでダウンタイム有無やパッチ適用時間が異なる。
 アップグレードの種類と気にしなければいけないことをまとめた。
