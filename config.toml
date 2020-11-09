@@ -4,6 +4,7 @@ languageCode = "en-us"
 title = "/home/lunarxlark/.config/blog"
 themes = "archie"
 copyright = "© lunarxlark"
+googleAnalytics = "UA-135352101-1"
 
 # Code Highlight
 pygmentsstyle = "monokai"
