@@ -4,7 +4,7 @@ date: 2019-01-15
 categories:
   - memo
 tags:
-  - ElasticSearch 
+  - ElasticSearch
   - AWS
   - Lambda
   - curator
