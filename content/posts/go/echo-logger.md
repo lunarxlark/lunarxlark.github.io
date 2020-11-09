@@ -1,5 +1,5 @@
 +++
-title = "GoのEchoでのLoggerWithConfigいじる"
+title = "Custome Logger using LoggerWithConfig in Echo"
 date = 2020-11-10
 tags = ["go", "echo"]
 draft = false
