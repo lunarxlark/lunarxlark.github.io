@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>My Favorite Usage urfave/cli - /home/lunarxlark/.config/blog</title><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:description" content><meta name=twitter:description content><meta name=description content><meta name=description content><meta property="og:title" content="My Favorite Usage urfave/cli | /home/lunarxlark/.config/blog"><meta name=twitter:title content="My Favorite Usage urfave/cli | /home/lunarxlark/.config/blog"><meta property="og:image" content><meta itemprop=name content="My Favorite Usage urfave/cli | /home/lunarxlark/.config/blog"><meta name=application-name content="My Favorite Usage urfave/cli | /home/lunarxlark/.config/blog"><meta property="og:site_name" content><meta property="og:title" content="My Favorite Usage urfave/cli"><meta property="og:description" content="参加しているプロジェクトでurfave/cliを使っている。使い方はExampleにあるのと同じ書き方で使っている。
+大半のバッチ処理をコマンドとして記述しているので、Exampleの書き方だとだいぶ見辛くなってきた。縦長のコマンド定義とオプション説明で目的の処理を探すのにもページ送りを何度もする。なんとかしたい。"><meta property="og:type" content="article"><meta property="og:url" content="https://lunarxlark.github.io/posts/golang/my-favorite-usage-urfave-cli/"><meta property="article:published_time" content="2020-02-06T02:47:11+09:00"><meta property="article:modified_time" content="2020-02-06T02:47:11+09:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="My Favorite Usage urfave/cli"><meta name=twitter:description content="参加しているプロジェクトでurfave/cliを使っている。使い方はExampleにあるのと同じ書き方で使っている。
+大半のバッチ処理をコマンドとして記述しているので、Exampleの書き方だとだいぶ見辛くなってきた。縦長のコマンド定義とオプション説明で目的の処理を探すのにもページ送りを何度もする。なんとかしたい。"><script src=https://lunarxlark.github.io/js/feather.min.js></script><link href=https://lunarxlark.github.io/css/fonts.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://lunarxlark.github.io/css/main.css><link rel=stylesheet type=text/css href=https://lunarxlark.github.io/css/dark.css></head><body><div class=content><header><div class=main><a href=https://lunarxlark.github.io/>/home/lunarxlark/.config/blog</a></div><nav><a href=/>Home</a>
+<a href=/about>About</a>
+<a href=/posts>Posts</a>
+<a href=/tags>Tags</a></nav></header><main><article><div class=title><h1 class=title>My Favorite Usage urfave/cli</h1><div class=meta>Posted on Feb 6, 2020</div></div><section class=body><p>参加しているプロジェクトで<code>urfave/cli</code>を使っている。使い方は<a href=https://github.com/urfave/cli/blob/master/docs/v2/manual.md#examples>Example</a>にあるのと同じ書き方で使っている。
+大半のバッチ処理をコマンドとして記述しているので、Exampleの書き方だとだいぶ見辛くなってきた。縦長のコマンド定義とオプション説明で目的の処理を探すのにもページ送りを何度もする。なんとかしたい。</p><p>golangを書き始めてそろそろ1年になり少し慣れてきたし、大好きなコマンド<a href=https://github.com/x-motemen/ghq>ghq</a>がv1.0.0を迎えたりドメイン変更したのを機にソースを読み始めた。
+この<code>ghq</code>も<code>urfave/cli</code>を使っているのだけど、読み始めてすぐになんて読みやすいんだ!と感激して、その書き方を踏まえてこう書いたらもっと読みやすくなるんじゃないかっていうのを残す。</p><p>まず、ghqのソース大まかに下記のようになっている。
+main.goではentrypointとしてのみあり、実装するコマンドと各コマンドの実装も別ファイルに分けている。読みやすい!!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#75715e>// main.go
+</span><span style=color:#75715e></span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>main</span>() {
+	<span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>newApp</span>().<span style=color:#a6e22e>Run</span>(<span style=color:#a6e22e>os</span>.<span style=color:#a6e22e>Args</span>); <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
+		<span style=color:#a6e22e>os</span>.<span style=color:#a6e22e>Exit</span>(<span style=color:#a6e22e>i1</span>)
+	}
+}
+
+<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>newApp</span>() <span style=color:#f92672>*</span><span style=color:#a6e22e>cli</span>.<span style=color:#a6e22e>App</span> {
+	<span style=color:#a6e22e>app</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>cli</span>.<span style=color:#a6e22e>NewApp</span>()
+	<span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>Name</span> = <span style=color:#e6db74>&#34;ghq&#34;</span>
+	<span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>Commands</span> = <span style=color:#a6e22e>commands</span>
+	<span style=color:#66d9ef>return</span> <span style=color:#a6e22e>app</span>
+}
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#75715e>// commands.go
+</span><span style=color:#75715e></span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>commands</span> = []<span style=color:#f92672>*</span><span style=color:#a6e22e>cli</span>.<span style=color:#a6e22e>Command</span>{
+	<span style=color:#a6e22e>commandGet</span>,
+	<span style=color:#a6e22e>commandList</span>,
+  <span style=color:#f92672>...</span>
+}
+
+<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>commandGet</span> = <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>cli</span>.<span style=color:#a6e22e>Command</span>{
+	<span style=color:#a6e22e>Name</span>:  <span style=color:#e6db74>&#34;get&#34;</span>,
+	<span style=color:#a6e22e>Action</span>: <span style=color:#a6e22e>doGet</span>,
+}
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#960050;background-color:#1e0010>#</span> <span style=color:#a6e22e>cmd_get</span>.<span style=color:#66d9ef>go</span>
+<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>doCreate</span>(<span style=color:#a6e22e>c</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>cli</span>.<span style=color:#a6e22e>Context</span>) <span style=color:#66d9ef>error</span> {
+  <span style=color:#f92672>...</span>
+}
+</code></pre></div><p>今のままでも十分読みやすいんだけど、コマンドが増えていくと同じ階層に同じprefixのファイルも増える。そうなるとディレクトリを掘りたくなったので下記のようにしてみた。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>x-motemen/ghq/
+　├ cmd/
+　│　└ common.go
+　│　└ get.go
+　│　└ list.go
+　│　└ root.go
+　├ repository/
+　│　└ local.go
+　│　└ remote.go
+...
+　├ main.go
+　├ vcs.go
+　└ url.go
+</code></pre></div><p><code>urfave/cli</code>のstruct階層とディレクトリ構成が似ていて、個人的にはとっつきやすいし読みやすいし、まとまっているのでこの書き方が好きだなって感じた。
+他に<code>urfave/cli</code>を使っているコマンドも見ていこう。オプションの初期化も気になる&mldr;やりたいことは多いなぁ。</p></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/golang>golang</a></li></ul></nav></div></article></main><footer><hr><a class=soc href=https://github.com/lunarxlark/ title=GitHub><i data-feather=github></i></a>|<a class=soc href=https://twitter.com/lunarxlark/ title=Twitter><i data-feather=twitter></i></a>|<a class=soc href=https://instagram.com/lunarxlark/ title=Instagram><i data-feather=instagram></i></a>|⚡️
+2020 © lunarxlark | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></footer><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-135352101-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script>feather.replace()</script></div></body></html>
