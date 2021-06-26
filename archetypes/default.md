@@ -1,6 +1,6 @@
-+++
-title = ""
-date = {{ .Date }}
-tags = [""]
-draft = true
-+++
+---
+title : ""
+date : {{ .Date }}
+tags : [""]
+published : true
+---
