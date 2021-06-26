@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Javaのチューニングオプション - /home/lunarxlark/.config/blog</title><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:description" content><meta name=twitter:description content><meta name=description content><meta name=description content><meta property="og:title" content="Javaのチューニングオプション | /home/lunarxlark/.config/blog"><meta name=twitter:title content="Javaのチューニングオプション | /home/lunarxlark/.config/blog"><meta property="og:image" content><meta itemprop=name content="Javaのチューニングオプション | /home/lunarxlark/.config/blog"><meta name=application-name content="Javaのチューニングオプション | /home/lunarxlark/.config/blog"><meta property="og:site_name" content><meta property="og:title" content="Javaのチューニングオプション"><meta property="og:description" content="Options
+
+-Dはシステムのオプション
+-XX:はJava Hotspot VMのオプション # Optinos_list
+-XX:オプションに対して、+で有効、-で無効を表す。"><meta property="og:type" content="article"><meta property="og:url" content="https://lunarxlark.github.io/posts/java-tuning-options/"><meta property="article:published_time" content="2018-12-02T00:00:00+00:00"><meta property="article:modified_time" content="2018-12-02T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Javaのチューニングオプション"><meta name=twitter:description content="Options
+
+-Dはシステムのオプション
+-XX:はJava Hotspot VMのオプション # Optinos_list
+-XX:オプションに対して、+で有効、-で無効を表す。"><script src=https://lunarxlark.github.io/js/feather.min.js></script><link href=https://lunarxlark.github.io/css/fonts.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://lunarxlark.github.io/css/main.css><link rel=stylesheet type=text/css href=https://lunarxlark.github.io/css/dark.css></head><body><div class=content><header><div class=main><a href=https://lunarxlark.github.io/>/home/lunarxlark/.config/blog</a></div><nav><a href=/>Home</a>
+<a href=/about>About</a>
+<a href=/posts>Posts</a>
+<a href=/tags>Tags</a></nav></header><main><article><div class=title><h1 class=title>Javaのチューニングオプション</h1><div class=meta>Posted on Dec 2, 2018</div></div><section class=body><h3 id=options>Options</h3><ul><li><code>-D</code>はシステムのオプション</li><li><code>-XX:</code>はJava Hotspot VMのオプション <a href=https://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html># Optinos_list</a></li><li><code>-XX:</code>オプションに対して、<code>+</code>で有効、<code>-</code>で無効を表す。</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#75715e>### memory ###</span>
+<span style=color:#75715e># Permanent領域の最大サイズを指定</span>
+-XX:MaxPermSize<span style=color:#f92672>=</span>9g
+
+<span style=color:#75715e># Permanent領域の初期サイズを指定()</span>
+-XX:PermSize<span style=color:#f92672>=</span>9g
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#75715e>### Garbage Collect ###</span>
+<span style=color:#75715e># GCの出力情報をファイルに保存</span>
+-Xloggc:/path/to/gc.log
+
+<span style=color:#75715e># GCの詳細情報を出力</span>
+-XX:+PrintGCDetails
+
+<span style=color:#75715e># GC開始時刻追記</span>
+-XX:+PrintGCDateStamps
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#75715e>### JIT Compiler ###</span>
+<span style=color:#75715e># JITコンパイラでコンパイルされた各メソッドの情報をログ・ファイルに記録</span>
+-XX:+PrintCompilation
+
+<span style=color:#75715e># メソッドがコンパイルされるための条件となるメソッド呼び出し回数を設定</span>
+-XX:CompileThreshold<span style=color:#f92672>=</span>n
+
+<span style=color:#75715e># 使用するコードキャッシュの総サイズを設定</span>
+-XX:ReservedCodeCacheSize<span style=color:#f92672>=</span>YYm
+
+<span style=color:#75715e># 利用頻度の低いコード・ブロブのフラッシュをJVMに許可(Java7 Update4以降ではdefault:on)</span>
+-XX:+UseCodeCacheFlushing
+
+<span style=color:#75715e>## コンパイル閾値を下げたくない。でも、重要なメソッドを可能な限り早急にコンパイルしたい場合の対応</span>
+ウォームアップ処理 … プロセス起動後にテスト・トラフィックを送信することでコードを十分な回数実行して強制的にコンパイルさせる
+</code></pre></div><h3 id=ref>ref</h3><ul><li>:star: <a href=http://luozengbin.github.io/blog/2015-09-01-%5Btips%5D%5Bjava%5Dcodecache%E9%A0%98%E5%9F%9F%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E7%A2%BA%E8%AA%8D%E6%96%B9%E6%B3%95.html>Akira&rsquo;s Tech Notes [tips][Java]CodeCache領域使用状況の確認方法</a></li><li>:star: <a href=https://www.oracle.com/webfolder/technetwork/jp/javamagazine/Java-JA13-Architect-evans.pdf>Java HotSpot VM コードキャッシュについて</a></li></ul></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/java>Java</a></li></ul></nav></div></article></main><footer><hr><a class=soc href=https://github.com/lunarxlark/ title=GitHub><i data-feather=github></i></a>|<a class=soc href=https://twitter.com/lunarxlark/ title=Twitter><i data-feather=twitter></i></a>|<a class=soc href=https://instagram.com/lunarxlark/ title=Instagram><i data-feather=instagram></i></a>|⚡️
+2021 © lunarxlark | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></footer><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-135352101-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script>feather.replace()</script></div></body></html>
