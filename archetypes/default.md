@@ -1,6 +1,6 @@
 ---
 title : ""
-date : {{ .Date }}
 tags : [""]
+published-on : {{ .Date }}
 published : true
 ---
