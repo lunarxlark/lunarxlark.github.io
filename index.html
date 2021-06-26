@@ -6,7 +6,9 @@
 cf. GitHub dotfiles
 いきなりだが、vimrcとvim-lsp-settings/settings.jsonを抜粋して貼り付ける。
 以前、GoではLspCodeAction, LspCodeLens等をサポートしていなかったが、今では使えるようになっている。
-キーマップに設定している関数は全てGoで使用出来る。ただし、カーソルがどこにいても実行出来るわけではないので注意が必要。
+キーマップに設定している関数は全てGoで使用出来る。
+ただし、カーソルがどこにいても実行出来るわけではないので注意が必要。
+LspCodeActionはカーソルの位置によって実行内容が変わるのでそこも注意。
 ...Plug 'prabirshrestha/vim-lsp'Plug 'mattn/vim-lsp-settings'Plug 'prabirshrestha/asyncomplete-lsp.vim'Plug 'mattn/vim-gomod'..." ------------------------------------------------------------------------------" vim-lsp" ------------------------------------------------------------------------------function! s:on_lsp_buffer_enabled() abort setlocal omnifunc=lsp#complete setlocal signcolumn=yes if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif nmap &lt;buffer> &lt;leader>ac &lt;plug>(lsp-code-action) nmap &lt;buffer> &lt;leader>cl &lt;plug>(lsp-code-lens) nmap &lt;buffer> &lt;leader>df &lt;plug>(lsp-definition) nmap &lt;buffer> &lt;leader>dd &lt;plug>(lsp-document-diagnostics) nmap &lt;buffer> &lt;leader>im &lt;plug>(lsp-implementation) nmap &lt;buffer> &lt;leader>pdf &lt;plug>(lsp-peek-definition) nmap &lt;buffer> &lt;leader>sm &lt;plug>(lsp-document-symbol-search) nmap &lt;buffer> &lt;leader>Sm &lt;plug>(lsp-workspace-symbol-search) nmap &lt;buffer> &lt;leader>rf &lt;plug>(lsp-references) nmap &lt;buffer> &lt;leader>td &lt;plug>(lsp-type-definition) nmap &lt;buffer> &lt;leader>rn &lt;plug>(lsp-rename) nmap &lt;buffer> &lt;leader>en &lt;plug>(lsp-next-error) nmap &lt;buffer> &lt;leader>ep &lt;plug>(lsp-previous-error) nmap &lt;buffer> &lt;leader>ho &lt;plug>(lsp-hover) let g:lsp_format_sync_timeout = 500 autocmd!&mldr;</div><a href=/posts/2021_vim_gopls/>Read more ⟶</a></section><section class=list-item><h1 class=title><a href=/posts/vegeta-dynamic-payload/>load test with dynamic payload by tsenart/vegeta</a></h1><time>Mar 11, 2021</time><br><div class=description>負荷テストツールvegetaのコマンドでの使い方ぐはググるとたくさん出てくるが、ライブラリとして仕様している記事が少なく手こずったのでメモ代わりに記事にする。
 やりたいこと リクエスト毎にRequestの内容を動的に変えて、負荷をかけたかった。
 Headerに持つタイムスタンプがリクエスト時のタイムスタンプになるように。 userIdはuniqueになるように。(同じユーザだと重複リクエストを弾く処理があったため。) 具体的には下記のような感じでリクエストを送りたい。
