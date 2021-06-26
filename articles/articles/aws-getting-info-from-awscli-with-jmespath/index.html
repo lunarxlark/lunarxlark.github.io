@@ -1,0 +1,122 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>aws-cliの結果をJMESPathで取得する方法 - /home/lunarxlark/.config/blog</title><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:description" content><meta name=twitter:description content><meta name=description content><meta name=description content><meta property="og:title" content="aws-cliの結果をJMESPathで取得する方法 | /home/lunarxlark/.config/blog"><meta name=twitter:title content="aws-cliの結果をJMESPathで取得する方法 | /home/lunarxlark/.config/blog"><meta property="og:image" content><meta itemprop=name content="aws-cliの結果をJMESPathで取得する方法 | /home/lunarxlark/.config/blog"><meta name=application-name content="aws-cliの結果をJMESPathで取得する方法 | /home/lunarxlark/.config/blog"><meta property="og:site_name" content><meta property="og:title" content="aws-cliの結果をJMESPathで取得する方法"><meta property="og:description" content="tagやownerでfilterして、作成日でソートした結果のうちImageIdだけ取り出す"><meta property="og:type" content="article"><meta property="og:url" content="https://lunarxlark.github.io/articles/articles/aws-getting-info-from-awscli-with-jmespath/"><meta property="article:published_time" content="2018-06-10T00:00:00+00:00"><meta property="article:modified_time" content="2018-06-10T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="aws-cliの結果をJMESPathで取得する方法"><meta name=twitter:description content="tagやownerでfilterして、作成日でソートした結果のうちImageIdだけ取り出す"><script src=https://lunarxlark.github.io/js/feather.min.js></script><link href=https://lunarxlark.github.io/css/fonts.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://lunarxlark.github.io/css/main.css><link rel=stylesheet type=text/css href=https://lunarxlark.github.io/css/dark.css></head><body><div class=content><header><div class=main><a href=https://lunarxlark.github.io/>/home/lunarxlark/.config/blog</a></div><nav><a href=/>Home</a>
+<a href=/about>About</a>
+<a href=/articles>Articles</a>
+<a href=/tags>Tags</a></nav></header><main><article><div class=title><h1 class=title>aws-cliの結果をJMESPathで取得する方法</h1><div class=meta>Posted on Jun 10, 2018</div></div><section class=body><ul><li>tagやownerでfilterして、作成日でソートした結果のうちImageIdだけ取り出す</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ aws ec2 describe-images <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --filters <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>owner-id,Values<span style=color:#f92672>=</span><span style=color:#ae81ff>1234512345</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>tag:Branch,Values<span style=color:#f92672>=</span>master <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>tag:Role,Values<span style=color:#f92672>=</span>ap <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#34;reverse(sort_by(Images, &amp;CreationDate)[].ImageId)&#34;</span>
+<span style=color:#75715e># option:query解説</span>
+<span style=color:#75715e># mapのImagesをCreationDateでsortして、ImageIdを抽出</span>
+<span style=color:#75715e># 結果を逆順にする</span>
+</code></pre></div><hr><ul><li>取り出すモノを複数指定</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ aws ec2 describe-images <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --filters <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>owner-id,Values<span style=color:#f92672>=</span><span style=color:#ae81ff>1234512345</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>tag:Branch,Values<span style=color:#f92672>=</span>master <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>tag:Role,Values<span style=color:#f92672>=</span>ap <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#34;reverse(sort_by(Images, &amp;CreationDate)[].[ImageId, Name])&#34;</span>
+<span style=color:#75715e># option:query解説</span>
+<span style=color:#75715e># mapのImagesをCreationDateでsortして、ImageIdを抽出</span>
+<span style=color:#75715e># 結果を逆順にする</span>
+</code></pre></div><hr><ul><li>上記の結果の内、最新1行のみ取得</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ aws ec2 describe-images <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --filters <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>owner-id,Values<span style=color:#f92672>=</span><span style=color:#ae81ff>1234512345</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>tag:Branch,Values<span style=color:#f92672>=</span>master <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>tag:Role,Values<span style=color:#f92672>=</span>ap <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#34;reverse(sort_by(Images, &amp;CreationDate)[].ImageId)[1]&#34;</span>
+</code></pre></div><hr><ul><li>double-quoteを外したい</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ aws ec2 describe-images <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --filters <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>owner-id,Values<span style=color:#f92672>=</span><span style=color:#ae81ff>1234512345</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>tag:Branch,Values<span style=color:#f92672>=</span>master <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>tag:Role,Values<span style=color:#f92672>=</span>ap <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#34;reverse(sort_by(Images, &amp;CreationDate)[].ImageId)[1]&#34;</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --output text
+</code></pre></div><hr><ul><li>ラベルをつける</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ aws ec2 describe-images <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --filters <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>owner-id,Values<span style=color:#f92672>=</span><span style=color:#ae81ff>1234512345</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>tag:Branch,Values<span style=color:#f92672>=</span>master <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>tag:Role,Values<span style=color:#f92672>=</span>ap <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#34;reverse(sort_by(Images, &amp;CreationDate)[].{imageid:ImageId, snapshotid: BlockDeviceMappings[0].Ebs.SnapshotId})[1]&#34;</span>
+</code></pre></div><hr><ul><li>ラベルをつけて、特定ラベルの値だけ取得</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ aws ec2 describe-images <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --filters <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>owner-id,Values<span style=color:#f92672>=</span><span style=color:#ae81ff>1234512345</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>tag:Branch,Values<span style=color:#f92672>=</span>master <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    Name<span style=color:#f92672>=</span>tag:Role,Values<span style=color:#f92672>=</span>ap <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#34;reverse(sort_by(Images, &amp;CreationDate)[].{imageid:ImageId, snapshotid: BlockDeviceMappings[0].Ebs.SnapshotId})[1] | snapshotid&#34;</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --output text
+&gt; <span style=color:#f92672>{</span>
+&gt;   <span style=color:#e6db74>&#34;imageid&#34;</span>: <span style=color:#e6db74>&#34;ami-xxxxxxxxxxxxxxxx&#34;</span>,
+&gt;   <span style=color:#e6db74>&#34;snapshotid&#34;</span>: <span style=color:#e6db74>&#34;snap-xxxxxxxxxxxxx&#34;</span>
+&gt; <span style=color:#f92672>}</span>
+</code></pre></div><hr><ul><li>元ネタ</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+    <span style=color:#f92672>&#34;Images&#34;</span>: [
+        {
+            <span style=color:#f92672>&#34;Hypervisor&#34;</span>: <span style=color:#e6db74>&#34;xen&#34;</span>,
+            <span style=color:#f92672>&#34;State&#34;</span>: <span style=color:#e6db74>&#34;available&#34;</span>,
+            <span style=color:#f92672>&#34;RootDeviceType&#34;</span>: <span style=color:#e6db74>&#34;ebs&#34;</span>,
+            <span style=color:#f92672>&#34;RootDeviceName&#34;</span>: <span style=color:#e6db74>&#34;/dev/xvda&#34;</span>,
+            <span style=color:#f92672>&#34;ImageType&#34;</span>: <span style=color:#e6db74>&#34;machine&#34;</span>,
+            <span style=color:#f92672>&#34;BlockDeviceMappings&#34;</span>: [
+                {
+                    <span style=color:#f92672>&#34;Ebs&#34;</span>: {
+                        <span style=color:#f92672>&#34;VolumeSize&#34;</span>: <span style=color:#ae81ff>8</span>,
+                        <span style=color:#f92672>&#34;SnapshotId&#34;</span>: <span style=color:#e6db74>&#34;snap-xxxxxxxxxx&#34;</span>,
+                        <span style=color:#f92672>&#34;VolumeType&#34;</span>: <span style=color:#e6db74>&#34;gp2&#34;</span>,
+                        <span style=color:#f92672>&#34;DeleteOnTermination&#34;</span>: <span style=color:#66d9ef>true</span>,
+                        <span style=color:#f92672>&#34;Encrypted&#34;</span>: <span style=color:#66d9ef>false</span>
+                    },
+                    <span style=color:#f92672>&#34;DeviceName&#34;</span>: <span style=color:#e6db74>&#34;/dev/xvda&#34;</span>
+                }
+            ],
+            <span style=color:#f92672>&#34;OwnerId&#34;</span>: <span style=color:#e6db74>&#34;1234512345&#34;</span>,
+            <span style=color:#f92672>&#34;ImageId&#34;</span>: <span style=color:#e6db74>&#34;ami-xxxxxxxxxxxxxxxx&#34;</span>,
+            <span style=color:#f92672>&#34;CreationDate&#34;</span>: <span style=color:#e6db74>&#34;2018-10-04T01:17:47.000Z&#34;</span>,
+            <span style=color:#f92672>&#34;Architecture&#34;</span>: <span style=color:#e6db74>&#34;x86_64&#34;</span>,
+            <span style=color:#f92672>&#34;VirtualizationType&#34;</span>: <span style=color:#e6db74>&#34;hvm&#34;</span>,
+            <span style=color:#f92672>&#34;ImageLocation&#34;</span>: <span style=color:#e6db74>&#34;xxxxxxxxxx/Pckr-ap-auth-2018-10-04T01-14-43Z&#34;</span>,
+            <span style=color:#f92672>&#34;Public&#34;</span>: <span style=color:#66d9ef>false</span>,
+            <span style=color:#f92672>&#34;Name&#34;</span>: <span style=color:#e6db74>&#34;Pckr-ap-auth-2018-10-04T01-14-43Z&#34;</span>,
+            <span style=color:#f92672>&#34;SriovNetSupport&#34;</span>: <span style=color:#e6db74>&#34;simple&#34;</span>,
+            <span style=color:#f92672>&#34;EnaSupport&#34;</span>: <span style=color:#66d9ef>true</span>,
+            <span style=color:#f92672>&#34;Tags&#34;</span>: [
+                {
+                    <span style=color:#f92672>&#34;Key&#34;</span>: <span style=color:#e6db74>&#34;Made&#34;</span>,
+                    <span style=color:#f92672>&#34;Value&#34;</span>: <span style=color:#e6db74>&#34;packer&#34;</span>
+                },
+                {
+                    <span style=color:#f92672>&#34;Key&#34;</span>: <span style=color:#e6db74>&#34;CommitId&#34;</span>,
+                    <span style=color:#f92672>&#34;Value&#34;</span>: <span style=color:#e6db74>&#34;61b0e7&#34;</span>
+                },
+                {
+                    <span style=color:#f92672>&#34;Key&#34;</span>: <span style=color:#e6db74>&#34;Base_AMI_Name&#34;</span>,
+                    <span style=color:#f92672>&#34;Value&#34;</span>: <span style=color:#e6db74>&#34;amzn2-ami-hvm-2.0.20180810-x86_64-gp2&#34;</span>
+                },
+                {
+                    <span style=color:#f92672>&#34;Key&#34;</span>: <span style=color:#e6db74>&#34;Branch&#34;</span>,
+                    <span style=color:#f92672>&#34;Value&#34;</span>: <span style=color:#e6db74>&#34;master&#34;</span>
+                },
+                {
+                    <span style=color:#f92672>&#34;Key&#34;</span>: <span style=color:#e6db74>&#34;Role&#34;</span>,
+                    <span style=color:#f92672>&#34;Value&#34;</span>: <span style=color:#e6db74>&#34;ap&#34;</span>
+                },
+                {
+                    <span style=color:#f92672>&#34;Key&#34;</span>: <span style=color:#e6db74>&#34;OS_Version&#34;</span>,
+                    <span style=color:#f92672>&#34;Value&#34;</span>: <span style=color:#e6db74>&#34;Amazon Linux 2 LTS&#34;</span>
+                },
+                {
+                    <span style=color:#f92672>&#34;Key&#34;</span>: <span style=color:#e6db74>&#34;Base_AMI&#34;</span>,
+                    <span style=color:#f92672>&#34;Value&#34;</span>: <span style=color:#e6db74>&#34;ami-xxxxxxxxxxxxx&#34;</span>
+                },
+                    <span style=color:#e6db74>&#34;Key&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> <span style=color:#e6db74>&#34;Name&#34;</span>,
+                    <span style=color:#e6db74>&#34;Value&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> <span style=color:#e6db74>&#34;packer-ap&#34;</span>
+                <span style=color:#960050;background-color:#1e0010>}</span>
+            ],
+            <span style=color:#f92672>&#34;Description&#34;</span>: <span style=color:#e6db74>&#34;ami-ap-auth&#34;</span>
+        },
+        {
+            <span style=color:#f92672>&#34;Hypervisor&#34;</span>: <span style=color:#e6db74>&#34;xen&#34;</span>,
+            <span style=color:#960050;background-color:#1e0010>...</span>
+}
+</code></pre></div></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/jmespath>JMESPATH</a></li><li><a href=/tags/aws-cli>aws-cli</a></li></ul></nav></div></article></main><footer><hr><a class=soc href=https://github.com/lunarxlark/ title=GitHub><i data-feather=github></i></a>|<a class=soc href=https://twitter.com/lunarxlark/ title=Twitter><i data-feather=twitter></i></a>|<a class=soc href=https://instagram.com/lunarxlark/ title=Instagram><i data-feather=instagram></i></a>|⚡️
+2021 © lunarxlark | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></footer><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-135352101-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script>feather.replace()</script></div></body></html>
