@@ -4,7 +4,7 @@ defaultContentLanguage = "ja"
 title = "/home/lunarxlark/.config/blog"
 themes = "archie"
 copyright = "© lunarxlark"
-googleAnalytics = "UA-135352101-1"
+googleAnalytics = "G-HLW147X7ET"
 
 # Code Highlight
 pygmentsstyle = "monokai"
