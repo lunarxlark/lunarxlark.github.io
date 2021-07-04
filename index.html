@@ -4,7 +4,6 @@ gtag('js',new Date());gtag('config','G-HC9218ZECN');</script><meta property="og:
 <a href=/articles>Articles</a>
 <a href=/tags>Tags</a></nav></header><main class=list><div class=site-description></div><section class=list-item><h1 class=title><a href=/articles/articles/ssh-with-publickey-without-pem/>EC2へssh with GitHubに登録している公開鍵</a></h1><time>Jul 4, 2021</time><br><div class=description>isuconの練習時にGitHubに登録している公開鍵でEC2へssh出来るように、userdataを設定したかった。
 sedでのエスケープの仕方でハマったのでメモ。
-コンソールで作成時にkey pairを指定しなくても公開鍵でssh出来ることを確認済。
 #!/bin/bash su isucon -c 'mkdir -p /home/isucon/.ssh && touch /home/isucon/.ssh/authorized_keys' su isucon -c "curl https://api.github.com/users/{{github_user_id}}/keys | grep \"key\" | sed -e 's/ \"key\": \"//g' -e 's/\"//g' >> /home/isucon/.ssh/authorized_keys" &mldr;</div><a href=/articles/articles/ssh-with-publickey-without-pem/>Read more ⟶</a></section><section class=list-item><h1 class=title><a href=/articles/articles/2021_vim_gopls/>2021年版 vim + goplsの設定</a></h1><time>Jun 16, 2021</time><br><div class=description>goplsが出てから, vimでも定義ジャンプやシンボル検索、ドキュメント参照等が行えるようになった。
 たまにVSCodeを触りvimでの作業を改善できないか考える中で、自身の設定が古いことに気付いた。また、ググってもなかなか出てこなかったのでメモとして記述する。
 cf. GitHub dotfiles
