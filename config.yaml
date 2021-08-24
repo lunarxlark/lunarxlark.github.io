@@ -1,0 +1,52 @@
+baseURL : https://lunarxlark.github.io/
+title : /home/lunarxlark/.config/blog
+theme : "PaperMod"
+googleAnalytics : G-HC9218ZECN
+defaultContentLanguage : ja
+
+paginate : 10
+
+enableRobotsTXT : true
+buildDrafts : false
+buildFuture : false
+buildExpired : false
+minify:
+    disableXML: true
+    minifyOutput: true
+
+params:
+  env: production
+  title : /home/lunarxlark/.config/blog
+  homeInfoParams:
+    Title: "Hi, I'm lunarxlark"
+    Content: "I \U00002764 \U00002328. crkbd user."
+  defaultTheme: dark
+  ShowShareButtons: true
+  ShowReadingTime: true
+  socialIcons:
+      - name: github
+        url: "https://github.com/lunarxlark"
+      - name: twitter
+        url: "https://twitter.com/lunarxlark"
+
+# Main menu Items
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: about
+      name: About
+      url: /about
+      weight: 20
+    - identifier: tags
+      name: Tags
+      url: /tags
+      weight: 30
+
+markup:
+    highlight:
+        codeFences: true
+        lineNos: true
+        style: monokai
