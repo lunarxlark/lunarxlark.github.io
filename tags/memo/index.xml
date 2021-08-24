@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>memo on /home/lunarxlark/.config/blog</title><link>https://lunarxlark.github.io/tags/memo/</link><description>Recent content in memo on /home/lunarxlark/.config/blog</description><generator>Hugo -- gohugo.io</generator><copyright>© lunarxlark</copyright><lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/memo/index.xml" rel="self" type="application/rss+xml"/><item><title>JMeterことはじめ</title><link>https://lunarxlark.github.io/articles/articles/getting-start-jmeter/</link><pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate><guid>https://lunarxlark.github.io/articles/articles/getting-start-jmeter/</guid><description>参考 今さら聞けない Apache JMeter の基本 JMeter の利用方法(1) – Ramp－up、スレッド数、ループ回数の誤用 | 株式会社ケイズ・ソフトウェア</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>memo on /home/lunarxlark/.config/blog</title>
+    <link>https://lunarxlark.github.io/tags/memo/</link>
+    <description>Recent content in memo on /home/lunarxlark/.config/blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/memo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JMeterことはじめ</title>
+      <link>https://lunarxlark.github.io/articles/articles/getting-start-jmeter/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarxlark.github.io/articles/articles/getting-start-jmeter/</guid>
+      <description>参考  今さら聞けない Apache JMeter の基本 JMeter の利用方法(1) – Ramp－up、スレッド数、ループ回数の誤用 | 株式会社ケイズ・ソフトウェア  </description>
+    </item>
+    
+  </channel>
+</rss>

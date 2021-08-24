@@ -1,3 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EC2 on /home/lunarxlark/.config/blog</title><link>https://lunarxlark.github.io/tags/ec2/</link><description>Recent content in EC2 on /home/lunarxlark/.config/blog</description><generator>Hugo -- gohugo.io</generator><copyright>© lunarxlark</copyright><lastBuildDate>Sun, 04 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/ec2/index.xml" rel="self" type="application/rss+xml"/><item><title>EC2へssh with GitHubに登録している公開鍵</title><link>https://lunarxlark.github.io/articles/articles/ssh-with-publickey-without-pem/</link><pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate><guid>https://lunarxlark.github.io/articles/articles/ssh-with-publickey-without-pem/</guid><description>isuconの練習時にGitHubに登録している公開鍵でEC2へssh出来るように、userdataを設定したかった。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>EC2 on /home/lunarxlark/.config/blog</title>
+    <link>https://lunarxlark.github.io/tags/ec2/</link>
+    <description>Recent content in EC2 on /home/lunarxlark/.config/blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 04 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/ec2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EC2へssh with GitHubに登録している公開鍵</title>
+      <link>https://lunarxlark.github.io/articles/articles/ssh-with-publickey-without-pem/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarxlark.github.io/articles/articles/ssh-with-publickey-without-pem/</guid>
+      <description>isuconの練習時にGitHubに登録している公開鍵でEC2へssh出来るように、userdataを設定したかった。
 sedでのエスケープの仕方でハマったのでメモ。
-#!/bin/bash su isucon -c &amp;#39;mkdir -p /home/isucon/.ssh &amp;amp;&amp;amp; touch /home/isucon/.ssh/authorized_keys&amp;#39; su isucon -c &amp;#34;curl https://api.github.com/users/{{github_user_id}}/keys | grep \&amp;#34;key\&amp;#34; | sed -e &amp;#39;s/ \&amp;#34;key\&amp;#34;: \&amp;#34;//g&amp;#39; -e &amp;#39;s/\&amp;#34;//g&amp;#39; &amp;gt;&amp;gt; /home/isucon/.ssh/authorized_keys&amp;#34;</description></item></channel></rss>
+#!/bin/bash su isucon -c &#39;mkdir -p /home/isucon/.ssh &amp;amp;&amp;amp; touch /home/isucon/.ssh/authorized_keys&#39; su isucon -c &amp;quot;curl https://api.github.com/users/{{github_user_id}}/keys | grep \&amp;quot;key\&amp;quot; | sed -e &#39;s/ \&amp;quot;key\&amp;quot;: \&amp;quot;//g&#39; -e &#39;s/\&amp;quot;//g&#39; &amp;gt;&amp;gt; /home/isucon/.ssh/authorized_keys&amp;quot; </description>
+    </item>
+    
+  </channel>
+</rss>
