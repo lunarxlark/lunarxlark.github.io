@@ -5,7 +5,34 @@
     <link>https://lunarxlark.github.io/tags/</link>
     <description>Recent content in Tags on /home/lunarxlark/.config/blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gin</title>
+      <link>https://lunarxlark.github.io/tags/gin/</link>
+      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarxlark.github.io/tags/gin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://lunarxlark.github.io/tags/go/</link>
+      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarxlark.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gorm</title>
+      <link>https://lunarxlark.github.io/tags/gorm/</link>
+      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarxlark.github.io/tags/gorm/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>isucon</title>
       <link>https://lunarxlark.github.io/tags/isucon/</link>
@@ -30,15 +57,6 @@
       <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>https://lunarxlark.github.io/tags/go/</link>
-      <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://lunarxlark.github.io/tags/go/</guid>
       <description></description>
     </item>
     
