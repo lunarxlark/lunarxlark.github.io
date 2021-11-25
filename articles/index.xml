@@ -5,7 +5,24 @@
     <link>https://lunarxlark.github.io/articles/</link>
     <description>Recent content in Articles on /home/lunarxlark/.config/blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 12 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Neovim &#43; DAP &#43; Go</title>
+      <link>https://lunarxlark.github.io/articles/articles/20211124_nvim-dap-go/</link>
+      <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarxlark.github.io/articles/articles/20211124_nvim-dap-go/</guid>
+      <description>TL;DR DAP(Debug Adapter Protocol)の力を借りれば、Neovim上でも視覚的にGoのデバッグが出来ました。 ここでは下記については話しません。
+ DAPの詳細 packer.nvimでのインストール方法 vscode-goのdebugAdapter.jsの使用方法  Neovimでデバッグするモチベーション v0.2.2から色々変わったNeovimを久々に触ってみようかと思いinit.luaへ以降して遊んでいました。 起動が早いだけでなく、LSP系の動作もサクサク動いてここ2ヶ月程快適に過ごしています。
+ただ、VSCodeでのデバッグ機能がとても便利なため、デバッガ使用時のみこの快適な環境を離れていました。
+どうにかNeovim上で完結させられないか&amp;hellip;。
+DAP DAPの説明はリンク先や他HPをご参照ください。
+イメージを持ってもらうためLSPを引き合いに出すと、LSPがテキスト編集時に定義や変更内容や補完候補等を返すのに対して、DAPはデバッガとやりとりしてデバッグ情報を返す位のイメージを持ってもらえれば大丈夫だと思います。
+Neovim + DAP + Go 使うプラグインは下記になります。
+ mfussenegger/nvim-dap : NeovimのDAPクライアント。VSCodeのlaunch.jsonも使用可 rcarriga/nvim-dap-ui : nvim-dapを視覚的に操作しやすいUI leoluz/nvim-dap-go : DAPのGo用設定(delve dap起動) nvim-treesitter/nvim-treesitter nvim-dap-goでテストをデバッグする際、近くのテストを見つけるのに必要  packer.nvimの設定 VSCodeのlaunch.jsonを使用しない場合、require(&#39;dap.ext.vscode&#39;).load_launchjs()は不要です。 launch.jsonを読み込めた場合、デバッグ方法の選択時にlaunch.jsonの内容が追加表示されて選択可能になります。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  -- dap plugin installation with packer.nvim ... -- dap use { &amp;#34;rcarriga/nvim-dap-ui&amp;#34;, requires = { &amp;#34;mfussenegger/nvim-dap&amp;#34;, &amp;#34;leoluz/nvim-dap-go&amp;#34;, &amp;#34;nvim-treesitter/nvim-treesitter&amp;#34; }, config = function () vim.</description>
+    </item>
+    
     <item>
       <title>gin &#43; gorm v2でのセッションやトランザクション</title>
       <link>https://lunarxlark.github.io/articles/articles/20210912_gin_gormv2/</link>
