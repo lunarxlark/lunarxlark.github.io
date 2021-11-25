@@ -8,19 +8,19 @@
     <lastBuildDate>Tue, 15 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LambdaでAWS Elasticsearch ServiceのIndex削除する方法</title>
-      <link>https://lunarxlark.github.io/articles/articles/how-to-delete-indices-by-lambda/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20190115_how-to-delete-indices-by-lambda/</link>
       <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/how-to-delete-indices-by-lambda/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20190115_how-to-delete-indices-by-lambda/</guid>
       <description>Curator を使用した Amazon Elasticsearch Service でのデータの更新</description>
     </item>
     
     <item>
       <title>ElasticsearchのIndexをAPIで操作</title>
-      <link>https://lunarxlark.github.io/articles/articles/how-to-use-elasticsearch-api/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20190114_how-to-use-elasticsearch-api/</link>
       <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/how-to-use-elasticsearch-api/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20190114_how-to-use-elasticsearch-api/</guid>
       <description>GET Indecies 1 2 3 4 5  curl -X GET http://&amp;lt;es-url&amp;gt;/&amp;lt;index-name&amp;gt;-* | \  jq -r &amp;#34;.[].settings.index.provided_name&amp;#34; | sort authapi_access_log-2018.10.31 authapi_access_log-2018.11.01 authapi_access_log-2018.11.05   DELETE indecies 1  curl -X DELETE http://&amp;lt;es-url&amp;gt;/&amp;lt;index-name&amp;gt;-2018.11.06   </description>
     </item>
     

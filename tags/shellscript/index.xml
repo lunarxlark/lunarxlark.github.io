@@ -8,19 +8,19 @@
     <lastBuildDate>Fri, 03 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/shellscript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>setコマンドでの位置パラメータへの代入方法</title>
-      <link>https://lunarxlark.github.io/articles/articles/how-to-set-position-parameter-in-shellscript/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20180803_how-to-set-position-parameter-in-shellscript/</link>
       <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/how-to-set-position-parameter-in-shellscript/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20180803_how-to-set-position-parameter-in-shellscript/</guid>
       <description>&lt;p&gt;&amp;ndash;オプションを使う事で、文字列を空白文字で分割して、位置パラメータにセットできる。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>AWSでのシェルスクリプト集</title>
-      <link>https://lunarxlark.github.io/articles/articles/aws-convenient-shellscripts-in-aws/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20180502_aws-convenient-shellscripts-in-aws/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/aws-convenient-shellscripts-in-aws/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20180502_aws-convenient-shellscripts-in-aws/</guid>
       <description>&lt;p&gt;便利なシェルスクリプト@AWS&lt;/p&gt;</description>
     </item>
     

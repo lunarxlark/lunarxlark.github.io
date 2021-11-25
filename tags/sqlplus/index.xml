@@ -8,10 +8,10 @@
     <lastBuildDate>Sat, 01 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/sqlplus/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQL*Plusでviを使う</title>
-      <link>https://lunarxlark.github.io/articles/articles/how-to-use-vi-in-sqlplus/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20181201_how-to-use-vi-in-sqlplus/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/how-to-use-vi-in-sqlplus/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20181201_how-to-use-vi-in-sqlplus/</guid>
       <description>1 2 3  SQL&amp;gt; DEFINE _EDITOR = vi SQL&amp;gt; edit SQL&amp;gt; / -- 実行   glogin.sqlに設定することでDEFINE _EDITOR = viを省略できる</description>
     </item>
     

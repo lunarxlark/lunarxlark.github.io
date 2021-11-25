@@ -8,10 +8,10 @@
     <lastBuildDate>Sun, 12 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>gin &#43; gorm v2でのセッションやトランザクション</title>
-      <link>https://lunarxlark.github.io/articles/articles/2021-09-12_gin_gormv2/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20210912_gin_gormv2/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/2021-09-12_gin_gormv2/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20210912_gin_gormv2/</guid>
       <description>TL;DR ginでの各リクエストを1セッションで管理しつつ、トランザクションも管理したい。
  ginのmiddlewareで、gin.Contextにgorm.WithContextを用いてGormのセッションを持たせる。 ginの各HandlerFuncの中では、gin.Context内のGormセッションからDBへアクセスする。  モチベーション Gormはv2になり色々と変わった。 Gorm 2.0 Release Note
 色々な記事が書かれているがTransactoinに関してあまり書かれていない。
@@ -29,10 +29,10 @@ gorm.WithContextのreturnはdb.Sessionとなっている(下記はgormのソー�
     
     <item>
       <title>2021年版 vim &#43; goplsの設定</title>
-      <link>https://lunarxlark.github.io/articles/articles/2021_vim_gopls/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20210616_2021vim_gopls/</link>
       <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/2021_vim_gopls/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20210616_2021vim_gopls/</guid>
       <description>goplsが出てから, vimでも定義ジャンプやシンボル検索、ドキュメント参照等が行えるようになった。
 たまにVSCodeを触りvimでの作業を改善できないか考える中で、自身の設定が古いことに気付いた。また、ググってもなかなか出てこなかったのでメモとして記述する。
 cf. GitHub dotfiles
@@ -46,10 +46,10 @@ LspCodeActionはカーソルの位置によって実行内容が変わるので�
     
     <item>
       <title>load test with dynamic payload by tsenart/vegeta</title>
-      <link>https://lunarxlark.github.io/articles/articles/vegeta-dynamic-payload/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20210311_vegeta-dynamic-payload/</link>
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/vegeta-dynamic-payload/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20210311_vegeta-dynamic-payload/</guid>
       <description>負荷テストツールvegetaのコマンドでの使い方ぐはググるとたくさん出てくるが、ライブラリとして仕様している記事が少なく手こずったのでメモ代わりに記事にする。
 やりたいこと リクエスト毎にRequestの内容を動的に変えて、負荷をかけたかった。
  Headerに持つタイムスタンプがリクエスト時のタイムスタンプになるように。 userIdはuniqueになるように。(同じユーザだと重複リクエストを弾く処理があったため。)  具体的には下記のような感じでリクエストを送りたい。
@@ -62,10 +62,10 @@ LspCodeActionはカーソルの位置によって実行内容が変わるので�
     
     <item>
       <title>Custome Logger using LoggerWithConfig in Echo</title>
-      <link>https://lunarxlark.github.io/articles/articles/echo-custom-logger/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20201110_echo-custom-logger/</link>
       <pubDate>Tue, 10 Nov 2020 02:51:09 +0900</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/echo-custom-logger/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20201110_echo-custom-logger/</guid>
       <description>WebFramework EchoのLoggerを弄っていて気付いた点があったのでメモ。
 sample code
 箇条書き  responseログにHeader X-Any-Headerを出力したい場合、ログフォーマットに&amp;quot;any_header&amp;quot;:${header:x-any-header}を指定すればいいよ responseログにQueryParamerter ?anyparam=xxxを出力したい場合、ログフォーマットに&amp;quot;any_query&amp;quot;:${query:anyparam}を指定すればいいよ デフォルトで出力されるカラム&amp;rsquo;id&amp;rsquo;はHeader X-Request-Id を指定すると出力されるよ Skipperを設定することで、path毎にログ出力する/しない等を設定出来るよ  1, 2, 3はEchoのそういう機能だってことで特にありません。 4は結構便利だなと思いました。以下のサンプルコードでは、/healthcheckに来た場合とCI/CD等での自動テスト時にはresponseログを出力しないようにする設定例です。
@@ -74,29 +74,29 @@ sample 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 2
     
     <item>
       <title>自分用日本語訳 Go Module</title>
-      <link>https://lunarxlark.github.io/articles/articles/go-module-jpn/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20200514_go-module-jpn/</link>
       <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/go-module-jpn/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20200514_go-module-jpn/</guid>
       <description>&lt;p&gt;(この記事は、執筆時点での&lt;a href=&#34;https://github.com/golang/go/wiki/Modules&#34;&gt;Go Modules&lt;/a&gt;をもとにした私のメモです。Go Moduleの理解のために、元記事と記載の順番が入れ替わっている項目もあります。)&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>My Favorite Usage urfave/cli</title>
-      <link>https://lunarxlark.github.io/articles/articles/my-favorite-usage-urfave-cli/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20200206_my-favorite-usage-urfave-cli/</link>
       <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/my-favorite-usage-urfave-cli/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20200206_my-favorite-usage-urfave-cli/</guid>
       <description>&lt;p&gt;参加しているプロジェクトで&lt;code&gt;urfave/cli&lt;/code&gt;を使っている。使い方は&lt;a href=&#34;https://github.com/urfave/cli/blob/master/docs/v2/manual.md#examples&#34;&gt;Example&lt;/a&gt;にあるのと同じ書き方で使っている。
 大半のバッチ処理をコマンドとして記述しているので、Exampleの書き方だとだいぶ見辛くなってきた。縦長のコマンド定義とオプション説明で目的の処理を探すのにもページ送りを何度もする。なんとかしたい。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Error &#39;undefined&#39; when go run</title>
-      <link>https://lunarxlark.github.io/articles/articles/how-to-go-run/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20200204_how-to-go-run/</link>
       <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/how-to-go-run/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20200204_how-to-go-run/</guid>
       <description>x…motemen/ghqを写経している時、 go run main.go 出来ないことに気付いた。 下記が実行時のエラーになる。ちなみに、 go build は出来る。
 1 2 3 4  ~/d/s/g/x/ghq &amp;gt;&amp;gt;&amp;gt; go run main.go # command-line-arguments ./main.go:38:17: undefined: commands ~/d/s/g/x/ghq &amp;gt;&amp;gt;&amp;gt;   commands が見つからない？同じ階層の commands.go には下記記述がちゃんとあるのに、どうして見つからない&amp;hellip;。
 1 2 3 4 5 6  var commands = []*cli.Command{ commandGet, commandList, commandRoot, commandCreate, }   理由は、go runの引数に指定したファイル(+ importされるパッケージ)しか読み込まないから。

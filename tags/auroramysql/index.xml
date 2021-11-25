@@ -8,19 +8,19 @@
     <lastBuildDate>Tue, 15 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/auroramysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Aurora MySQLの確認方法</title>
-      <link>https://lunarxlark.github.io/articles/articles/how-to-check-aurora-mysql-version/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20180515_how-to-check-aurora-mysql-version/</link>
       <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/how-to-check-aurora-mysql-version/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20180515_how-to-check-aurora-mysql-version/</guid>
       <description>1 2  &amp;gt; SELECT AURORA_VERSION(); &amp;gt; SELECT @@aurora_version;   </description>
     </item>
     
     <item>
       <title>AuroraのUpgradeでの注意点</title>
-      <link>https://lunarxlark.github.io/articles/articles/aws-important-notice-aurora-upgrade/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20180503_aws-important-notice-aurora-upgrade/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/aws-important-notice-aurora-upgrade/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20180503_aws-important-notice-aurora-upgrade/</guid>
       <description>&lt;p&gt;Auroraのアップグレードには何種類かあり、それぞれでダウンタイム有無やパッチ適用時間が異なる。
 アップグレードの種類と気にしなければいけないことをまとめた。&lt;/p&gt;</description>
     </item>

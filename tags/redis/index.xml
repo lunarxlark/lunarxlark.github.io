@@ -8,10 +8,10 @@
     <lastBuildDate>Fri, 30 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redisを始める時に参考になりそうなサイト</title>
-      <link>https://lunarxlark.github.io/articles/articles/getting-start-redis/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20181130_getting-start-redis/</link>
       <pubDate>Fri, 30 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/getting-start-redis/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20181130_getting-start-redis/</guid>
       <description>ref  Command Reference Try Redis Redis入門: Redisとは？ インメモリDBについて、memcachedとの違いなど  </description>
     </item>
     

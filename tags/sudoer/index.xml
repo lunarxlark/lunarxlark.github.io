@@ -8,10 +8,10 @@
     <lastBuildDate>Wed, 14 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/sudoer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sudoの設定ファイル:sudoersのまとめ</title>
-      <link>https://lunarxlark.github.io/articles/articles/summary-sudoers/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20181114_summary-sudoers/</link>
       <pubDate>Wed, 14 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/summary-sudoers/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20181114_summary-sudoers/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;sudoers &amp;hellip; sudoに関する設定ファイル&lt;/li&gt;
 &lt;li&gt;visudo &amp;hellip; sudoersを編集するためのコマンド&lt;/li&gt;

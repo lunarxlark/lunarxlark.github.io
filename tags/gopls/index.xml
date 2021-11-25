@@ -8,10 +8,10 @@
     <lastBuildDate>Wed, 16 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/gopls/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2021年版 vim &#43; goplsの設定</title>
-      <link>https://lunarxlark.github.io/articles/articles/2021_vim_gopls/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20210616_2021vim_gopls/</link>
       <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/2021_vim_gopls/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20210616_2021vim_gopls/</guid>
       <description>goplsが出てから, vimでも定義ジャンプやシンボル検索、ドキュメント参照等が行えるようになった。
 たまにVSCodeを触りvimでの作業を改善できないか考える中で、自身の設定が古いことに気付いた。また、ググってもなかなか出てこなかったのでメモとして記述する。
 cf. GitHub dotfiles

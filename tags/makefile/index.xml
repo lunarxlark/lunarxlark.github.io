@@ -8,10 +8,10 @@
     <lastBuildDate>Thu, 12 Jul 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/makefile/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>実行している現在のMakefileのディレクトリ取得方法</title>
-      <link>https://lunarxlark.github.io/articles/articles/how-to-get-current-file-path-in-makefile/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20180712_how-to-get-current-file-path-in-makefile/</link>
       <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/how-to-get-current-file-path-in-makefile/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20180712_how-to-get-current-file-path-in-makefile/</guid>
       <description>1  MAKEFILE_DIR := $(dir $(lastword $(MAKEFILE_LIST)))   </description>
     </item>
     

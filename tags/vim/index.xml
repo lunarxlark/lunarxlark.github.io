@@ -8,10 +8,10 @@
     <lastBuildDate>Wed, 16 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2021年版 vim &#43; goplsの設定</title>
-      <link>https://lunarxlark.github.io/articles/articles/2021_vim_gopls/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20210616_2021vim_gopls/</link>
       <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/2021_vim_gopls/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20210616_2021vim_gopls/</guid>
       <description>goplsが出てから, vimでも定義ジャンプやシンボル検索、ドキュメント参照等が行えるようになった。
 たまにVSCodeを触りvimでの作業を改善できないか考える中で、自身の設定が古いことに気付いた。また、ググってもなかなか出てこなかったのでメモとして記述する。
 cf. GitHub dotfiles
@@ -25,10 +25,10 @@ LspCodeActionはカーソルの位置によって実行内容が変わるので�
     
     <item>
       <title>From denite.nvim To fzf.vim</title>
-      <link>https://lunarxlark.github.io/articles/articles/from-denite-to-fzf/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20200211_from-denite-to-fzf/</link>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/from-denite-to-fzf/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20200211_from-denite-to-fzf/</guid>
       <description>denite.nvimとfzf.vimって比較記事?
  違います。断捨離した結果、fzf.vimで事足りてしまったという記事です。
 denite.nvimとfzf.vimは、一見やれることが似ているように見えますが提供しているインタフェースが違います。 denite.nvimの方が拡張性/汎用性が高いです。Pythonスクリプトを呼び出せますし。
@@ -43,10 +43,10 @@ denite.nvimとfzf.vimは、一見やれることが似ているように見え�
     
     <item>
       <title>SQL*Plusでviを使う</title>
-      <link>https://lunarxlark.github.io/articles/articles/how-to-use-vi-in-sqlplus/</link>
+      <link>https://lunarxlark.github.io/articles/articles/20181201_how-to-use-vi-in-sqlplus/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/how-to-use-vi-in-sqlplus/</guid>
+      <guid>https://lunarxlark.github.io/articles/articles/20181201_how-to-use-vi-in-sqlplus/</guid>
       <description>1 2 3  SQL&amp;gt; DEFINE _EDITOR = vi SQL&amp;gt; edit SQL&amp;gt; / -- 実行   glogin.sqlに設定することでDEFINE _EDITOR = viを省略できる</description>
     </item>
     
