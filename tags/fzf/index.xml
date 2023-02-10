@@ -13,10 +13,10 @@
       
       <guid>https://lunarxlark.github.io/articles/articles/20180324_getting-start-fzf/</guid>
       <description>github.com/junegunn/fzf
-Shortcut   Ctrl+T
-  Ctrl + R: history検索
-  Alt + C: cd into selected directory
-  Completion 1  ssh **&amp;lt;tab&amp;gt;   </description>
+Shortcut Ctrl+T
+Ctrl + R: history検索
+Alt + C: cd into selected directory
+Completion 1 ssh **&amp;lt;tab&amp;gt; </description>
     </item>
     
   </channel>

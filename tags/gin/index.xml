@@ -13,18 +13,18 @@
       
       <guid>https://lunarxlark.github.io/articles/articles/20210912_gin_gormv2/</guid>
       <description>TL;DR ginでの各リクエストを1セッションで管理しつつ、トランザクションも管理したい。
- ginのmiddlewareで、gin.Contextにgorm.WithContextを用いてGormのセッションを持たせる。 ginの各HandlerFuncの中では、gin.Context内のGormセッションからDBへアクセスする。  モチベーション Gormはv2になり色々と変わった。 Gorm 2.0 Release Note
+ginのmiddlewareで、gin.Contextにgorm.WithContextを用いてGormのセッションを持たせる。 ginの各HandlerFuncの中では、gin.Context内のGormセッションからDBへアクセスする。 モチベーション Gormはv2になり色々と変わった。 Gorm 2.0 Release Note
 色々な記事が書かれているがTransactoinに関してあまり書かれていない。
 下記疑問を払拭して正しい使い方を自分なりに確かめたかったので試した。
- なんとなく動くがこれで正しいのか? ドキュメントを読んでいてSkipDefaultTransaction:trueだと30%もパフォーマンスが上がるというがその設定はtrueにしていいいのか? っていうか、DefaultTransactionって何？ロールバックの単位とかどうやって指定するの?  確認&amp;amp;検証 検証時に作成したソースはgithub.com/lunarxlark/gorm2-tx
+なんとなく動くがこれで正しいのか? ドキュメントを読んでいてSkipDefaultTransaction:trueだと30%もパフォーマンスが上がるというがその設定はtrueにしていいいのか? っていうか、DefaultTransactionって何？ロールバックの単位とかどうやって指定するの? 確認&amp;amp;検証 検証時に作成したソースはgithub.com/lunarxlark/gorm2-tx
 Context Gorm 2.0 #Context
 GormはContextサポートを提供し、それを使いたかったらWithContext使ってくれ。 また、Sessionには単セッションモードと継続セッションモードがある。 普通は、継続セッションモードを使って、複数オペレーションをまとめるよ。 &amp;hellip;GormのSessionってどんなことできるの?
 Session Gorm 2.0 #Session
 Gormは`Session`メソッドをを通して、新しいセッションを提供するよ。 新しいセッションを作る場合、設定がたくさんあるよ。DryRunやLoggerとかね。 &amp;hellip;新しいセッションを一々作るのは望んでない。
 Contextサポートしてくれるってことなのでgin.Contextへ埋め込む時にセッションを作成してそれを使い回したい。
 gorm.WithContextのreturnはdb.Sessionとなっている(下記はgormのソースから抜粋)ので、gin.Contextへ埋め込むだけで新たにセッションを作る必要はない。
-1 2 3 4  // WithContext change current instance db&amp;#39;s context to ctx func (db *DB) WithContext(ctx context.Context) *DB { return db.Session(&amp;amp;Session{Context: ctx}) }   ここまでで下記みたいな感じになる。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36  func main() { //.</description>
+1 2 3 4 // WithContext change current instance db&amp;#39;s context to ctx func (db *DB) WithContext(ctx context.Context) *DB { return db.Session(&amp;amp;Session{Context: ctx}) } ここまでで下記みたいな感じになる。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 func main() { //.</description>
     </item>
     
   </channel>

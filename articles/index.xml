@@ -5,7 +5,16 @@
     <link>https://lunarxlark.github.io/articles/</link>
     <description>Recent content in Articles on /home/lunarxlark/.config/blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022年 ふりかえり</title>
+      <link>https://lunarxlark.github.io/articles/articles/20221227_2022-summary/</link>
+      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarxlark.github.io/articles/articles/20221227_2022-summary/</guid>
+      <description>生きてるかtest test</description>
+    </item>
+    
     <item>
       <title>Neovim &#43; DAP &#43; Go</title>
       <link>https://lunarxlark.github.io/articles/articles/20211124_nvim-dap-go/</link>
@@ -13,14 +22,14 @@
       
       <guid>https://lunarxlark.github.io/articles/articles/20211124_nvim-dap-go/</guid>
       <description>TL;DR DAP(Debug Adapter Protocol)の力を借りれば、Neovim上でも視覚的にGoのデバッグが出来ました。 ここでは下記については話しません。
- DAPの詳細 packer.nvimでのインストール方法 vscode-goのdebugAdapter.jsの使用方法  Neovimでデバッグするモチベーション v0.2.2から色々変わったNeovimを久々に触ってみようかと思いinit.luaへ以降して遊んでいました。 起動が早いだけでなく、LSP系の動作もサクサク動いてここ2ヶ月程快適に過ごしています。
+DAPの詳細 packer.nvimでのインストール方法 vscode-goのdebugAdapter.jsの使用方法 Neovimでデバッグするモチベーション v0.2.2から色々変わったNeovimを久々に触ってみようかと思いinit.luaへ以降して遊んでいました。 起動が早いだけでなく、LSP系の動作もサクサク動いてここ2ヶ月程快適に過ごしています。
 ただ、VSCodeでのデバッグ機能がとても便利なため、デバッガ使用時のみこの快適な環境を離れていました。
 どうにかNeovim上で完結させられないか&amp;hellip;。
 DAP DAPの説明はリンク先や他HPをご参照ください。
 イメージを持ってもらうためLSPを引き合いに出すと、LSPがテキスト編集時に定義や変更内容や補完候補等を返すのに対して、DAPはデバッガとやりとりしてデバッグ情報を返す位のイメージを持ってもらえれば大丈夫だと思います。
 Neovim + DAP + Go 使うプラグインは下記になります。
- mfussenegger/nvim-dap : NeovimのDAPクライアント。VSCodeのlaunch.jsonも使用可 rcarriga/nvim-dap-ui : nvim-dapを視覚的に操作しやすいUI leoluz/nvim-dap-go : DAPのGo用設定(delve dap起動) nvim-treesitter/nvim-treesitter nvim-dap-goでテストをデバッグする際、近くのテストを見つけるのに必要  packer.nvimの設定 VSCodeのlaunch.jsonを使用しない場合、require(&#39;dap.ext.vscode&#39;).load_launchjs()は不要です。 launch.jsonを読み込めた場合、デバッグ方法の選択時にlaunch.jsonの内容が追加表示されて選択可能になります。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  -- dap plugin installation with packer.nvim ... -- dap use { &amp;#34;rcarriga/nvim-dap-ui&amp;#34;, requires = { &amp;#34;mfussenegger/nvim-dap&amp;#34;, &amp;#34;leoluz/nvim-dap-go&amp;#34;, &amp;#34;nvim-treesitter/nvim-treesitter&amp;#34; }, config = function () vim.</description>
+mfussenegger/nvim-dap : NeovimのDAPクライアント。VSCodeのlaunch.jsonも使用可 rcarriga/nvim-dap-ui : nvim-dapを視覚的に操作しやすいUI leoluz/nvim-dap-go : DAPのGo用設定(delve dap起動) nvim-treesitter/nvim-treesitter nvim-dap-goでテストをデバッグする際、近くのテストを見つけるのに必要 packer.nvimの設定 VSCodeのlaunch.jsonを使用しない場合、require(&#39;dap.ext.vscode&#39;).load_launchjs()は不要です。 launch.jsonを読み込めた場合、デバッグ方法の選択時にlaunch.jsonの内容が追加表示されて選択可能になります。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 -- dap plugin installation with packer.nvim ... -- dap use { &amp;#34;rcarriga/nvim-dap-ui&amp;#34;, requires = { &amp;#34;mfussenegger/nvim-dap&amp;#34;, &amp;#34;leoluz/nvim-dap-go&amp;#34;, &amp;#34;nvim-treesitter/nvim-treesitter&amp;#34; }, config = function () vim.</description>
     </item>
     
     <item>
@@ -30,18 +39,18 @@ Neovim + DAP + Go 使うプラグインは下記になります。
       
       <guid>https://lunarxlark.github.io/articles/articles/20210912_gin_gormv2/</guid>
       <description>TL;DR ginでの各リクエストを1セッションで管理しつつ、トランザクションも管理したい。
- ginのmiddlewareで、gin.Contextにgorm.WithContextを用いてGormのセッションを持たせる。 ginの各HandlerFuncの中では、gin.Context内のGormセッションからDBへアクセスする。  モチベーション Gormはv2になり色々と変わった。 Gorm 2.0 Release Note
+ginのmiddlewareで、gin.Contextにgorm.WithContextを用いてGormのセッションを持たせる。 ginの各HandlerFuncの中では、gin.Context内のGormセッションからDBへアクセスする。 モチベーション Gormはv2になり色々と変わった。 Gorm 2.0 Release Note
 色々な記事が書かれているがTransactoinに関してあまり書かれていない。
 下記疑問を払拭して正しい使い方を自分なりに確かめたかったので試した。
- なんとなく動くがこれで正しいのか? ドキュメントを読んでいてSkipDefaultTransaction:trueだと30%もパフォーマンスが上がるというがその設定はtrueにしていいいのか? っていうか、DefaultTransactionって何？ロールバックの単位とかどうやって指定するの?  確認&amp;amp;検証 検証時に作成したソースはgithub.com/lunarxlark/gorm2-tx
+なんとなく動くがこれで正しいのか? ドキュメントを読んでいてSkipDefaultTransaction:trueだと30%もパフォーマンスが上がるというがその設定はtrueにしていいいのか? っていうか、DefaultTransactionって何？ロールバックの単位とかどうやって指定するの? 確認&amp;amp;検証 検証時に作成したソースはgithub.com/lunarxlark/gorm2-tx
 Context Gorm 2.0 #Context
 GormはContextサポートを提供し、それを使いたかったらWithContext使ってくれ。 また、Sessionには単セッションモードと継続セッションモードがある。 普通は、継続セッションモードを使って、複数オペレーションをまとめるよ。 &amp;hellip;GormのSessionってどんなことできるの?
 Session Gorm 2.0 #Session
 Gormは`Session`メソッドをを通して、新しいセッションを提供するよ。 新しいセッションを作る場合、設定がたくさんあるよ。DryRunやLoggerとかね。 &amp;hellip;新しいセッションを一々作るのは望んでない。
 Contextサポートしてくれるってことなのでgin.Contextへ埋め込む時にセッションを作成してそれを使い回したい。
 gorm.WithContextのreturnはdb.Sessionとなっている(下記はgormのソースから抜粋)ので、gin.Contextへ埋め込むだけで新たにセッションを作る必要はない。
-1 2 3 4  // WithContext change current instance db&amp;#39;s context to ctx func (db *DB) WithContext(ctx context.Context) *DB { return db.Session(&amp;amp;Session{Context: ctx}) }   ここまでで下記みたいな感じになる。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36  func main() { //.</description>
+1 2 3 4 // WithContext change current instance db&amp;#39;s context to ctx func (db *DB) WithContext(ctx context.Context) *DB { return db.Session(&amp;amp;Session{Context: ctx}) } ここまでで下記みたいな感じになる。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 func main() { //.</description>
     </item>
     
     <item>
@@ -54,9 +63,10 @@ gorm.WithContextのreturnはdb.Sessionとなっている(下記はgormのソー�
 結果は 151 位 29614 点 でした。
 悔しい。あそこで気付いていれば&amp;hellip;みたいなポイントがクリティカルでした。
 反省点 直すところはたくさんあったと思いますが、直すと決断するまでに迷いがありました。
- 時間内でのアプリケーションへの理解が足りなかった。  ユーザストーリの理解と加点の仕組みが結びつかなかった。  アプリケーションのどこを直したらいいか。 どう直したら加点されるのか。   非効率なポイントがあっても、他の要因ですぐに直せなそうだった。 見つけた時には時間が足りなかった。   修正して試す環境が本番環境のみだった。  大幅な修正をして、他メンバーとコンフリクトが起きるのが怖かった。    ざっくりタイムライン 前準備
- private な作業リポジトリ(メンバーを招待)  Discord との webhook   deploy.sh 各種 tool のインストールスクリプト  10:00
- 競技スタート。 @annkaraが AWS アカウントを準備してくれたので CFn でスタック作成。 CFn でのインフラ作成完了。 ssh config 配布。全員が接続確認完了。 初回ベンチ回す。ベンチ:2981点 ソースや設定を GitHub へ。 conditionLimit : 20 -&amp;gt; 40。ベンチ:1704点(すぐ Revert) alp, netdata, pt-query-digest をインストール。  11:00</description>
+時間内でのアプリケーションへの理解が足りなかった。 ユーザストーリの理解と加点の仕組みが結びつかなかった。 アプリケーションのどこを直したらいいか。 どう直したら加点されるのか。 非効率なポイントがあっても、他の要因ですぐに直せなそうだった。 見つけた時には時間が足りなかった。 修正して試す環境が本番環境のみだった。 大幅な修正をして、他メンバーとコンフリクトが起きるのが怖かった。 ざっくりタイムライン 前準備
+private な作業リポジトリ(メンバーを招待) Discord との webhook deploy.sh 各種 tool のインストールスクリプト 10:00
+競技スタート。 @annkaraが AWS アカウントを準備してくれたので CFn でスタック作成。 CFn でのインフラ作成完了。 ssh config 配布。全員が接続確認完了。 初回ベンチ回す。ベンチ:2981点 ソースや設定を GitHub へ。 conditionLimit : 20 -&amp;gt; 40。ベンチ:1704点(すぐ Revert) alp, netdata, pt-query-digest をインストール。 11:00
+AP の負荷があまりにも高く、CPU100%に張り付いていたので DB を No.3 へ逃がす。ベンチ:8267点 POST /api/condition を bulk insert へ。ベンチ:9452点 nginx のログ出力を ltsv へ。 mariaDB のスロークエリを出力。 DB table isu_conditionのjia_isu_uuidへ INDEX 追加。ベンチ:22746点 DB table isuのjia_isu_uuidへ INDEX 追加。ベンチ:22492点 12:00</description>
     </item>
     
     <item>
@@ -67,7 +77,7 @@ gorm.WithContextのreturnはdb.Sessionとなっている(下記はgormのソー�
       <guid>https://lunarxlark.github.io/articles/articles/20210704_ssh-with-publickey-without-pem/</guid>
       <description>isuconの練習時にGitHubに登録している公開鍵でEC2へssh出来るように、userdataを設定したかった。
 sedでのエスケープの仕方でハマったのでメモ。
-#!/bin/bash su isucon -c &#39;mkdir -p /home/isucon/.ssh &amp;amp;&amp;amp; touch /home/isucon/.ssh/authorized_keys&#39; su isucon -c &amp;quot;curl https://api.github.com/users/{{github_user_id}}/keys | grep \&amp;quot;key\&amp;quot; | sed -e &#39;s/ \&amp;quot;key\&amp;quot;: \&amp;quot;//g&#39; -e &#39;s/\&amp;quot;//g&#39; &amp;gt;&amp;gt; /home/isucon/.ssh/authorized_keys&amp;quot; </description>
+#!/bin/bash su isucon -c &amp;#39;mkdir -p /home/isucon/.ssh &amp;amp;&amp;amp; touch /home/isucon/.ssh/authorized_keys&amp;#39; su isucon -c &amp;#34;curl https://api.github.com/users/{{github_user_id}}/keys | grep \&amp;#34;key\&amp;#34; | sed -e &amp;#39;s/ \&amp;#34;key\&amp;#34;: \&amp;#34;//g&amp;#39; -e &amp;#39;s/\&amp;#34;//g&amp;#39; &amp;gt;&amp;gt; /home/isucon/.ssh/authorized_keys&amp;#34; </description>
     </item>
     
     <item>
@@ -84,7 +94,7 @@ cf. GitHub dotfiles
 キーマップに設定している関数は全てGoで使用出来る。
 ただし、カーソルがどこにいても実行出来るわけではないので注意が必要。
 LspCodeActionはカーソルの位置によって実行内容が変わるのでそこも注意。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40  ...Plug &amp;#39;prabirshrestha/vim-lsp&amp;#39;Plug &amp;#39;mattn/vim-lsp-settings&amp;#39;Plug &amp;#39;prabirshrestha/asyncomplete-lsp.vim&amp;#39;Plug &amp;#39;mattn/vim-gomod&amp;#39;...&amp;#34; ------------------------------------------------------------------------------&amp;#34; vim-lsp&amp;#34; ------------------------------------------------------------------------------function! s:on_lsp_buffer_enabled() abort setlocal omnifunc=lsp#complete setlocal signcolumn=yes if exists(&amp;#39;+tagfunc&amp;#39;) | setlocal tagfunc=lsp#tagfunc | endif nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;ac &amp;lt;plug&amp;gt;(lsp-code-action) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;cl &amp;lt;plug&amp;gt;(lsp-code-lens) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;df &amp;lt;plug&amp;gt;(lsp-definition) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;dd &amp;lt;plug&amp;gt;(lsp-document-diagnostics) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;im &amp;lt;plug&amp;gt;(lsp-implementation) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;pdf &amp;lt;plug&amp;gt;(lsp-peek-definition) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;sm &amp;lt;plug&amp;gt;(lsp-document-symbol-search) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;Sm &amp;lt;plug&amp;gt;(lsp-workspace-symbol-search) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;rf &amp;lt;plug&amp;gt;(lsp-references) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;td &amp;lt;plug&amp;gt;(lsp-type-definition) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;rn &amp;lt;plug&amp;gt;(lsp-rename) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;en &amp;lt;plug&amp;gt;(lsp-next-error) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;ep &amp;lt;plug&amp;gt;(lsp-previous-error) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;ho &amp;lt;plug&amp;gt;(lsp-hover) let g:lsp_format_sync_timeout = 500 autocmd!</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 ... Plug &amp;#39;prabirshrestha/vim-lsp&amp;#39; Plug &amp;#39;mattn/vim-lsp-settings&amp;#39; Plug &amp;#39;prabirshrestha/asyncomplete-lsp.vim&amp;#39; Plug &amp;#39;mattn/vim-gomod&amp;#39; ... &amp;#34; ------------------------------------------------------------------------------ &amp;#34; vim-lsp &amp;#34; ------------------------------------------------------------------------------ function! s:on_lsp_buffer_enabled() abort setlocal omnifunc=lsp#complete setlocal signcolumn=yes if exists(&amp;#39;+tagfunc&amp;#39;) | setlocal tagfunc=lsp#tagfunc | endif nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;ac &amp;lt;plug&amp;gt;(lsp-code-action) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;cl &amp;lt;plug&amp;gt;(lsp-code-lens) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;df &amp;lt;plug&amp;gt;(lsp-definition) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;dd &amp;lt;plug&amp;gt;(lsp-document-diagnostics) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;im &amp;lt;plug&amp;gt;(lsp-implementation) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;pdf &amp;lt;plug&amp;gt;(lsp-peek-definition) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;sm &amp;lt;plug&amp;gt;(lsp-document-symbol-search) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;Sm &amp;lt;plug&amp;gt;(lsp-workspace-symbol-search) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;rf &amp;lt;plug&amp;gt;(lsp-references) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;td &amp;lt;plug&amp;gt;(lsp-type-definition) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;rn &amp;lt;plug&amp;gt;(lsp-rename) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;en &amp;lt;plug&amp;gt;(lsp-next-error) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;ep &amp;lt;plug&amp;gt;(lsp-previous-error) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;ho &amp;lt;plug&amp;gt;(lsp-hover) let g:lsp_format_sync_timeout = 500 autocmd!</description>
     </item>
     
     <item>
@@ -95,12 +105,12 @@ LspCodeActionはカーソルの位置によって実行内容が変わるので�
       <guid>https://lunarxlark.github.io/articles/articles/20210311_vegeta-dynamic-payload/</guid>
       <description>負荷テストツールvegetaのコマンドでの使い方ぐはググるとたくさん出てくるが、ライブラリとして仕様している記事が少なく手こずったのでメモ代わりに記事にする。
 やりたいこと リクエスト毎にRequestの内容を動的に変えて、負荷をかけたかった。
- Headerに持つタイムスタンプがリクエスト時のタイムスタンプになるように。 userIdはuniqueになるように。(同じユーザだと重複リクエストを弾く処理があったため。)  具体的には下記のような感じでリクエストを送りたい。
-1 2 3 4 5  {&amp;#34;header&amp;#34;: {&amp;#34;timestamp&amp;#34;:&amp;#34;1234&amp;#34;}, &amp;#34;body&amp;#34;: {&amp;#34;userId&amp;#34;: &amp;#34;lunar-1&amp;#34;}} {&amp;#34;header&amp;#34;: {&amp;#34;timestamp&amp;#34;:&amp;#34;1234&amp;#34;}, &amp;#34;body&amp;#34;: {&amp;#34;userId&amp;#34;: &amp;#34;lunar-2&amp;#34;}} {&amp;#34;header&amp;#34;: {&amp;#34;timestamp&amp;#34;:&amp;#34;1235&amp;#34;}, &amp;#34;body&amp;#34;: {&amp;#34;userId&amp;#34;: &amp;#34;lunar-3&amp;#34;}} ... {&amp;#34;header&amp;#34;: {&amp;#34;timestamp&amp;#34;:&amp;#34;1240&amp;#34;}, &amp;#34;body&amp;#34;: {&amp;#34;userId&amp;#34;: &amp;#34;lunar-n&amp;#34;}}   vegeta.Targeterは func(*vegeta.Target) error である。
+Headerに持つタイムスタンプがリクエスト時のタイムスタンプになるように。 userIdはuniqueになるように。(同じユーザだと重複リクエストを弾く処理があったため。) 具体的には下記のような感じでリクエストを送りたい。
+1 2 3 4 5 {&amp;#34;header&amp;#34;: {&amp;#34;timestamp&amp;#34;:&amp;#34;1234&amp;#34;}, &amp;#34;body&amp;#34;: {&amp;#34;userId&amp;#34;: &amp;#34;lunar-1&amp;#34;}} {&amp;#34;header&amp;#34;: {&amp;#34;timestamp&amp;#34;:&amp;#34;1234&amp;#34;}, &amp;#34;body&amp;#34;: {&amp;#34;userId&amp;#34;: &amp;#34;lunar-2&amp;#34;}} {&amp;#34;header&amp;#34;: {&amp;#34;timestamp&amp;#34;:&amp;#34;1235&amp;#34;}, &amp;#34;body&amp;#34;: {&amp;#34;userId&amp;#34;: &amp;#34;lunar-3&amp;#34;}} ... {&amp;#34;header&amp;#34;: {&amp;#34;timestamp&amp;#34;:&amp;#34;1240&amp;#34;}, &amp;#34;body&amp;#34;: {&amp;#34;userId&amp;#34;: &amp;#34;lunar-n&amp;#34;}} vegeta.Targeterは func(*vegeta.Target) error である。
 また、vegeta.Attackは、vegeta.Targeterをgoroutineで都度呼び出して、Targeter内からTargetに基づきリクエストしていることから、都度Targetが変わるようなTargeterを返す関数を作成し、それをAttack時に呼び出せば良さそう。
 ってことが、 [QUESTION] Sending requests with dynamic body #330に書いてあって何度も行き来した結果やっと理解できた&amp;hellip;。
 上記を拝借して以下のようにすることで目的を達成できた。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41  type yourRequestBody struct { UserID string } targeter := func(id uint64) vegeta.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 type yourRequestBody struct { UserID string } targeter := func(id uint64) vegeta.</description>
     </item>
     
     <item>
@@ -110,8 +120,8 @@ LspCodeActionはカーソルの位置によって実行内容が変わるので�
       
       <guid>https://lunarxlark.github.io/articles/articles/20201229_2020-summary/</guid>
       <description>2020年の振り返りと来年にやりたいことをつらつらと書こうと思う。 きっかけは、1on1をしてくれたEMからのアドバイスだ。
- 年末になると、1年を振り返るが過小評価しがち 何回かに分けてやると良い 謙遜せずやったことはやったと自分に言う  そんな趣旨のアドバイスを貰った。実際、いつも自分でやる振り返りでは、今年も結局&amp;hellip;みたいな評価になってしまっている。 仕事を頑張っていないわけではない。今年は自分でも頑張ったと思う。そんな、いつもは謙虚な(?)な自分に今年は前向きな評価をしてあげよう。 そう思った。
- Dependency Injectionの実装方法を理解した  トランザクションマネージャ(DB参照先を捕捉し、rollbackを埋め込んであるmethodを持つinterface)を依存性に注入することでrollback記載不要に。 トップダウンで記述するDIでは、DB参照先もあらかじめ記述しておけるが、トランザクション範囲については自身で記載しなければ出来ないという結論に。   ポインタレシーバにはポインタが、値レシーバには値がコピーされる。  メソッドをinterfaceに指定する際、レシーバにコピーされる値への変更を保持したいか等でポインタ/値レシーバどちらにするかの判断基準になる。   WebFramework Echoのmiddlewareの作り方。  Skipperによるecho.Contextの使い回し方。(structメンバーに、echo.Contextを引数に持つ関数を持たせる) Echoのデフォルトログでは、ヘッダーx-request-idに指定した値がrequest idに出る。 Echoのmiddlewareに対する理解が深まった。(雑)   CloudFrontの各項目に対する理解が深まり、通信障害時にどのように調べて、どのメトリクスを見れば良いかがある程度わかるようになった。  CloudFrontのrequest idをoriginのEchoへ出力したい場合、x-amz-cf-idをEchoロガーで出力すればよい。 L@Eの使い方と開発/リリース時の注意点について教訓を得た。  L@Eへの反映には時間がかかるので、テストの仕方を工夫しなければいけない。 L@Eに適用するLambdaのversionはLATESTを指定出来ないので、リリース時にはLambdaのversionを数値指定しなければいけない。     L@Eを修正するにあたり、Node.js v10.xを少し勉強した。(動的型付け言語は好きになれない。結局、undefinedと向き合わなければならず、動的型付けのメリットが感じられなかった。) その点、TypeScriptはちょっと触った感じ楽しかった。トランスパイルという言葉を知った。(言語のversionがどんどん上がっていくECMAScriptに対して、トランスパイルが追従していけるのかちょっと不安を感じた。) AWS StepFunctionは、Lambdaをjsonというインタフェースで繋げていて、Lambdaのフローをjsonで定義しているだけなんだと理解した。 AWS Lambdaをローカルである程度動作確認出来るようにDEBUGフラグを付けた。 Go言語の開発環境が自分の中で固まってきた。(Vimで必要なPluginがある程度固定されてきた) Alfredにより、unixtimestamp変換とbase64エンコード/デコードが素早く行えるようになった。 CI/CD時にdocker pull rate limitによるエラーを、DockerHubへのログインで解消させた。 コネクションプールの生存時間が短すぎることを見つけ、DBstatsからコネクションスパイクに対してプール生存時間を伸ばすことでDBへの負荷とコネクション接続時のlatencyを短くした。  </description>
+年末になると、1年を振り返るが過小評価しがち 何回かに分けてやると良い 謙遜せずやったことはやったと自分に言う そんな趣旨のアドバイスを貰った。実際、いつも自分でやる振り返りでは、今年も結局&amp;hellip;みたいな評価になってしまっている。 仕事を頑張っていないわけではない。今年は自分でも頑張ったと思う。そんな、いつもは謙虚な(?)な自分に今年は前向きな評価をしてあげよう。 そう思った。
+Dependency Injectionの実装方法を理解した トランザクションマネージャ(DB参照先を捕捉し、rollbackを埋め込んであるmethodを持つinterface)を依存性に注入することでrollback記載不要に。 トップダウンで記述するDIでは、DB参照先もあらかじめ記述しておけるが、トランザクション範囲については自身で記載しなければ出来ないという結論に。 ポインタレシーバにはポインタが、値レシーバには値がコピーされる。 メソッドをinterfaceに指定する際、レシーバにコピーされる値への変更を保持したいか等でポインタ/値レシーバどちらにするかの判断基準になる。 WebFramework Echoのmiddlewareの作り方。 Skipperによるecho.Contextの使い回し方。(structメンバーに、echo.Contextを引数に持つ関数を持たせる) Echoのデフォルトログでは、ヘッダーx-request-idに指定した値がrequest idに出る。 Echoのmiddlewareに対する理解が深まった。(雑) CloudFrontの各項目に対する理解が深まり、通信障害時にどのように調べて、どのメトリクスを見れば良いかがある程度わかるようになった。 CloudFrontのrequest idをoriginのEchoへ出力したい場合、x-amz-cf-idをEchoロガーで出力すればよい。 L@Eの使い方と開発/リリース時の注意点について教訓を得た。 L@Eへの反映には時間がかかるので、テストの仕方を工夫しなければいけない。 L@Eに適用するLambdaのversionはLATESTを指定出来ないので、リリース時にはLambdaのversionを数値指定しなければいけない。 L@Eを修正するにあたり、Node.js v10.xを少し勉強した。(動的型付け言語は好きになれない。結局、undefinedと向き合わなければならず、動的型付けのメリットが感じられなかった。) その点、TypeScriptはちょっと触った感じ楽しかった。トランスパイルという言葉を知った。(言語のversionがどんどん上がっていくECMAScriptに対して、トランスパイルが追従していけるのかちょっと不安を感じた。) AWS StepFunctionは、Lambdaをjsonというインタフェースで繋げていて、Lambdaのフローをjsonで定義しているだけなんだと理解した。 AWS Lambdaをローカルである程度動作確認出来るようにDEBUGフラグを付けた。 Go言語の開発環境が自分の中で固まってきた。(Vimで必要なPluginがある程度固定されてきた) Alfredにより、unixtimestamp変換とbase64エンコード/デコードが素早く行えるようになった。 CI/CD時にdocker pull rate limitによるエラーを、DockerHubへのログインで解消させた。 コネクションプールの生存時間が短すぎることを見つけ、DBstatsからコネクションスパイクに対してプール生存時間を伸ばすことでDBへの負荷とコネクション接続時のlatencyを短くした。 </description>
     </item>
     
     <item>
@@ -122,8 +132,8 @@ LspCodeActionはカーソルの位置によって実行内容が変わるので�
       <guid>https://lunarxlark.github.io/articles/articles/20201110_echo-custom-logger/</guid>
       <description>WebFramework EchoのLoggerを弄っていて気付いた点があったのでメモ。
 sample code
-箇条書き  responseログにHeader X-Any-Headerを出力したい場合、ログフォーマットに&amp;quot;any_header&amp;quot;:${header:x-any-header}を指定すればいいよ responseログにQueryParamerter ?anyparam=xxxを出力したい場合、ログフォーマットに&amp;quot;any_query&amp;quot;:${query:anyparam}を指定すればいいよ デフォルトで出力されるカラム&amp;rsquo;id&amp;rsquo;はHeader X-Request-Id を指定すると出力されるよ Skipperを設定することで、path毎にログ出力する/しない等を設定出来るよ  1, 2, 3はEchoのそういう機能だってことで特にありません。 4は結構便利だなと思いました。以下のサンプルコードでは、/healthcheckに来た場合とCI/CD等での自動テスト時にはresponseログを出力しないようにする設定例です。
-sample 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59  // Middleware e.</description>
+箇条書き responseログにHeader X-Any-Headerを出力したい場合、ログフォーマットに&amp;quot;any_header&amp;quot;:${header:x-any-header}を指定すればいいよ responseログにQueryParamerter ?anyparam=xxxを出力したい場合、ログフォーマットに&amp;quot;any_query&amp;quot;:${query:anyparam}を指定すればいいよ デフォルトで出力されるカラム&amp;rsquo;id&amp;rsquo;はHeader X-Request-Id を指定すると出力されるよ Skipperを設定することで、path毎にログ出力する/しない等を設定出来るよ 1, 2, 3はEchoのそういう機能だってことで特にありません。 4は結構便利だなと思いました。以下のサンプルコードでは、/healthcheckに来た場合とCI/CD等での自動テスト時にはresponseログを出力しないようにする設定例です。
+sample 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 // Middleware e.</description>
     </item>
     
     <item>
@@ -151,15 +161,15 @@ sample 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 2
       
       <guid>https://lunarxlark.github.io/articles/articles/20200211_from-denite-to-fzf/</guid>
       <description>denite.nvimとfzf.vimって比較記事?
- 違います。断捨離した結果、fzf.vimで事足りてしまったという記事です。
+違います。断捨離した結果、fzf.vimで事足りてしまったという記事です。
 denite.nvimとfzf.vimは、一見やれることが似ているように見えますが提供しているインタフェースが違います。 denite.nvimの方が拡張性/汎用性が高いです。Pythonスクリプトを呼び出せますし。
- どうしてやめたん？
- Python3とpipの環境整備に疲れたというのが理由で完全に力不足なだけです。
+どうしてやめたん？
+Python3とpipの環境整備に疲れたというのが理由で完全に力不足なだけです。
 そもそも使いこなせていなかったっていうのも大きい。自分に必要な機能が何か見直したら次のがあれば十分っぽい。
- コマンドの結果の一覧表示(x-motemen/ghq list, mattn/memo list, history等) 一覧表示の後のアクションを指定可能(cd, vim) buffer切替  fzf.vimはfzfのついでに入れていただけで全く使っていなかった。Shougo/denite.nvimでfzf.vimで同じことが出来るし、sourceの拡張がいくつもあるのでそれで十分だった。
+コマンドの結果の一覧表示(x-motemen/ghq list, mattn/memo list, history等) 一覧表示の後のアクションを指定可能(cd, vim) buffer切替 fzf.vimはfzfのついでに入れていただけで全く使っていなかった。Shougo/denite.nvimでfzf.vimで同じことが出来るし、sourceの拡張がいくつもあるのでそれで十分だった。
 もともとfzfが好きなのもあって、fzf.vimで上記が実現出来るように設定した、っていうかhelpからパクってきた。
 何日か使っていて快適に使えているので結構満足。previewはbatってコマンド入れないとsyntax highlightされなかったのでいれたけど、なんとなくそっちの方がリッチっぽいという理由だけなので重ければそのうち消す。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34  command! -bang -nargs=? -complete=dir Files call fzf#vim#files( \ &amp;lt;q-args&amp;gt;, \ fzf#vim#with_preview(), \ &amp;lt;bang&amp;gt;0)command!</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 command! -bang -nargs=? -complete=dir Files call fzf#vim#files( \ &amp;lt;q-args&amp;gt;, \ fzf#vim#with_preview(), \ &amp;lt;bang&amp;gt;0) command! -nargs=0 Ghq call fzf#run({ \ &amp;#39;source&amp;#39; : &amp;#39;ghq list --full-path&amp;#39;, \ &amp;#39;sink&amp;#39; : &amp;#39;cd&amp;#39; \}) command!</description>
     </item>
     
     <item>
@@ -179,10 +189,10 @@ denite.nvimとfzf.vimは、一見やれることが似ているように見え�
       
       <guid>https://lunarxlark.github.io/articles/articles/20200204_how-to-go-run/</guid>
       <description>x…motemen/ghqを写経している時、 go run main.go 出来ないことに気付いた。 下記が実行時のエラーになる。ちなみに、 go build は出来る。
-1 2 3 4  ~/d/s/g/x/ghq &amp;gt;&amp;gt;&amp;gt; go run main.go # command-line-arguments ./main.go:38:17: undefined: commands ~/d/s/g/x/ghq &amp;gt;&amp;gt;&amp;gt;   commands が見つからない？同じ階層の commands.go には下記記述がちゃんとあるのに、どうして見つからない&amp;hellip;。
-1 2 3 4 5 6  var commands = []*cli.Command{ commandGet, commandList, commandRoot, commandCreate, }   理由は、go runの引数に指定したファイル(+ importされるパッケージ)しか読み込まないから。
+1 2 3 4 ~/d/s/g/x/ghq &amp;gt;&amp;gt;&amp;gt; go run main.go # command-line-arguments ./main.go:38:17: undefined: commands ~/d/s/g/x/ghq &amp;gt;&amp;gt;&amp;gt; commands が見つからない？同じ階層の commands.go には下記記述がちゃんとあるのに、どうして見つからない&amp;hellip;。
+1 2 3 4 5 6 var commands = []*cli.Command{ commandGet, commandList, commandRoot, commandCreate, } 理由は、go runの引数に指定したファイル(+ importされるパッケージ)しか読み込まないから。
 実際、go run main.go commands.goに変更すると上記エラーは解消される&amp;hellip;が、別のエラーとなる。 今度は違うのが見つからないって言われる。
-1 2 3 4 5 6  ~/d/s/g/x/ghq master &amp;gt;&amp;gt;&amp;gt; go run main.</description>
+1 2 3 4 5 6 ~/d/s/g/x/ghq master &amp;gt;&amp;gt;&amp;gt; go run main.go commands.go # command-line-arguments ./commands.go:25:10: undefined: doGet .</description>
     </item>
     
     <item>
@@ -227,7 +237,7 @@ gocode contribuerへの思いとLSP発展への期待が書かれている。&lt
       <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20190114_how-to-use-elasticsearch-api/</guid>
-      <description>GET Indecies 1 2 3 4 5  curl -X GET http://&amp;lt;es-url&amp;gt;/&amp;lt;index-name&amp;gt;-* | \  jq -r &amp;#34;.[].settings.index.provided_name&amp;#34; | sort authapi_access_log-2018.10.31 authapi_access_log-2018.11.01 authapi_access_log-2018.11.05   DELETE indecies 1  curl -X DELETE http://&amp;lt;es-url&amp;gt;/&amp;lt;index-name&amp;gt;-2018.11.06   </description>
+      <description>GET Indecies 1 2 3 4 5 curl -X GET http://&amp;lt;es-url&amp;gt;/&amp;lt;index-name&amp;gt;-* | \ jq -r &amp;#34;.[].settings.index.provided_name&amp;#34; | sort authapi_access_log-2018.10.31 authapi_access_log-2018.11.01 authapi_access_log-2018.11.05 DELETE indecies 1 curl -X DELETE http://&amp;lt;es-url&amp;gt;/&amp;lt;index-name&amp;gt;-2018.11.06 </description>
     </item>
     
     <item>
@@ -237,7 +247,7 @@ gocode contribuerへの思いとLSP発展への期待が書かれている。&lt
       
       <guid>https://lunarxlark.github.io/articles/articles/20190110_bigquery-how-to-compare-partitiontime/</guid>
       <description>比較対象はtimestamp型に変更してから比較
-1 2 3 4 5 6 7 8  SELECT * FROM [zzzzzzzzzz.xxxxxxxxxxxxx] WHERE _PARTITIONTIME between timestamp(&amp;#39;2018-12-04&amp;#39;) and timestamp(&amp;#39;2018-12-11&amp;#39;) ORDER BY log_time DESC LIMIT 100   </description>
+1 2 3 4 5 6 7 8 SELECT * FROM [zzzzzzzzzz.xxxxxxxxxxxxx] WHERE _PARTITIONTIME between timestamp(&amp;#39;2018-12-04&amp;#39;) and timestamp(&amp;#39;2018-12-11&amp;#39;) ORDER BY log_time DESC LIMIT 100 </description>
     </item>
     
     <item>
@@ -246,7 +256,7 @@ gocode contribuerへの思いとLSP発展への期待が書かれている。&lt
       <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20181210_aws-mounting-efs-with-autofs/</guid>
-      <description> autofsでEFSをマウントする あしたから本気出す  </description>
+      <description> autofsでEFSをマウントする あしたから本気出す </description>
     </item>
     
     <item>
@@ -256,7 +266,7 @@ gocode contribuerへの思いとLSP発展への期待が書かれている。&lt
       
       <guid>https://lunarxlark.github.io/articles/articles/20181210_how-to-use-memory-in-java/</guid>
       <description>メモリ空間のイメージ
-ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
+ref TOYATAKU WEB 備忘録/技術メモ/Java </description>
     </item>
     
     <item>
@@ -265,7 +275,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       <pubDate>Sun, 09 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20181209_java_word_collection/</guid>
-      <description>HotSpot VM HotSpotコンパイラを搭載するJVM。アプリケーションにおいて最も実行頻度の高いクラスに対して、コンパイル/インライン展開などの最適化を行う。(80/20の法則)    Stop The World  Full GCが実行されたときに、全てのアプリケーションスレッドが停止する現象。Scavenge GCでも短い時間で起きている。</description>
+      <description>HotSpot VM HotSpotコンパイラを搭載するJVM。アプリケーションにおいて最も実行頻度の高いクラスに対して、コンパイル/インライン展開などの最適化を行う。(80/20の法則) Stop The World Full GCが実行されたときに、全てのアプリケーションスレッドが停止する現象。Scavenge GCでも短い時間で起きている。</description>
     </item>
     
     <item>
@@ -288,7 +298,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20181201_how-to-use-vi-in-sqlplus/</guid>
-      <description>1 2 3  SQL&amp;gt; DEFINE _EDITOR = vi SQL&amp;gt; edit SQL&amp;gt; / -- 実行   glogin.sqlに設定することでDEFINE _EDITOR = viを省略できる</description>
+      <description>1 2 3 SQL&amp;gt; DEFINE _EDITOR = vi SQL&amp;gt; edit SQL&amp;gt; / -- 実行 glogin.sqlに設定することでDEFINE _EDITOR = viを省略できる</description>
     </item>
     
     <item>
@@ -297,7 +307,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       <pubDate>Fri, 30 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20181130_getting-start-redis/</guid>
-      <description>ref  Command Reference Try Redis Redis入門: Redisとは？ インメモリDBについて、memcachedとの違いなど  </description>
+      <description>ref Command Reference Try Redis Redis入門: Redisとは？ インメモリDBについて、memcachedとの違いなど </description>
     </item>
     
     <item>
@@ -307,7 +317,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       
       <guid>https://lunarxlark.github.io/articles/articles/20181129_error-secure-file-priv-option/</guid>
       <description>MySQL ERROR 1290 (HY000) &amp;ndash;secure-file-priv option - Stack Overflow
-1 2 3 4 5 6 7 8 9  mysql&amp;gt; load data infile &amp;#39;account.csv&amp;#39; into table authapi.account fields terminated by &amp;#39;,&amp;#39; enclosed by &amp;#39;&amp;#34;&amp;#39;; ERROR 1290 (HY000): The MySQL server is running with the --secure-file-priv option so it cannot execute this statement  mysql&amp;gt; SELECT @@GLOBAL.secure_file_priv; +---------------------------+  | @@GLOBAL.secure_file_priv | +---------------------------+  | /var/lib/mysql-files/ | +---------------------------+   </description>
+1 2 3 4 5 6 7 8 9 mysql&amp;gt; load data infile &amp;#39;account.csv&amp;#39; into table authapi.account fields terminated by &amp;#39;,&amp;#39; enclosed by &amp;#39;&amp;#34;&amp;#39;; ERROR 1290 (HY000): The MySQL server is running with the --secure-file-priv option so it cannot execute this statement mysql&amp;gt; SELECT @@GLOBAL.secure_file_priv; +---------------------------+ | @@GLOBAL.secure_file_priv | +---------------------------+ | /var/lib/mysql-files/ | +---------------------------+ </description>
     </item>
     
     <item>
@@ -347,7 +357,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20181015_ansible-convenient-options/</guid>
-      <description>1 2  --syntax-check --check   </description>
+      <description> 1 2 --syntax-check --check </description>
     </item>
     
     <item>
@@ -383,7 +393,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20180712_how-to-get-current-file-path-in-makefile/</guid>
-      <description>1  MAKEFILE_DIR := $(dir $(lastword $(MAKEFILE_LIST)))   </description>
+      <description> 1 MAKEFILE_DIR := $(dir $(lastword $(MAKEFILE_LIST))) </description>
     </item>
     
     <item>
@@ -392,7 +402,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20180615_how-to-load-csv/</guid>
-      <description>1 2 3 4 5 6 7  load data infile &amp;#39;account.csv&amp;#39; into table authapi.account fields terminated by &amp;#39;,&amp;#39; enclosed by &amp;#39;\\&amp;#34;&amp;#39; escaped by &amp;#39;\\&amp;#39; lines terminated by &amp;#39;\\\\n&amp;#39;   </description>
+      <description> 1 2 3 4 5 6 7 load data infile &amp;#39;account.csv&amp;#39; into table authapi.account fields terminated by &amp;#39;,&amp;#39; enclosed by &amp;#39;\\&amp;#34;&amp;#39; escaped by &amp;#39;\\&amp;#39; lines terminated by &amp;#39;\\\\n&amp;#39; </description>
     </item>
     
     <item>
@@ -412,7 +422,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       <pubDate>Sat, 26 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20180526_how-to-check-timezone/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14  &amp;gt; show variables like &amp;#39;%time_zone%&amp;#39;; +------------------+--------+ | Variable_name | Value | +------------------+--------+ | system_time_zone | JST | | time_zone | SYSTEM | +------------------+--------+  &amp;gt; select NOW(); +---------------------+ | NOW() | +---------------------+ | 2018-11-16 10:45:53 | +---------------------+   </description>
+      <description> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 &amp;gt; show variables like &amp;#39;%time_zone%&amp;#39;; +------------------+--------+ | Variable_name | Value | +------------------+--------+ | system_time_zone | JST | | time_zone | SYSTEM | +------------------+--------+ &amp;gt; select NOW(); +---------------------+ | NOW() | +---------------------+ | 2018-11-16 10:45:53 | +---------------------+ </description>
     </item>
     
     <item>
@@ -421,7 +431,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20180515_how-to-check-aurora-mysql-version/</guid>
-      <description>1 2  &amp;gt; SELECT AURORA_VERSION(); &amp;gt; SELECT @@aurora_version;   </description>
+      <description> 1 2 &amp;gt; SELECT AURORA_VERSION(); &amp;gt; SELECT @@aurora_version; </description>
     </item>
     
     <item>
@@ -449,7 +459,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20180502_changelog-mysql57-8/</guid>
-      <description> キャッシュが利用できなくなる  </description>
+      <description> キャッシュが利用できなくなる </description>
     </item>
     
     <item>
@@ -458,7 +468,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20180501_getting-start-jmeter/</guid>
-      <description>参考  今さら聞けない Apache JMeter の基本 JMeter の利用方法(1) – Ramp－up、スレッド数、ループ回数の誤用 | 株式会社ケイズ・ソフトウェア  </description>
+      <description>参考 今さら聞けない Apache JMeter の基本 JMeter の利用方法(1) – Ramp－up、スレッド数、ループ回数の誤用 | 株式会社ケイズ・ソフトウェア </description>
     </item>
     
     <item>
@@ -467,7 +477,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20180501_getting-info-lists/</guid>
-      <description>1 2  -- DB一覧 SHOW databases;   1 2  -- user一覧 SELECT host, user FROM user;   1 2 3 4 5 6 7 8 9 10 11 12  -- ### MySQL内の権限一覧 ### -- グローバルレベル権限のリスト SELECT * FROM information_schema.user_privileges; -- データベースレベル権限のリスト SELECT * FROM information_schema.schema_privileges; -- テーブルレベル権限のリスト SELECT * FROM information_schema.table_privileges; -- カラムレベル権限のリスト SELECT * FROM information_schema.column_privileges;   1 2  -- ユーザ別の権限一覧 SHOW GRANTS FOR &amp;#39;&amp;lt;user&amp;gt;&amp;#39;@&amp;#39;&amp;lt;db&amp;gt;&amp;#39;;   </description>
+      <description> 1 2 -- DB一覧 SHOW databases; 1 2 -- user一覧 SELECT host, user FROM user; 1 2 3 4 5 6 7 8 9 10 11 12 -- ### MySQL内の権限一覧 ### -- グローバルレベル権限のリスト SELECT * FROM information_schema.user_privileges; -- データベースレベル権限のリスト SELECT * FROM information_schema.schema_privileges; -- テーブルレベル権限のリスト SELECT * FROM information_schema.table_privileges; -- カラムレベル権限のリスト SELECT * FROM information_schema.column_privileges; 1 2 -- ユーザ別の権限一覧 SHOW GRANTS FOR &amp;#39;&amp;lt;user&amp;gt;&amp;#39;@&amp;#39;&amp;lt;db&amp;gt;&amp;#39;; </description>
     </item>
     
     <item>
@@ -476,7 +486,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20180428_how-to-make-users/</guid>
-      <description>1  CREATE user &amp;lt;user-name&amp;gt; IDENTIFIED BY &amp;#39;&amp;lt;password&amp;gt;&amp;#39;;   </description>
+      <description> 1 CREATE user &amp;lt;user-name&amp;gt; IDENTIFIED BY &amp;#39;&amp;lt;password&amp;gt;&amp;#39;; </description>
     </item>
     
     <item>
@@ -486,10 +496,10 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       
       <guid>https://lunarxlark.github.io/articles/articles/20180324_getting-start-fzf/</guid>
       <description>github.com/junegunn/fzf
-Shortcut   Ctrl+T
-  Ctrl + R: history検索
-  Alt + C: cd into selected directory
-  Completion 1  ssh **&amp;lt;tab&amp;gt;   </description>
+Shortcut Ctrl+T
+Ctrl + R: history検索
+Alt + C: cd into selected directory
+Completion 1 ssh **&amp;lt;tab&amp;gt; </description>
     </item>
     
     <item>

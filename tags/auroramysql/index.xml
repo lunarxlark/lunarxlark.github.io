@@ -12,7 +12,7 @@
       <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20180515_how-to-check-aurora-mysql-version/</guid>
-      <description>1 2  &amp;gt; SELECT AURORA_VERSION(); &amp;gt; SELECT @@aurora_version;   </description>
+      <description> 1 2 &amp;gt; SELECT AURORA_VERSION(); &amp;gt; SELECT @@aurora_version; </description>
     </item>
     
     <item>

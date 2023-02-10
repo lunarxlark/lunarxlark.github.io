@@ -12,7 +12,7 @@
       <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20180712_how-to-get-current-file-path-in-makefile/</guid>
-      <description>1  MAKEFILE_DIR := $(dir $(lastword $(MAKEFILE_LIST)))   </description>
+      <description> 1 MAKEFILE_DIR := $(dir $(lastword $(MAKEFILE_LIST))) </description>
     </item>
     
   </channel>

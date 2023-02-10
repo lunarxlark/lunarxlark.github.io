@@ -13,7 +13,7 @@
       
       <guid>https://lunarxlark.github.io/articles/articles/20181210_how-to-use-memory-in-java/</guid>
       <description>メモリ空間のイメージ
-ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
+ref TOYATAKU WEB 備忘録/技術メモ/Java </description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@ ref  TOYATAKU WEB 備忘録/技術メモ/Java  </description>
       <pubDate>Sun, 09 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/articles/20181209_java_word_collection/</guid>
-      <description>HotSpot VM HotSpotコンパイラを搭載するJVM。アプリケーションにおいて最も実行頻度の高いクラスに対して、コンパイル/インライン展開などの最適化を行う。(80/20の法則)    Stop The World  Full GCが実行されたときに、全てのアプリケーションスレッドが停止する現象。Scavenge GCでも短い時間で起きている。</description>
+      <description>HotSpot VM HotSpotコンパイラを搭載するJVM。アプリケーションにおいて最も実行頻度の高いクラスに対して、コンパイル/インライン展開などの最適化を行う。(80/20の法則) Stop The World Full GCが実行されたときに、全てのアプリケーションスレッドが停止する現象。Scavenge GCでも短い時間で起きている。</description>
     </item>
     
     <item>

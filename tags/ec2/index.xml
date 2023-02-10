@@ -14,7 +14,7 @@
       <guid>https://lunarxlark.github.io/articles/articles/20210704_ssh-with-publickey-without-pem/</guid>
       <description>isuconの練習時にGitHubに登録している公開鍵でEC2へssh出来るように、userdataを設定したかった。
 sedでのエスケープの仕方でハマったのでメモ。
-#!/bin/bash su isucon -c &#39;mkdir -p /home/isucon/.ssh &amp;amp;&amp;amp; touch /home/isucon/.ssh/authorized_keys&#39; su isucon -c &amp;quot;curl https://api.github.com/users/{{github_user_id}}/keys | grep \&amp;quot;key\&amp;quot; | sed -e &#39;s/ \&amp;quot;key\&amp;quot;: \&amp;quot;//g&#39; -e &#39;s/\&amp;quot;//g&#39; &amp;gt;&amp;gt; /home/isucon/.ssh/authorized_keys&amp;quot; </description>
+#!/bin/bash su isucon -c &amp;#39;mkdir -p /home/isucon/.ssh &amp;amp;&amp;amp; touch /home/isucon/.ssh/authorized_keys&amp;#39; su isucon -c &amp;#34;curl https://api.github.com/users/{{github_user_id}}/keys | grep \&amp;#34;key\&amp;#34; | sed -e &amp;#39;s/ \&amp;#34;key\&amp;#34;: \&amp;#34;//g&amp;#39; -e &amp;#39;s/\&amp;#34;//g&amp;#39; &amp;gt;&amp;gt; /home/isucon/.ssh/authorized_keys&amp;#34; </description>
     </item>
     
   </channel>
