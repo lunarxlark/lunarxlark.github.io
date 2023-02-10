@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>hermes on /home/lunarxlark/.config/blog</title>
+    <link>https://lunarxlark.github.io/tags/hermes/</link>
+    <description>Recent content in hermes on /home/lunarxlark/.config/blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 10 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/hermes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hashicorp-forge/hermes</title>
+      <link>https://lunarxlark.github.io/articles/articles/20230211_hermes/</link>
+      <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarxlark.github.io/articles/articles/20230211_hermes/</guid>
+      <description>hashicorp-forge/hermes 触ってみた 2023/02/01 の朝、面白いツイートが目に飛び込みました。
+Excited to see the HashiCorp document management system become open source! Built on top of Google Workspaces, this has really helped our writing system scale better with the company instead of pure Drive + Groups. https://t.co/7SUrogij0k pic.twitter.com/v8lkbgjL08
+&amp;mdash; Mitchell Hashimoto (@mitchellh) January 31, 2023 ここ半年、いや 1 年位、いやもっとだったかも。設計工程の進め方にずっと不満がありました。
+クラウドストレージに散らばっている 見たか見てないのかわからない、コメントへの反応 バージョン管理されていない そんな不満、いや設計構成に一石投じているように感じました。まるで初めて Packer や golps(現 gopls) に出会ったような時の衝撃が走りました。
+私はブランクがあるものの、新卒から現在まで IT 業界にいて、設計書を印刷してマーカーを引いたり、ソースコード管理の自前ソフトを使用したライブラリ管理(通称リブ管)をしていた頃もあります。
+それに比べたら、今では信じられないくらい進化しています。CVS や CSV ホスティングサービス、Google Sheet には編集履歴や版を設定出来たり。
+そんな私にはまさに夢のツールになり得るプロダクトに見えました。ということで、早速動かしました。</description>
+    </item>
+    
+  </channel>
+</rss>

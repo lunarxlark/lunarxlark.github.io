@@ -5,13 +5,22 @@
     <link>https://lunarxlark.github.io/tags/</link>
     <description>Recent content in Tags on /home/lunarxlark/.config/blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 27 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>poem</title>
-      <link>https://lunarxlark.github.io/tags/poem/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      <title>hashicorp</title>
+      <link>https://lunarxlark.github.io/tags/hashicorp/</link>
+      <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/tags/poem/</guid>
+      <guid>https://lunarxlark.github.io/tags/hashicorp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hermes</title>
+      <link>https://lunarxlark.github.io/tags/hermes/</link>
+      <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarxlark.github.io/tags/hermes/</guid>
       <description></description>
     </item>
     
@@ -120,6 +129,15 @@
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/tags/vegeta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>poem</title>
+      <link>https://lunarxlark.github.io/tags/poem/</link>
+      <pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarxlark.github.io/tags/poem/</guid>
       <description></description>
     </item>
     
