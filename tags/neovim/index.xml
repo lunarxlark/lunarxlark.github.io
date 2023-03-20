@@ -8,10 +8,10 @@
     <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/neovim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Neovim &#43; DAP &#43; Go</title>
-      <link>https://lunarxlark.github.io/articles/articles/20211124_nvim-dap-go/</link>
+      <link>https://lunarxlark.github.io/articles/20211124_nvim-dap-go/</link>
       <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/20211124_nvim-dap-go/</guid>
+      <guid>https://lunarxlark.github.io/articles/20211124_nvim-dap-go/</guid>
       <description>TL;DR DAP(Debug Adapter Protocol)の力を借りれば、Neovim上でも視覚的にGoのデバッグが出来ました。 ここでは下記については話しません。
 DAPの詳細 packer.nvimでのインストール方法 vscode-goのdebugAdapter.jsの使用方法 Neovimでデバッグするモチベーション v0.2.2から色々変わったNeovimを久々に触ってみようかと思いinit.luaへ以降して遊んでいました。 起動が早いだけでなく、LSP系の動作もサクサク動いてここ2ヶ月程快適に過ごしています。
 ただ、VSCodeでのデバッグ機能がとても便利なため、デバッガ使用時のみこの快適な環境を離れていました。

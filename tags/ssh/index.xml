@@ -8,10 +8,10 @@
     <lastBuildDate>Sun, 04 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>EC2へssh with GitHubに登録している公開鍵</title>
-      <link>https://lunarxlark.github.io/articles/articles/20210704_ssh-with-publickey-without-pem/</link>
+      <link>https://lunarxlark.github.io/articles/20210704_ssh-with-publickey-without-pem/</link>
       <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/20210704_ssh-with-publickey-without-pem/</guid>
+      <guid>https://lunarxlark.github.io/articles/20210704_ssh-with-publickey-without-pem/</guid>
       <description>isuconの練習時にGitHubに登録している公開鍵でEC2へssh出来るように、userdataを設定したかった。
 sedでのエスケープの仕方でハマったのでメモ。
 #!/bin/bash su isucon -c &amp;#39;mkdir -p /home/isucon/.ssh &amp;amp;&amp;amp; touch /home/isucon/.ssh/authorized_keys&amp;#39; su isucon -c &amp;#34;curl https://api.github.com/users/{{github_user_id}}/keys | grep \&amp;#34;key\&amp;#34; | sed -e &amp;#39;s/ \&amp;#34;key\&amp;#34;: \&amp;#34;//g&amp;#39; -e &amp;#39;s/\&amp;#34;//g&amp;#39; &amp;gt;&amp;gt; /home/isucon/.ssh/authorized_keys&amp;#34; </description>

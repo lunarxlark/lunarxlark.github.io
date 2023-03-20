@@ -8,10 +8,10 @@
     <lastBuildDate>Fri, 10 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/hashicorp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hashicorp-forge/hermes</title>
-      <link>https://lunarxlark.github.io/articles/articles/20230211_hermes/</link>
+      <link>https://lunarxlark.github.io/articles/20230211_hermes/</link>
       <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/20230211_hermes/</guid>
+      <guid>https://lunarxlark.github.io/articles/20230211_hermes/</guid>
       <description>hashicorp-forge/hermes 触ってみた 2023/02/01 の朝、面白いツイートが目に飛び込みました。
 Excited to see the HashiCorp document management system become open source! Built on top of Google Workspaces, this has really helped our writing system scale better with the company instead of pure Drive + Groups. https://t.co/7SUrogij0k pic.twitter.com/v8lkbgjL08
 &amp;mdash; Mitchell Hashimoto (@mitchellh) January 31, 2023 ここ半年、いや 1 年位、いやもっとだったかも。設計工程の進め方にずっと不満がありました。

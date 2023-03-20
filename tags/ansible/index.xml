@@ -8,29 +8,20 @@
     <lastBuildDate>Mon, 15 Oct 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ansibleでの各roleのパス取得方法</title>
-      <link>https://lunarxlark.github.io/articles/articles/20181015_ansible-how-to-get-role-path/</link>
+      <link>https://lunarxlark.github.io/articles/20181015_ansible-how-to-get-role-path/</link>
       <pubDate>Mon, 15 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/20181015_ansible-how-to-get-role-path/</guid>
+      <guid>https://lunarxlark.github.io/articles/20181015_ansible-how-to-get-role-path/</guid>
       <description>&lt;p&gt;playbookをrole毎に分けた際、roleの中でfilesのpath指定をするために実行中の/path/to/role/{current}を知りたくなった。&lt;/p&gt;
 &lt;p&gt;ref: &lt;a href=&#34;https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#accessing-information-about-other-hosts-with-magic-variables&#34;&gt;Accessiing information about other hosts with magic variables&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Ansible実行時に役立つ便利オプション</title>
-      <link>https://lunarxlark.github.io/articles/articles/20181015_ansible-convenient-options/</link>
-      <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://lunarxlark.github.io/articles/articles/20181015_ansible-convenient-options/</guid>
-      <description> 1 2 --syntax-check --check </description>
-    </item>
-    
-    <item>
       <title>Ansibleでよく使うモジュール</title>
-      <link>https://lunarxlark.github.io/articles/articles/20180930_ansible-useful-modules/</link>
+      <link>https://lunarxlark.github.io/articles/20180930_ansible-useful-modules/</link>
       <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/20180930_ansible-useful-modules/</guid>
+      <guid>https://lunarxlark.github.io/articles/20180930_ansible-useful-modules/</guid>
       <description></description>
     </item>
     

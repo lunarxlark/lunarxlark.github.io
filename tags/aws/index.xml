@@ -8,10 +8,10 @@
     <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>aws-cliで始めるCloudFormation</title>
-      <link>https://lunarxlark.github.io/articles/articles/20190305_aws-getting-start-cloudformation/</link>
+      <link>https://lunarxlark.github.io/articles/20190305_aws-getting-start-cloudformation/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/20190305_aws-getting-start-cloudformation/</guid>
+      <guid>https://lunarxlark.github.io/articles/20190305_aws-getting-start-cloudformation/</guid>
       <description>&lt;h4 id=&#34;目的&#34;&gt;目的&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;CloudFormationで使われる用語を理解する&lt;/li&gt;
@@ -21,40 +21,13 @@
     </item>
     
     <item>
-      <title>LambdaでAWS Elasticsearch ServiceのIndex削除する方法</title>
-      <link>https://lunarxlark.github.io/articles/articles/20190115_how-to-delete-indices-by-lambda/</link>
-      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://lunarxlark.github.io/articles/articles/20190115_how-to-delete-indices-by-lambda/</guid>
-      <description>Curator を使用した Amazon Elasticsearch Service でのデータの更新</description>
-    </item>
-    
-    <item>
-      <title>autofsでEFSをマウント</title>
-      <link>https://lunarxlark.github.io/articles/articles/20181210_aws-mounting-efs-with-autofs/</link>
-      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://lunarxlark.github.io/articles/articles/20181210_aws-mounting-efs-with-autofs/</guid>
-      <description> autofsでEFSをマウントする あしたから本気出す </description>
-    </item>
-    
-    <item>
       <title>AuroraのUpgradeでの注意点</title>
-      <link>https://lunarxlark.github.io/articles/articles/20180503_aws-important-notice-aurora-upgrade/</link>
+      <link>https://lunarxlark.github.io/articles/20180503_aws-important-notice-aurora-upgrade/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/20180503_aws-important-notice-aurora-upgrade/</guid>
+      <guid>https://lunarxlark.github.io/articles/20180503_aws-important-notice-aurora-upgrade/</guid>
       <description>&lt;p&gt;Auroraのアップグレードには何種類かあり、それぞれでダウンタイム有無やパッチ適用時間が異なる。
 アップグレードの種類と気にしなければいけないことをまとめた。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>AWSでのシェルスクリプト集</title>
-      <link>https://lunarxlark.github.io/articles/articles/20180502_aws-convenient-shellscripts-in-aws/</link>
-      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://lunarxlark.github.io/articles/articles/20180502_aws-convenient-shellscripts-in-aws/</guid>
-      <description>&lt;p&gt;便利なシェルスクリプト@AWS&lt;/p&gt;</description>
     </item>
     
   </channel>

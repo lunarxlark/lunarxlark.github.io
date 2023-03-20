@@ -5,32 +5,13 @@
     <link>https://lunarxlark.github.io/tags/java/</link>
     <description>Recent content in Java on /home/lunarxlark/.config/blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 10 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Javaのメモリ空間</title>
-      <link>https://lunarxlark.github.io/articles/articles/20181210_how-to-use-memory-in-java/</link>
-      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://lunarxlark.github.io/articles/articles/20181210_how-to-use-memory-in-java/</guid>
-      <description>メモリ空間のイメージ
-ref TOYATAKU WEB 備忘録/技術メモ/Java </description>
-    </item>
-    
-    <item>
-      <title>Javaで出てくる単語</title>
-      <link>https://lunarxlark.github.io/articles/articles/20181209_java_word_collection/</link>
-      <pubDate>Sun, 09 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://lunarxlark.github.io/articles/articles/20181209_java_word_collection/</guid>
-      <description>HotSpot VM HotSpotコンパイラを搭載するJVM。アプリケーションにおいて最も実行頻度の高いクラスに対して、コンパイル/インライン展開などの最適化を行う。(80/20の法則) Stop The World Full GCが実行されたときに、全てのアプリケーションスレッドが停止する現象。Scavenge GCでも短い時間で起きている。</description>
-    </item>
-    
+    <lastBuildDate>Sun, 02 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Javaのチューニングオプション</title>
-      <link>https://lunarxlark.github.io/articles/articles/20181202_java-tuning-options/</link>
+      <link>https://lunarxlark.github.io/articles/20181202_java-tuning-options/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/20181202_java-tuning-options/</guid>
+      <guid>https://lunarxlark.github.io/articles/20181202_java-tuning-options/</guid>
       <description>&lt;h3 id=&#34;options&#34;&gt;Options&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;-D&lt;/code&gt;はシステムのオプション&lt;/li&gt;

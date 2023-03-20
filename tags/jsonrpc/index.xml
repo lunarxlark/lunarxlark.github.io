@@ -8,10 +8,10 @@
     <lastBuildDate>Sat, 23 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/jsonrpc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LSP(Language Server Protocol)のドキュメントを読む</title>
-      <link>https://lunarxlark.github.io/articles/articles/20190223_read-lsp-doc-overview/</link>
+      <link>https://lunarxlark.github.io/articles/20190223_read-lsp-doc-overview/</link>
       <pubDate>Sat, 23 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/20190223_read-lsp-doc-overview/</guid>
+      <guid>https://lunarxlark.github.io/articles/20190223_read-lsp-doc-overview/</guid>
       <description>&lt;p&gt;golangコミュニティが&lt;a href=&#34;https://godoc.org/golang.org/x/tools/cmd/gopls&#34;&gt;gopls&lt;/a&gt;を開発し始めたり、Microsoftが提唱したこともあって&lt;code&gt;Language Server Protocol (以後,LSP)&lt;/code&gt;が注目され始めた。
 特にVimやgolang界隈ではmattnさんのブログ記事&lt;a href=&#34;https://mattn.kaoriya.net/software/lang/go/20181217000056.htm&#34;&gt;gocode やめます(そして Language Server へ)&lt;/a&gt;で一層注目を集めたと思う。是非読んで欲しい。
 gocode contribuerへの思いとLSP発展への期待が書かれている。&lt;/p&gt;

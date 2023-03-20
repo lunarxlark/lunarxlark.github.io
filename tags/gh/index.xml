@@ -8,10 +8,10 @@
     <lastBuildDate>Fri, 14 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/gh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>New Github Official CLI `gh`</title>
-      <link>https://lunarxlark.github.io/articles/articles/20200214_new-github-command-gh/</link>
+      <link>https://lunarxlark.github.io/articles/20200214_new-github-command-gh/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/20200214_new-github-command-gh/</guid>
+      <guid>https://lunarxlark.github.io/articles/20200214_new-github-command-gh/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/cli/cli/cmd/gh&#34;&gt;github.com/cli/cli/cmd/gh&lt;/a&gt; is new official command for GitHub.&lt;/p&gt;</description>
     </item>
     

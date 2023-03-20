@@ -8,10 +8,10 @@
     <lastBuildDate>Thu, 11 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/vegeta/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>load test with dynamic payload by tsenart/vegeta</title>
-      <link>https://lunarxlark.github.io/articles/articles/20210311_vegeta-dynamic-payload/</link>
+      <link>https://lunarxlark.github.io/articles/20210311_vegeta-dynamic-payload/</link>
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://lunarxlark.github.io/articles/articles/20210311_vegeta-dynamic-payload/</guid>
+      <guid>https://lunarxlark.github.io/articles/20210311_vegeta-dynamic-payload/</guid>
       <description>負荷テストツールvegetaのコマンドでの使い方ぐはググるとたくさん出てくるが、ライブラリとして仕様している記事が少なく手こずったのでメモ代わりに記事にする。
 やりたいこと リクエスト毎にRequestの内容を動的に変えて、負荷をかけたかった。
 Headerに持つタイムスタンプがリクエスト時のタイムスタンプになるように。 userIdはuniqueになるように。(同じユーザだと重複リクエストを弾く処理があったため。) 具体的には下記のような感じでリクエストを送りたい。
