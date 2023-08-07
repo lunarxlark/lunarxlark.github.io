@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>raspberry-pi on /home/lunarxlark/.config/blog</title>
+    <link>https://lunarxlark.github.io/tags/raspberry-pi/</link>
+    <description>Recent content in raspberry-pi on /home/lunarxlark/.config/blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 07 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raspberry Pi 4 Model B でKubernetes cluster構築した</title>
+      <link>https://lunarxlark.github.io/articles/20230807_raspi_k8s_cluster/</link>
+      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarxlark.github.io/articles/20230807_raspi_k8s_cluster/</guid>
+      <description>完成形です。いぇい。 材料 材料 個数 Raspberry Pi 4 Model B 8GB 4 PoE HAT(E) 4 PoE対応 スイッチングハブ 1 無線ルーター 1 MicroSD 128GB 4 LAN (0.15m) 4 LAN (0.3m) 1 ケース 1 追加スペーサー 50個入り 組み立ての感想 見た目をスッキリさせたかったので、ラズパイの電源は PoE HATによりハブからLANで取ってます。
+ただ、これだとLANを引っこ抜いてノードを切り離すことが出来ないので失敗したかなって思ってます。
+LAN引っこ抜いてノードネットワーク障害ごっこしたいのに、電源も落ちちゃう。
+cf. PoE (Power Over Ethernet)。
+また、ケースでもPoE HATで失敗しました。
+PoE HATを付けると高さが高くなります。(値段も)
+買ったケースのファンとPoE HATのIsolation Transformerがぶつかります。
+なので、ケース付属スペーサーだけでは足りないのでスペーサーを買い足しました。
+(そして、そのスペーサーが付属スペーサーのネジ径と合わない&amp;hellip;。付属のはM2だったっぽい&amp;hellip;。)
+付属スペーサーは高さ20mm。このケース(+ファン) + PoE HAT の場合、30mmでぴったり合います。
+Amazonで激安のPoE HATはさらに高くなるので、ご注意を。
+k8s cluster 構築 0. 別PCでの準備 無線ルーターを中継機として既存LANに参加させます。 Raspberry Pi Imagerを使ってmicroSDカード4枚にRaspberry Pi OS(64-bit) Liteを書き込みます。 Imagerでホスト名やssh有効化、user/passwd設定等出来るのでここでやっても可。 中継機が192.</description>
+    </item>
+    
+  </channel>
+</rss>
