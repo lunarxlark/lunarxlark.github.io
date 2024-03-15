@@ -192,7 +192,7 @@ perf_event      0       80      1
 net_prio        0       80      1
 pids    0       80      1
 # 有効化(末尾にcgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memoryを追加)
-$ sudo sed -i "s/$/ cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory/" /boot/cmdline.txt
+$ sudo sed -i "s/$/ cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory/" /boot/firmware/cmdline.txt
 $ sudo reboot
 ```
 
