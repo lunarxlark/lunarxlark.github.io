@@ -279,7 +279,8 @@ gocode contribuerへの思いとLSP発展への期待が書かれている。&lt
       <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>https://lunarxlark.github.io/articles/20180930_ansible-useful-modules/</guid>
-      <description></description>
+      <description>blockinfile : 複数行を扱えるfileモジュール blockinfile - Insert/update/remove a text block surrounded by marker lines
+1 2 3 4 5 6 7 8 9 10 11 12 - hosts: all roles: - yaegashi.blockinfile tasks: - name: 特定の場所に追加 blockinfile: path: ./test.txt insertafter: &amp;#39;^# xxxx&amp;#39; marker: &amp;#34;&amp;lt;!-- {mark} ANSIBLE MANAGED BLOCK --&amp;gt;&amp;#34; block: | 1行目 2行目 unarchive unarchive - Unpacks an archive after (optionally) copying it from the local machine. 1 2 3 4 5 6 7 8 9 10 11 12 - name: install peco become: yes unarchive: remote_src: yes src: &amp;#34;{{ peco_bin_url }}&amp;#34; dest: /usr/local/bin/ mode: 0755 owner: root group: root extra_opts: - --strip-components=1 - peco_linux_amd64/peco </description>
     </item>
     
     <item>
