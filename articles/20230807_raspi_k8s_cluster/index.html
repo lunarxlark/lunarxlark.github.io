@@ -231,13 +231,13 @@ You can now join any number of control-plane nodes by copying certificate author
 and service account keys on each node and then running the following as root:
 
   kubeadm join rp1:6443 --token n3np0b.isp8nf8rjz4cyfqt \
-   --discovery-token-ca-cert-hash sha256:6cd816b6bab54e59969113787fe631ef72f95377f1b65b7d17875e16c01d87dc \
+   --discovery-token-ca-cert-hash sha256:&lt;hash&gt; \
    --control-plane
 
 Then you can join any number of worker nodes by running the following on each as root:
 
 kubeadm join rp1:6443 --token n3np0b.isp8nf8rjz4cyfqt \
-   --discovery-token-ca-cert-hash sha256:6cd816b6bab54e59969113787fe631ef72f95377f1b65b7d17875e16c01d87dc
+   --discovery-token-ca-cert-hash sha256:&lt;hash&gt;
 </code></pre><h4 id=83-k8sクラスタへの参加>8.3. k8sクラスタへの参加<a hidden class=anchor aria-hidden=true href=#83-k8sクラスタへの参加>#</a></h4><p>コントロールプレーンに参加するコマンドとワーカーノードに参加するコマンドが表示されます。<br>残り3台はワーカーノードに参加させたいので、後ろのコマンドを3台に実施します。</p><pre tabindex=0><code>$ kubeadm join &lt;control-plane-host&gt;:&lt;control-plane-port&gt; \
     --token &lt;token&gt; \
     --discovery-token-ca-cert-hash sha256:&lt;hash&gt;
