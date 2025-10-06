@@ -1,13 +1,12 @@
 ---
 title: ISUCON11予選に参加して惨敗した
 tags: ["isucon"]
-date: 2021-08-22
-published: true
+published: 2021-08-22
 ---
 
 ## 結果
 
-ISUCON 経験者の 2 名([@Aki_Mineo](https://twitter.com/Aki_Mineo), [@annkara](https://twitter.com/__annkara__))に誘われてチーム:コバミネとして参加しました。
+ISUCON 経験者の 2 名([@Aki_Mineo](https://x.com/Aki_Mineo), [@annkara](https://x.com/__annkara__))に誘われてチーム:コバミネとして参加しました。
 私は主にインフラ担当でしたが、業務でバックエンドを Go で書いているためインフラの作業を終え次第、合流する作戦でした。
 
 結果は [151 位 29614 点](https://isucon.net/archives/56021246.html) でした。
@@ -39,7 +38,7 @@ _前準備_
 _10:00_
 
 - 競技スタート。
-- [@annkara](https://twitter.com/__annkara__)が AWS アカウントを準備してくれたので CFn でスタック作成。
+- [@annkara](https://x.com/__annkara__)が AWS アカウントを準備してくれたので CFn でスタック作成。
 - CFn でのインフラ作成完了。
 - ssh config 配布。全員が接続確認完了。
 - 初回ベンチ回す。`ベンチ:2981点`

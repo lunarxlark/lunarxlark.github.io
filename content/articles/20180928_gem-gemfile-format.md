@@ -1,8 +1,7 @@
 ---
 title : Gemfileの書き方
 tags : ["Gem", "Gemfile"]
-date : 2018-09-28
-published : true
+published : 2018-09-28
 ---
 
 Rails公式ドキュメントからGemfileの書き方を抜粋

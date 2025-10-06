@@ -1,8 +1,7 @@
 ---
 title : load test with dynamic payload by tsenart/vegeta
 tags : ["go", "vegeta"]
-date : 2021-03-11
-published : true
+published : 2021-03-11
 ---
 
 負荷テストツール`vegeta`のコマンドでの使い方ぐはググるとたくさん出てくるが、ライブラリとして仕様している記事が少なく手こずったのでメモ代わりに記事にする。

@@ -1,8 +1,7 @@
 ---
 title : LSP(Language Server Protocol)のドキュメントを読む
 tags : ["lsp", "jsonRPC"]
-date : 2019-02-23
-published : true
+published : 2019-02-23
 ---
 
 

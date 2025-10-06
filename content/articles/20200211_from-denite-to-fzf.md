@@ -1,8 +1,7 @@
 ---
 title : From denite.nvim To fzf.vim
 tags : ["vim"]
-date : 2020-02-11
-published : true
+published : 2020-02-11
 ---
 
 > denite.nvimとfzf.vimって比較記事?

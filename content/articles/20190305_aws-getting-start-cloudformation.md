@@ -1,8 +1,7 @@
 ---
 title : aws-cliで始めるCloudFormation
 tags : ["AWS", "aws-cli", "CloudFormation"]
-date : 2019-03-05
-published : true
+published : 2019-03-05
 ---
 
 #### 目的

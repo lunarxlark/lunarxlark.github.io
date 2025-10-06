@@ -4,7 +4,8 @@ theme : "PaperMod"
 googleAnalytics : G-HC9218ZECN
 defaultContentLanguage : ja
 
-paginate : 10
+pagination:
+  pagerSize: 10
 
 enableRobotsTXT : true
 buildDrafts : false
@@ -19,15 +20,14 @@ params:
   title : /home/lunarxlark/.config/blog
   homeInfoParams:
     Title: "Hi, I'm lunarxlark"
-    Content: "I \U00002764 \U00002328. crkbd user."
+    Content: "I \U00002764 \U00002328. keyball44 user."
   defaultTheme: dark
   ShowShareButtons: true
   ShowReadingTime: true
-  socialIcons:
-      - name: github
-        url: "https://github.com/lunarxlark"
-      - name: twitter
-        url: "https://twitter.com/lunarxlark"
+
+social:
+  - x: lunarxlark
+  - github: lunarxlark
 
 # Main menu Items
 menu:

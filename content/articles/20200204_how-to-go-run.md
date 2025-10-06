@@ -1,8 +1,7 @@
 ---
 title : Error 'undefined' when go run
 tags : ["go"]
-date : 2020-02-04
-published : true
+published : 2020-02-04
 ---
 
 x…motemen/ghqを写経している時、 `go run main.go` 出来ないことに気付いた。

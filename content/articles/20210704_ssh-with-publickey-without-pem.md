@@ -1,8 +1,7 @@
 ---
 title : EC2へssh with GitHubに登録している公開鍵
 tags : ["ssh","EC2"]
-date : 2021-07-04
-published : true
+published : 2021-07-04
 ---
 
 isuconの練習時にGitHubに登録している公開鍵でEC2へssh出来るように、userdataを設定したかった。

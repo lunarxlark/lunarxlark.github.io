@@ -1,8 +1,7 @@
 ---
 title : Ansibleでよく使うモジュール
 tags : ["Ansible"]
-date : 2018-09-30
-published : true
+published : 2018-09-30
 ---
 
 <!--more-->

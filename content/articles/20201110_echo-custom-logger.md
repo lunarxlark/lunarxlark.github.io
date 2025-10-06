@@ -1,8 +1,7 @@
 ---
 title : Custome Logger using LoggerWithConfig in Echo
 tags : ["go", "echo"]
-date : 2020-11-10T02:51:09+09:00
-published : true
+published : 2020-11-10T02:51:09+09:00
 ---
 
 WebFramework `Echo`のLoggerを弄っていて気付いた点があったのでメモ。

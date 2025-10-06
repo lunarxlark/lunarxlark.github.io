@@ -1,8 +1,7 @@
 ---
 title: Raspberry Pi 4 Model B でKubernetes cluster構築した
 tags: ["kubernetes", "raspberry-pi"]
-date: 2023-08-07
-published: true
+published: 2023-08-07
 ---
 
 完成形です。いぇい。

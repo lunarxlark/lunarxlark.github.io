@@ -1,8 +1,7 @@
 ---
 title : AuroraのUpgradeでの注意点
 tags : ["AWS", "AuroraMySQL"]
-date : 2018-05-03
-published : true
+published : 2018-05-03
 ---
 
 Auroraのアップグレードには何種類かあり、それぞれでダウンタイム有無やパッチ適用時間が異なる。

@@ -1,8 +1,7 @@
 ---
 title: Neovim + DAP + Go
 tags: ["neovim", "dap", "go", "debug"]
-date: 2021-11-24
-published: true
+published: 2021-11-24
 ---
 
 ## TL;DR

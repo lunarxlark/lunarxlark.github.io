@@ -1,8 +1,7 @@
 ---
 title : My Favorite Usage urfave/cli
 tags : ["go"]
-date : 2020-02-06
-published : true
+published : 2020-02-06
 ---
 
 参加しているプロジェクトで`urfave/cli`を使っている。使い方は[Example](https://github.com/urfave/cli/blob/master/docs/v2/manual.md#examples)にあるのと同じ書き方で使っている。

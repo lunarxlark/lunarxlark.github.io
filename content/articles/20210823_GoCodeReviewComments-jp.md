@@ -1,8 +1,7 @@
 ---
 title: Go Code Review Comments (2021年時点)
 tags: ["go"]
-date: 2021-08-23
-published: false
+published: 2021-08-23
 ---
 
 ## 原典

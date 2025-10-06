@@ -1,8 +1,7 @@
 ---
 title : Javaのチューニングオプション
 tags : ["Java"]
-date : 2018-12-02
-published : true
+published : 2018-12-02
 ---
 
 ### Options

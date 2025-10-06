@@ -1,8 +1,7 @@
 ---
 title : New Github Official CLI `gh`
 tags : ["gh"]
-date : 2020-02-14
-published : true
+published : 2020-02-14
 ---
 
 [github.com/cli/cli/cmd/gh](https://github.com/cli/cli/cmd/gh) is new official command for GitHub.
