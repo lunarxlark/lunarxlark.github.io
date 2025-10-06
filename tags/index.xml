@@ -4,278 +4,219 @@
     <title>Tags on /home/lunarxlark/.config/blog</title>
     <link>https://lunarxlark.github.io/tags/</link>
     <description>Recent content in Tags on /home/lunarxlark/.config/blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://lunarxlark.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kubernetes</title>
       <link>https://lunarxlark.github.io/tags/kubernetes/</link>
       <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Raspberry-Pi</title>
       <link>https://lunarxlark.github.io/tags/raspberry-pi/</link>
       <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/raspberry-pi/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Hashicorp</title>
       <link>https://lunarxlark.github.io/tags/hashicorp/</link>
       <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/hashicorp/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Hermes</title>
       <link>https://lunarxlark.github.io/tags/hermes/</link>
       <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/hermes/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Dap</title>
       <link>https://lunarxlark.github.io/tags/dap/</link>
       <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/dap/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Debug</title>
       <link>https://lunarxlark.github.io/tags/debug/</link>
       <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/debug/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Go</title>
       <link>https://lunarxlark.github.io/tags/go/</link>
       <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/go/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Neovim</title>
       <link>https://lunarxlark.github.io/tags/neovim/</link>
       <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/neovim/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Gin</title>
       <link>https://lunarxlark.github.io/tags/gin/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/gin/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Gorm</title>
       <link>https://lunarxlark.github.io/tags/gorm/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/gorm/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Isucon</title>
       <link>https://lunarxlark.github.io/tags/isucon/</link>
       <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/isucon/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>EC2</title>
       <link>https://lunarxlark.github.io/tags/ec2/</link>
       <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/ec2/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Ssh</title>
       <link>https://lunarxlark.github.io/tags/ssh/</link>
       <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/ssh/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Gopls</title>
       <link>https://lunarxlark.github.io/tags/gopls/</link>
       <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/gopls/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Vim</title>
       <link>https://lunarxlark.github.io/tags/vim/</link>
       <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/vim/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Vegeta</title>
       <link>https://lunarxlark.github.io/tags/vegeta/</link>
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/vegeta/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Poem</title>
       <link>https://lunarxlark.github.io/tags/poem/</link>
       <pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/poem/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Echo</title>
       <link>https://lunarxlark.github.io/tags/echo/</link>
       <pubDate>Tue, 10 Nov 2020 02:51:09 +0900</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/echo/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Gh</title>
       <link>https://lunarxlark.github.io/tags/gh/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/gh/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>AWS</title>
       <link>https://lunarxlark.github.io/tags/aws/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/aws/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Aws-Cli</title>
       <link>https://lunarxlark.github.io/tags/aws-cli/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/aws-cli/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>CloudFormation</title>
       <link>https://lunarxlark.github.io/tags/cloudformation/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/cloudformation/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>JsonRPC</title>
       <link>https://lunarxlark.github.io/tags/jsonrpc/</link>
       <pubDate>Sat, 23 Feb 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/jsonrpc/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Lsp</title>
       <link>https://lunarxlark.github.io/tags/lsp/</link>
       <pubDate>Sat, 23 Feb 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/lsp/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Java</title>
       <link>https://lunarxlark.github.io/tags/java/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/java/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Ansible</title>
       <link>https://lunarxlark.github.io/tags/ansible/</link>
       <pubDate>Mon, 15 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/ansible/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Gem</title>
       <link>https://lunarxlark.github.io/tags/gem/</link>
       <pubDate>Fri, 28 Sep 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/gem/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Gemfile</title>
       <link>https://lunarxlark.github.io/tags/gemfile/</link>
       <pubDate>Fri, 28 Sep 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/gemfile/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>JMESPath</title>
       <link>https://lunarxlark.github.io/tags/jmespath/</link>
       <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/jmespath/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>AuroraMySQL</title>
       <link>https://lunarxlark.github.io/tags/auroramysql/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/tags/auroramysql/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

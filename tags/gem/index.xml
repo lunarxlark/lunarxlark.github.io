@@ -4,17 +4,16 @@
     <title>Gem on /home/lunarxlark/.config/blog</title>
     <link>https://lunarxlark.github.io/tags/gem/</link>
     <description>Recent content in Gem on /home/lunarxlark/.config/blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 28 Sep 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/gem/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://lunarxlark.github.io/tags/gem/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gemfileの書き方</title>
       <link>https://lunarxlark.github.io/articles/20180928_gem-gemfile-format/</link>
       <pubDate>Fri, 28 Sep 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/articles/20180928_gem-gemfile-format/</guid>
       <description>&lt;p&gt;Rails公式ドキュメントからGemfileの書き方を抜粋&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

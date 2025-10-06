@@ -4,14 +4,14 @@
     <title>JsonRPC on /home/lunarxlark/.config/blog</title>
     <link>https://lunarxlark.github.io/tags/jsonrpc/</link>
     <description>Recent content in JsonRPC on /home/lunarxlark/.config/blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 23 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/jsonrpc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://lunarxlark.github.io/tags/jsonrpc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LSP(Language Server Protocol)のドキュメントを読む</title>
       <link>https://lunarxlark.github.io/articles/20190223_read-lsp-doc-overview/</link>
       <pubDate>Sat, 23 Feb 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/articles/20190223_read-lsp-doc-overview/</guid>
       <description>&lt;p&gt;golangコミュニティが&lt;a href=&#34;https://godoc.org/golang.org/x/tools/cmd/gopls&#34;&gt;gopls&lt;/a&gt;を開発し始めたり、Microsoftが提唱したこともあって&lt;code&gt;Language Server Protocol (以後,LSP)&lt;/code&gt;が注目され始めた。
 特にVimやgolang界隈ではmattnさんのブログ記事&lt;a href=&#34;https://mattn.kaoriya.net/software/lang/go/20181217000056.htm&#34;&gt;gocode やめます(そして Language Server へ)&lt;/a&gt;で一層注目を集めたと思う。是非読んで欲しい。
@@ -19,6 +19,5 @@ gocode contribuerへの思いとLSP発展への期待が書かれている。&lt
 &lt;p&gt;そんな熱いLSPを理解することでVim発展に拍車がかかることへの期待とgoplsを理解したいという興味から、まずはLSPドキュメントを訳してみた。
 実際に、vim-lsp+goplsを入れて、log出力と照らし合わせながらLSPがどういう風に動くものなのか、理解が深まったと思う。以下、ドキュメントの訳。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

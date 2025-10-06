@@ -4,17 +4,16 @@
     <title>Gh on /home/lunarxlark/.config/blog</title>
     <link>https://lunarxlark.github.io/tags/gh/</link>
     <description>Recent content in Gh on /home/lunarxlark/.config/blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 14 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/gh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://lunarxlark.github.io/tags/gh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>New Github Official CLI `gh`</title>
       <link>https://lunarxlark.github.io/articles/20200214_new-github-command-gh/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/articles/20200214_new-github-command-gh/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/cli/cli/cmd/gh&#34;&gt;github.com/cli/cli/cmd/gh&lt;/a&gt; is new official command for GitHub.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,24 +4,73 @@
     <title>Isucon on /home/lunarxlark/.config/blog</title>
     <link>https://lunarxlark.github.io/tags/isucon/</link>
     <description>Recent content in Isucon on /home/lunarxlark/.config/blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/isucon/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://lunarxlark.github.io/tags/isucon/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ISUCON11予選に参加して惨敗した</title>
       <link>https://lunarxlark.github.io/articles/20181209_isucon11-qualify/</link>
       <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/articles/20181209_isucon11-qualify/</guid>
-      <description>結果 ISUCON 経験者の 2 名(@Aki_Mineo, @annkara)に誘われてチーム:コバミネとして参加しました。 私は主にインフラ担当でしたが、業務でバックエンドを Go で書いているためインフラの作業を終え次第、合流する作戦でした。
-結果は 151 位 29614 点 でした。
-悔しい。あそこで気付いていれば&amp;hellip;みたいなポイントがクリティカルでした。
-反省点 直すところはたくさんあったと思いますが、直すと決断するまでに迷いがありました。
-時間内でのアプリケーションへの理解が足りなかった。 ユーザストーリの理解と加点の仕組みが結びつかなかった。 アプリケーションのどこを直したらいいか。 どう直したら加点されるのか。 非効率なポイントがあっても、他の要因ですぐに直せなそうだった。 見つけた時には時間が足りなかった。 修正して試す環境が本番環境のみだった。 大幅な修正をして、他メンバーとコンフリクトが起きるのが怖かった。 ざっくりタイムライン 前準備
-private な作業リポジトリ(メンバーを招待) Discord との webhook deploy.sh 各種 tool のインストールスクリプト 10:00
-競技スタート。 @annkaraが AWS アカウントを準備してくれたので CFn でスタック作成。 CFn でのインフラ作成完了。 ssh config 配布。全員が接続確認完了。 初回ベンチ回す。ベンチ:2981点 ソースや設定を GitHub へ。 conditionLimit : 20 -&amp;gt; 40。ベンチ:1704点(すぐ Revert) alp, netdata, pt-query-digest をインストール。 11:00
-AP の負荷があまりにも高く、CPU100%に張り付いていたので DB を No.3 へ逃がす。ベンチ:8267点 POST /api/condition を bulk insert へ。ベンチ:9452点 nginx のログ出力を ltsv へ。 mariaDB のスロークエリを出力。 DB table isu_conditionのjia_isu_uuidへ INDEX 追加。ベンチ:22746点 DB table isuのjia_isu_uuidへ INDEX 追加。ベンチ:22492点 12:00</description>
+      <description>&lt;h2 id=&#34;結果&#34;&gt;結果&lt;/h2&gt;
+&lt;p&gt;ISUCON 経験者の 2 名(&lt;a href=&#34;https://x.com/Aki_Mineo&#34;&gt;@Aki_Mineo&lt;/a&gt;, &lt;a href=&#34;https://x.com/__annkara__&#34;&gt;@annkara&lt;/a&gt;)に誘われてチーム:コバミネとして参加しました。
+私は主にインフラ担当でしたが、業務でバックエンドを Go で書いているためインフラの作業を終え次第、合流する作戦でした。&lt;/p&gt;
+&lt;p&gt;結果は &lt;a href=&#34;https://isucon.net/archives/56021246.html&#34;&gt;151 位 29614 点&lt;/a&gt; でした。&lt;/p&gt;
+&lt;p&gt;悔しい。あそこで気付いていれば&amp;hellip;みたいなポイントがクリティカルでした。&lt;/p&gt;
+&lt;h2 id=&#34;反省点&#34;&gt;反省点&lt;/h2&gt;
+&lt;p&gt;直すところはたくさんあったと思いますが、&lt;code&gt;直す&lt;/code&gt;と決断するまでに迷いがありました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;時間内でのアプリケーションへの理解が足りなかった。
+&lt;ul&gt;
+&lt;li&gt;ユーザストーリの理解と加点の仕組みが結びつかなかった。
+&lt;ul&gt;
+&lt;li&gt;アプリケーションのどこを直したらいいか。&lt;/li&gt;
+&lt;li&gt;どう直したら加点されるのか。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非効率なポイントがあっても、他の要因ですぐに直せなそうだった。&lt;/li&gt;
+&lt;li&gt;見つけた時には時間が足りなかった。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;修正して試す環境が本番環境のみだった。
+&lt;ul&gt;
+&lt;li&gt;大幅な修正をして、他メンバーとコンフリクトが起きるのが怖かった。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ざっくりタイムライン&#34;&gt;ざっくりタイムライン&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;前準備&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;private な作業リポジトリ(メンバーを招待)
+&lt;ul&gt;
+&lt;li&gt;Discord との webhook&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;deploy.sh&lt;/li&gt;
+&lt;li&gt;各種 tool のインストールスクリプト&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;10:00&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;競技スタート。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://x.com/__annkara__&#34;&gt;@annkara&lt;/a&gt;が AWS アカウントを準備してくれたので CFn でスタック作成。&lt;/li&gt;
+&lt;li&gt;CFn でのインフラ作成完了。&lt;/li&gt;
+&lt;li&gt;ssh config 配布。全員が接続確認完了。&lt;/li&gt;
+&lt;li&gt;初回ベンチ回す。&lt;code&gt;ベンチ:2981点&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ソースや設定を GitHub へ。&lt;/li&gt;
+&lt;li&gt;conditionLimit : 20 -&amp;gt; 40。&lt;code&gt;ベンチ:1704点&lt;/code&gt;(すぐ Revert)&lt;/li&gt;
+&lt;li&gt;alp, netdata, pt-query-digest をインストール。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;11:00&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AP の負荷があまりにも高く、CPU100%に張り付いていたので DB を No.3 へ逃がす。&lt;code&gt;ベンチ:8267点&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;POST /api/condition&lt;/code&gt; を bulk insert へ。&lt;code&gt;ベンチ:9452点&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;nginx のログ出力を ltsv へ。&lt;/li&gt;
+&lt;li&gt;mariaDB のスロークエリを出力。&lt;/li&gt;
+&lt;li&gt;DB table &lt;code&gt;isu_condition&lt;/code&gt;の&lt;code&gt;jia_isu_uuid&lt;/code&gt;へ INDEX 追加。&lt;code&gt;ベンチ:22746点&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;DB table &lt;code&gt;isu&lt;/code&gt;の&lt;code&gt;jia_isu_uuid&lt;/code&gt;へ INDEX 追加。&lt;code&gt;ベンチ:22492点&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;12:00&lt;/em&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,14 +4,14 @@
     <title>AWS on /home/lunarxlark/.config/blog</title>
     <link>https://lunarxlark.github.io/tags/aws/</link>
     <description>Recent content in AWS on /home/lunarxlark/.config/blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://lunarxlark.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>aws-cliで始めるCloudFormation</title>
       <link>https://lunarxlark.github.io/articles/20190305_aws-getting-start-cloudformation/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/articles/20190305_aws-getting-start-cloudformation/</guid>
       <description>&lt;h4 id=&#34;目的&#34;&gt;目的&lt;/h4&gt;
 &lt;ul&gt;
@@ -20,16 +20,13 @@
 &lt;li&gt;出来るだけaws-cliのコマンドを実行していく&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>AuroraのUpgradeでの注意点</title>
       <link>https://lunarxlark.github.io/articles/20180503_aws-important-notice-aurora-upgrade/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/articles/20180503_aws-important-notice-aurora-upgrade/</guid>
       <description>&lt;p&gt;Auroraのアップグレードには何種類かあり、それぞれでダウンタイム有無やパッチ適用時間が異なる。
 アップグレードの種類と気にしなければいけないことをまとめた。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

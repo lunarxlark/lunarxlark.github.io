@@ -4,14 +4,14 @@
     <title>Aws-Cli on /home/lunarxlark/.config/blog</title>
     <link>https://lunarxlark.github.io/tags/aws-cli/</link>
     <description>Recent content in Aws-Cli on /home/lunarxlark/.config/blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/aws-cli/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://lunarxlark.github.io/tags/aws-cli/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>aws-cliで始めるCloudFormation</title>
       <link>https://lunarxlark.github.io/articles/20190305_aws-getting-start-cloudformation/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/articles/20190305_aws-getting-start-cloudformation/</guid>
       <description>&lt;h4 id=&#34;目的&#34;&gt;目的&lt;/h4&gt;
 &lt;ul&gt;
@@ -20,17 +20,14 @@
 &lt;li&gt;出来るだけaws-cliのコマンドを実行していく&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>aws-cliの結果をJMESPathで取得する方法</title>
       <link>https://lunarxlark.github.io/articles/20180610_aws-getting-info-from-awscli-with-jmespath/</link>
       <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/articles/20180610_aws-getting-info-from-awscli-with-jmespath/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;tagやownerでfilterして、作成日でソートした結果のうちImageIdだけ取り出す&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
   </channel>
 </rss>

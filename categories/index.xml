@@ -4,7 +4,8 @@
     <title>Categories on /home/lunarxlark/.config/blog</title>
     <link>https://lunarxlark.github.io/categories/</link>
     <description>Recent content in Categories on /home/lunarxlark/.config/blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language><atom:link href="https://lunarxlark.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- 0.151.0</generator>
+    <language>ja</language>
+    <atom:link href="https://lunarxlark.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

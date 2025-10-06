@@ -4,18 +4,17 @@
     <title>AuroraMySQL on /home/lunarxlark/.config/blog</title>
     <link>https://lunarxlark.github.io/tags/auroramysql/</link>
     <description>Recent content in AuroraMySQL on /home/lunarxlark/.config/blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 03 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/auroramysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 May 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://lunarxlark.github.io/tags/auroramysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AuroraのUpgradeでの注意点</title>
       <link>https://lunarxlark.github.io/articles/20180503_aws-important-notice-aurora-upgrade/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/articles/20180503_aws-important-notice-aurora-upgrade/</guid>
       <description>&lt;p&gt;Auroraのアップグレードには何種類かあり、それぞれでダウンタイム有無やパッチ適用時間が異なる。
 アップグレードの種類と気にしなければいけないことをまとめた。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

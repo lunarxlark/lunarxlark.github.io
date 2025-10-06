@@ -4,43 +4,264 @@
     <title>Vim on /home/lunarxlark/.config/blog</title>
     <link>https://lunarxlark.github.io/tags/vim/</link>
     <description>Recent content in Vim on /home/lunarxlark/.config/blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 16 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://lunarxlark.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2021年版 vim &#43; goplsの設定</title>
       <link>https://lunarxlark.github.io/articles/20210616_2021vim_gopls/</link>
       <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/articles/20210616_2021vim_gopls/</guid>
-      <description>goplsが出てから, vimでも定義ジャンプやシンボル検索、ドキュメント参照等が行えるようになった。
-たまにVSCodeを触りvimでの作業を改善できないか考える中で、自身の設定が古いことに気付いた。また、ググってもなかなか出てこなかったのでメモとして記述する。
-cf. GitHub dotfiles
-いきなりだが、vimrcとvim-lsp-settings/settings.jsonを抜粋して貼り付ける。
-以前、GoではLspCodeAction, LspCodeLens等をサポートしていなかったが、今では使えるようになっている。
-キーマップに設定している関数は全てGoで使用出来る。
-ただし、カーソルがどこにいても実行出来るわけではないので注意が必要。
-LspCodeActionはカーソルの位置によって実行内容が変わるのでそこも注意。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 ... Plug &amp;#39;prabirshrestha/vim-lsp&amp;#39; Plug &amp;#39;mattn/vim-lsp-settings&amp;#39; Plug &amp;#39;prabirshrestha/asyncomplete-lsp.vim&amp;#39; Plug &amp;#39;mattn/vim-gomod&amp;#39; ... &amp;#34; ------------------------------------------------------------------------------ &amp;#34; vim-lsp &amp;#34; ------------------------------------------------------------------------------ function! s:on_lsp_buffer_enabled() abort setlocal omnifunc=lsp#complete setlocal signcolumn=yes if exists(&amp;#39;+tagfunc&amp;#39;) | setlocal tagfunc=lsp#tagfunc | endif nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;ac &amp;lt;plug&amp;gt;(lsp-code-action) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;cl &amp;lt;plug&amp;gt;(lsp-code-lens) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;df &amp;lt;plug&amp;gt;(lsp-definition) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;dd &amp;lt;plug&amp;gt;(lsp-document-diagnostics) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;im &amp;lt;plug&amp;gt;(lsp-implementation) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;pdf &amp;lt;plug&amp;gt;(lsp-peek-definition) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;sm &amp;lt;plug&amp;gt;(lsp-document-symbol-search) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;Sm &amp;lt;plug&amp;gt;(lsp-workspace-symbol-search) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;rf &amp;lt;plug&amp;gt;(lsp-references) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;td &amp;lt;plug&amp;gt;(lsp-type-definition) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;rn &amp;lt;plug&amp;gt;(lsp-rename) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;en &amp;lt;plug&amp;gt;(lsp-next-error) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;ep &amp;lt;plug&amp;gt;(lsp-previous-error) nmap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;ho &amp;lt;plug&amp;gt;(lsp-hover) let g:lsp_format_sync_timeout = 500 autocmd!</description>
+      <description>&lt;p&gt;goplsが出てから, vimでも定義ジャンプやシンボル検索、ドキュメント参照等が行えるようになった。&lt;/p&gt;
+&lt;p&gt;たまにVSCodeを触りvimでの作業を改善できないか考える中で、自身の設定が古いことに気付いた。また、ググってもなかなか出てこなかったのでメモとして記述する。&lt;/p&gt;
+&lt;p&gt;cf. &lt;a href=&#34;https://github.com/lunarxlark/dotfiles&#34;&gt;GitHub dotfiles&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;いきなりだが、vimrcとvim-lsp-settings/settings.jsonを抜粋して貼り付ける。&lt;/p&gt;
+&lt;p&gt;以前、GoではLspCodeAction, LspCodeLens等をサポートしていなかったが、今では使えるようになっている。&lt;/p&gt;
+&lt;p&gt;キーマップに設定している関数は全てGoで使用出来る。&lt;/p&gt;
+&lt;p&gt;ただし、カーソルがどこにいても実行出来るわけではないので注意が必要。&lt;/p&gt;
+&lt;p&gt;LspCodeActionはカーソルの位置によって実行内容が変わるのでそこも注意。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;24
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;25
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;26
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;27
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;28
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;29
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;30
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;31
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;32
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;33
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;34
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;35
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;36
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;37
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;38
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;39
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;40
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Plug&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prabirshrestha/vim-lsp&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Plug&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mattn/vim-lsp-settings&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Plug&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prabirshrestha/asyncomplete-lsp.vim&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Plug&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mattn/vim-gomod&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;#34; ------------------------------------------------------------------------------&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;#34; vim-lsp&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;#34; ------------------------------------------------------------------------------&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;! &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;on_lsp_buffer_enabled&lt;/span&gt;() &lt;span style=&#34;color:#a6e22e&#34;&gt;abort&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;setlocal&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;omnifunc&lt;/span&gt;=&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;complete&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;setlocal&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;signcolumn&lt;/span&gt;=&lt;span style=&#34;color:#a6e22e&#34;&gt;yes&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;exists&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;+tagfunc&amp;#39;&lt;/span&gt;) | &lt;span style=&#34;color:#a6e22e&#34;&gt;setlocal&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;tagfunc&lt;/span&gt;=&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;tagfunc&lt;/span&gt; | &lt;span style=&#34;color:#66d9ef&#34;&gt;endif&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ac&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;code&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;action&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;cl&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;code&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;lens&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;df&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;definition&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;dd&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;document&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;diagnostics&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;im&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;implementation&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;pdf&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;peek&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;definition&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;sm&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;document&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;symbol&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;search&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Sm&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;workspace&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;symbol&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;search&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;rf&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;references&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;td&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;definition&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;rn&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;rename&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;en&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ep&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;previous&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buffer&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;leader&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ho&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;plug&lt;/span&gt;&amp;gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;hover&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;g&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;lsp_format_sync_timeout&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;500&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;autocmd&lt;/span&gt;! &lt;span style=&#34;color:#a6e22e&#34;&gt;BufWritePre&lt;/span&gt; *.&lt;span style=&#34;color:#a6e22e&#34;&gt;rs&lt;/span&gt;,*.&lt;span style=&#34;color:#a6e22e&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;call&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;execute&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;LspDocumentFormatSync&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;    &amp;#34; refer to doc to add more commands&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;endfunction&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;augroup&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lsp_install&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;au&lt;/span&gt;!
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;    &amp;#34; call s:on_lsp_buffer_enabled only for languages that has the server registered.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;autocmd&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;User&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lsp_buffer_enabled&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;call&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;on_lsp_buffer_enabled&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;augroup&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;END&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;24
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// vim-lsp-settings/settings.json
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;go&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;gopls&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;initialization_options&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;analyses&amp;#34;&lt;/span&gt; : {&lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;fillstruct&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;},
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;staticcheck&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;directoryFilters&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-debug&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;completeUnimported&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;usePlaceholders&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;matcher&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fuzzy&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;codelenses&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;gc_details&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;generate&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;tidy&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;vendor&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;hoverKind&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;SynopsisDocumentation&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;vim--goplsで新しく設定したこと&#34;&gt;vim + goplsで新しく設定したこと&lt;/h2&gt;
+&lt;h3 id=&#34;lspcodeaction&#34;&gt;LspCodeAction&lt;/h3&gt;
+&lt;p&gt;vim-lspのhelpにあるように、LspCodeActionが実行出来る行では &lt;code&gt;A&amp;gt;&lt;/code&gt; が表示される。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>From denite.nvim To fzf.vim</title>
       <link>https://lunarxlark.github.io/articles/20200211_from-denite-to-fzf/</link>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/articles/20200211_from-denite-to-fzf/</guid>
-      <description>denite.nvimとfzf.vimって比較記事?
-違います。断捨離した結果、fzf.vimで事足りてしまったという記事です。
-denite.nvimとfzf.vimは、一見やれることが似ているように見えますが提供しているインタフェースが違います。 denite.nvimの方が拡張性/汎用性が高いです。Pythonスクリプトを呼び出せますし。
-どうしてやめたん？
-Python3とpipの環境整備に疲れたというのが理由で完全に力不足なだけです。
-そもそも使いこなせていなかったっていうのも大きい。自分に必要な機能が何か見直したら次のがあれば十分っぽい。
-コマンドの結果の一覧表示(x-motemen/ghq list, mattn/memo list, history等) 一覧表示の後のアクションを指定可能(cd, vim) buffer切替 fzf.vimはfzfのついでに入れていただけで全く使っていなかった。Shougo/denite.nvimでfzf.vimで同じことが出来るし、sourceの拡張がいくつもあるのでそれで十分だった。
-もともとfzfが好きなのもあって、fzf.vimで上記が実現出来るように設定した、っていうかhelpからパクってきた。
-何日か使っていて快適に使えているので結構満足。previewはbatってコマンド入れないとsyntax highlightされなかったのでいれたけど、なんとなくそっちの方がリッチっぽいという理由だけなので重ければそのうち消す。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 command! -bang -nargs=? -complete=dir Files call fzf#vim#files( \ &amp;lt;q-args&amp;gt;, \ fzf#vim#with_preview(), \ &amp;lt;bang&amp;gt;0) command! -nargs=0 Ghq call fzf#run({ \ &amp;#39;source&amp;#39; : &amp;#39;ghq list --full-path&amp;#39;, \ &amp;#39;sink&amp;#39; : &amp;#39;cd&amp;#39; \}) command!</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;denite.nvimとfzf.vimって比較記事?&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;違います。断捨離した結果、fzf.vimで事足りてしまったという記事です。&lt;/p&gt;
+&lt;p&gt;denite.nvimとfzf.vimは、一見やれることが似ているように見えますが提供しているインタフェースが違います。
+denite.nvimの方が拡張性/汎用性が高いです。Pythonスクリプトを呼び出せますし。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;どうしてやめたん？&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Python3とpipの環境整備に疲れたというのが理由で完全に力不足なだけです。&lt;/p&gt;
+&lt;p&gt;そもそも使いこなせていなかったっていうのも大きい。自分に必要な機能が何か見直したら次のがあれば十分っぽい。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;コマンドの結果の一覧表示(&lt;a href=&#34;https://github.com/x-motemen/ghq&#34;&gt;x-motemen/ghq&lt;/a&gt; list, &lt;a href=&#34;https://github.com/mattn/memo&#34;&gt;mattn/memo&lt;/a&gt; list, history等)&lt;/li&gt;
+&lt;li&gt;一覧表示の後のアクションを指定可能(cd, vim)&lt;/li&gt;
+&lt;li&gt;buffer切替&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/junegunn/fzf.vim&#34;&gt;fzf.vim&lt;/a&gt;は&lt;a href=&#34;https://github.com/junegunn/fzf&#34;&gt;fzf&lt;/a&gt;のついでに入れていただけで全く使っていなかった。&lt;a href=&#34;https://github.com/Shougo/denite.nvim&#34;&gt;Shougo/denite.nvim&lt;/a&gt;でfzf.vimで同じことが出来るし、sourceの拡張がいくつもあるのでそれで十分だった。&lt;/p&gt;
+&lt;p&gt;もともとfzfが好きなのもあって、fzf.vimで上記が実現出来るように設定した、っていうかhelpからパクってきた。&lt;/p&gt;
+&lt;p&gt;何日か使っていて快適に使えているので結構満足。previewは&lt;a href=&#34;https://github.com/sharkdp/bat&#34;&gt;bat&lt;/a&gt;ってコマンド入れないとsyntax highlightされなかったのでいれたけど、なんとなくそっちの方がリッチっぽいという理由だけなので重ければそのうち消す。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;24
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;25
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;26
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;27
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;28
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;29
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;30
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;31
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;32
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;33
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;34
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;command&lt;/span&gt;! -&lt;span style=&#34;color:#a6e22e&#34;&gt;bang&lt;/span&gt; -&lt;span style=&#34;color:#a6e22e&#34;&gt;nargs&lt;/span&gt;=? -&lt;span style=&#34;color:#a6e22e&#34;&gt;complete&lt;/span&gt;=&lt;span style=&#34;color:#a6e22e&#34;&gt;dir&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Files&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;call&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fzf&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;vim&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;files&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;q&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;args&lt;/span&gt;&amp;gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &lt;span style=&#34;color:#a6e22e&#34;&gt;fzf&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;vim&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;with_preview&lt;/span&gt;(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;bang&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;command&lt;/span&gt;! -&lt;span style=&#34;color:#a6e22e&#34;&gt;nargs&lt;/span&gt;=&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Ghq&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;call&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fzf&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;run&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;source&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ghq list --full-path&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;sink&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cd&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \})
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;command&lt;/span&gt;! -&lt;span style=&#34;color:#a6e22e&#34;&gt;nargs&lt;/span&gt;=&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Mru&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;call&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fzf&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;run&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;source&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;oldfiles&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;sink&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;edit&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;options&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;-m -x +s&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;down&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;40%&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \})
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;command&lt;/span&gt;! -&lt;span style=&#34;color:#a6e22e&#34;&gt;bang&lt;/span&gt; -&lt;span style=&#34;color:#a6e22e&#34;&gt;nargs&lt;/span&gt;=? &lt;span style=&#34;color:#a6e22e&#34;&gt;Memo&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;call&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fzf&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;vim&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;files&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &lt;span style=&#34;color:#a6e22e&#34;&gt;expand&lt;/span&gt;($&lt;span style=&#34;color:#a6e22e&#34;&gt;HOME&lt;/span&gt; . &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/.config/memo/_posts&amp;#39;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &lt;span style=&#34;color:#a6e22e&#34;&gt;fzf&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;vim&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;with_preview&lt;/span&gt;({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;options&amp;#39;&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;--layout=reverse&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;--info=inline&amp;#39;&lt;/span&gt;]}),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;bang&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;command&lt;/span&gt;! -&lt;span style=&#34;color:#a6e22e&#34;&gt;bang&lt;/span&gt; -&lt;span style=&#34;color:#a6e22e&#34;&gt;nargs&lt;/span&gt;=* &lt;span style=&#34;color:#a6e22e&#34;&gt;Rg&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;call&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fzf&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;vim&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;grep&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;rg --column --no-heading --color=always --smart-case &amp;#39;&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;shellescape&lt;/span&gt;(&amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;q&lt;/span&gt;-&lt;span style=&#34;color:#a6e22e&#34;&gt;args&lt;/span&gt;&amp;gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  \ &lt;span style=&#34;color:#a6e22e&#34;&gt;fzf&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;vim&lt;/span&gt;#&lt;span style=&#34;color:#a6e22e&#34;&gt;with_preview&lt;/span&gt;(), &amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;bang&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; ,&lt;span style=&#34;color:#a6e22e&#34;&gt;f&lt;/span&gt; :&lt;span style=&#34;color:#a6e22e&#34;&gt;Files&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;CR&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; ,&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt; :&lt;span style=&#34;color:#a6e22e&#34;&gt;Snippet&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;CR&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; ,&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt; :&lt;span style=&#34;color:#a6e22e&#34;&gt;Buffers&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;CR&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; ,&lt;span style=&#34;color:#a6e22e&#34;&gt;g&lt;/span&gt; :&lt;span style=&#34;color:#a6e22e&#34;&gt;Ghq&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;CR&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; ,&lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt; :&lt;span style=&#34;color:#a6e22e&#34;&gt;Mru&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;CR&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; ,&lt;span style=&#34;color:#a6e22e&#34;&gt;mm&lt;/span&gt; :&lt;span style=&#34;color:#a6e22e&#34;&gt;Memo&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;CR&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;nmap&lt;/span&gt; ,&lt;span style=&#34;color:#a6e22e&#34;&gt;rg&lt;/span&gt; :&lt;span style=&#34;color:#a6e22e&#34;&gt;Rg&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#a6e22e&#34;&gt;CR&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

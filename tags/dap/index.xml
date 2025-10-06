@@ -4,25 +4,89 @@
     <title>Dap on /home/lunarxlark/.config/blog</title>
     <link>https://lunarxlark.github.io/tags/dap/</link>
     <description>Recent content in Dap on /home/lunarxlark/.config/blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/dap/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://lunarxlark.github.io/tags/dap/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Neovim &#43; DAP &#43; Go</title>
       <link>https://lunarxlark.github.io/articles/20211124_nvim-dap-go/</link>
       <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/articles/20211124_nvim-dap-go/</guid>
-      <description>TL;DR DAP(Debug Adapter Protocol)の力を借りれば、Neovim上でも視覚的にGoのデバッグが出来ました。 ここでは下記については話しません。
-DAPの詳細 packer.nvimでのインストール方法 vscode-goのdebugAdapter.jsの使用方法 Neovimでデバッグするモチベーション v0.2.2から色々変わったNeovimを久々に触ってみようかと思いinit.luaへ以降して遊んでいました。 起動が早いだけでなく、LSP系の動作もサクサク動いてここ2ヶ月程快適に過ごしています。
-ただ、VSCodeでのデバッグ機能がとても便利なため、デバッガ使用時のみこの快適な環境を離れていました。
-どうにかNeovim上で完結させられないか&amp;hellip;。
-DAP DAPの説明はリンク先や他HPをご参照ください。
-イメージを持ってもらうためLSPを引き合いに出すと、LSPがテキスト編集時に定義や変更内容や補完候補等を返すのに対して、DAPはデバッガとやりとりしてデバッグ情報を返す位のイメージを持ってもらえれば大丈夫だと思います。
-Neovim + DAP + Go 使うプラグインは下記になります。
-mfussenegger/nvim-dap : NeovimのDAPクライアント。VSCodeのlaunch.jsonも使用可 rcarriga/nvim-dap-ui : nvim-dapを視覚的に操作しやすいUI leoluz/nvim-dap-go : DAPのGo用設定(delve dap起動) nvim-treesitter/nvim-treesitter nvim-dap-goでテストをデバッグする際、近くのテストを見つけるのに必要 packer.nvimの設定 VSCodeのlaunch.jsonを使用しない場合、require(&#39;dap.ext.vscode&#39;).load_launchjs()は不要です。 launch.jsonを読み込めた場合、デバッグ方法の選択時にlaunch.jsonの内容が追加表示されて選択可能になります。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 -- dap plugin installation with packer.nvim ... -- dap use { &amp;#34;rcarriga/nvim-dap-ui&amp;#34;, requires = { &amp;#34;mfussenegger/nvim-dap&amp;#34;, &amp;#34;leoluz/nvim-dap-go&amp;#34;, &amp;#34;nvim-treesitter/nvim-treesitter&amp;#34; }, config = function () vim.</description>
+      <description>&lt;h2 id=&#34;tldr&#34;&gt;TL;DR&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://microsoft.github.io/debug-adapter-protocol/&#34;&gt;DAP(Debug Adapter Protocol)&lt;/a&gt;の力を借りれば、Neovim上でも視覚的にGoのデバッグが出来ました。
+&lt;img alt=&#34;nvim-dap-go&#34; loading=&#34;lazy&#34; src=&#34;https://lunarxlark.github.io/gif/nvim-dap-go.gif&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ここでは下記については話しません。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DAPの詳細&lt;/li&gt;
+&lt;li&gt;packer.nvimでのインストール方法&lt;/li&gt;
+&lt;li&gt;vscode-goのdebugAdapter.jsの使用方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;neovimでデバッグするモチベーション&#34;&gt;Neovimでデバッグするモチベーション&lt;/h2&gt;
+&lt;p&gt;v0.2.2から色々変わったNeovimを久々に触ってみようかと思いinit.luaへ以降して遊んでいました。
+起動が早いだけでなく、LSP系の動作もサクサク動いてここ2ヶ月程快適に過ごしています。&lt;/p&gt;
+&lt;p&gt;ただ、VSCodeでのデバッグ機能がとても便利なため、デバッガ使用時のみこの快適な環境を離れていました。&lt;/p&gt;
+&lt;p&gt;どうにかNeovim上で完結させられないか&amp;hellip;。&lt;/p&gt;
+&lt;h2 id=&#34;dap&#34;&gt;&lt;a href=&#34;https://microsoft.github.io/debug-adapter-protocol/&#34;&gt;DAP&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;DAPの説明はリンク先や他HPをご参照ください。&lt;/p&gt;
+&lt;p&gt;イメージを持ってもらうため&lt;a href=&#34;https://microsoft.github.io/language-server-protocol/&#34;&gt;LSP&lt;/a&gt;を引き合いに出すと、LSPがテキスト編集時に定義や変更内容や補完候補等を返すのに対して、DAPはデバッガとやりとりしてデバッグ情報を返す位のイメージを持ってもらえれば大丈夫だと思います。&lt;/p&gt;
+&lt;h2 id=&#34;neovim--dap--go&#34;&gt;Neovim + DAP + Go&lt;/h2&gt;
+&lt;p&gt;使うプラグインは下記になります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mfussenegger/nvim-dap&#34;&gt;mfussenegger/nvim-dap&lt;/a&gt; : NeovimのDAPクライアント。VSCodeのlaunch.jsonも使用可&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rcarriga/nvim-dap-ui&#34;&gt;rcarriga/nvim-dap-ui&lt;/a&gt; : nvim-dapを視覚的に操作しやすいUI&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/leoluz/nvim-dap-go&#34;&gt;leoluz/nvim-dap-go&lt;/a&gt; : DAPのGo用設定(delve dap起動)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/nvim-treesitter/nvim-treesitter&#34;&gt;nvim-treesitter/nvim-treesitter&lt;/a&gt; nvim-dap-goでテストをデバッグする際、近くのテストを見つけるのに必要&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;packernvimの設定&#34;&gt;packer.nvimの設定&lt;/h3&gt;
+&lt;p&gt;VSCodeのlaunch.jsonを使用しない場合、&lt;code&gt;require(&#39;dap.ext.vscode&#39;).load_launchjs()&lt;/code&gt;は不要です。
+launch.jsonを読み込めた場合、デバッグ方法の選択時にlaunch.jsonの内容が追加表示されて選択可能になります。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-lua&#34; data-lang=&#34;lua&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- dap plugin installation with packer.nvim&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;-- dap&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        use {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rcarriga/nvim-dap-ui&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            requires &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;mfussenegger/nvim-dap&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;leoluz/nvim-dap-go&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;nvim-treesitter/nvim-treesitter&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            config &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; ()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                vim.fn.sign_define(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;DapBreakpoint&amp;#39;&lt;/span&gt;, {text&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;⛔&amp;#39;&lt;/span&gt;, texthl&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;, linehl&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;, numhl&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;})
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                vim.fn.sign_define(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;DapStopped&amp;#39;&lt;/span&gt;, {text&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;👉&amp;#39;&lt;/span&gt;, texthl&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;, linehl&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;, numhl&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;})
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                require(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;dapui&amp;#39;&lt;/span&gt;).setup()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                require(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;dap-go&amp;#39;&lt;/span&gt;).setup()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                require(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;dap.ext.vscode&amp;#39;&lt;/span&gt;).load_launchjs()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;goでdapを起動する際の設定&#34;&gt;GoでDAPを起動する際の設定&lt;/h3&gt;
+&lt;p&gt;Goの場合、vscode-goのdebugAdapter.jsを使用することも出来ます。ここでは、delveを待ち構えさせます。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

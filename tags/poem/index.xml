@@ -4,19 +4,64 @@
     <title>Poem on /home/lunarxlark/.config/blog</title>
     <link>https://lunarxlark.github.io/tags/poem/</link>
     <description>Recent content in Poem on /home/lunarxlark/.config/blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 29 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://lunarxlark.github.io/tags/poem/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://lunarxlark.github.io/tags/poem/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2020年 ふりかえり</title>
       <link>https://lunarxlark.github.io/articles/20201229_2020-summary/</link>
       <pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://lunarxlark.github.io/articles/20201229_2020-summary/</guid>
-      <description>2020年の振り返りと来年にやりたいことをつらつらと書こうと思う。 きっかけは、1on1をしてくれたEMからのアドバイスだ。
-年末になると、1年を振り返るが過小評価しがち 何回かに分けてやると良い 謙遜せずやったことはやったと自分に言う そんな趣旨のアドバイスを貰った。実際、いつも自分でやる振り返りでは、今年も結局&amp;hellip;みたいな評価になってしまっている。 仕事を頑張っていないわけではない。今年は自分でも頑張ったと思う。そんな、いつもは謙虚な(?)な自分に今年は前向きな評価をしてあげよう。 そう思った。
-Dependency Injectionの実装方法を理解した トランザクションマネージャ(DB参照先を捕捉し、rollbackを埋め込んであるmethodを持つinterface)を依存性に注入することでrollback記載不要に。 トップダウンで記述するDIでは、DB参照先もあらかじめ記述しておけるが、トランザクション範囲については自身で記載しなければ出来ないという結論に。 ポインタレシーバにはポインタが、値レシーバには値がコピーされる。 メソッドをinterfaceに指定する際、レシーバにコピーされる値への変更を保持したいか等でポインタ/値レシーバどちらにするかの判断基準になる。 WebFramework Echoのmiddlewareの作り方。 Skipperによるecho.Contextの使い回し方。(structメンバーに、echo.Contextを引数に持つ関数を持たせる) Echoのデフォルトログでは、ヘッダーx-request-idに指定した値がrequest idに出る。 Echoのmiddlewareに対する理解が深まった。(雑) CloudFrontの各項目に対する理解が深まり、通信障害時にどのように調べて、どのメトリクスを見れば良いかがある程度わかるようになった。 CloudFrontのrequest idをoriginのEchoへ出力したい場合、x-amz-cf-idをEchoロガーで出力すればよい。 L@Eの使い方と開発/リリース時の注意点について教訓を得た。 L@Eへの反映には時間がかかるので、テストの仕方を工夫しなければいけない。 L@Eに適用するLambdaのversionはLATESTを指定出来ないので、リリース時にはLambdaのversionを数値指定しなければいけない。 L@Eを修正するにあたり、Node.js v10.xを少し勉強した。(動的型付け言語は好きになれない。結局、undefinedと向き合わなければならず、動的型付けのメリットが感じられなかった。) その点、TypeScriptはちょっと触った感じ楽しかった。トランスパイルという言葉を知った。(言語のversionがどんどん上がっていくECMAScriptに対して、トランスパイルが追従していけるのかちょっと不安を感じた。) AWS StepFunctionは、Lambdaをjsonというインタフェースで繋げていて、Lambdaのフローをjsonで定義しているだけなんだと理解した。 AWS Lambdaをローカルである程度動作確認出来るようにDEBUGフラグを付けた。 Go言語の開発環境が自分の中で固まってきた。(Vimで必要なPluginがある程度固定されてきた) Alfredにより、unixtimestamp変換とbase64エンコード/デコードが素早く行えるようになった。 CI/CD時にdocker pull rate limitによるエラーを、DockerHubへのログインで解消させた。 コネクションプールの生存時間が短すぎることを見つけ、DBstatsからコネクションスパイクに対してプール生存時間を伸ばすことでDBへの負荷とコネクション接続時のlatencyを短くした。 </description>
+      <description>&lt;p&gt;2020年の振り返りと来年にやりたいことをつらつらと書こうと思う。
+きっかけは、1on1をしてくれたEMからのアドバイスだ。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;年末になると、1年を振り返るが過小評価しがち&lt;/li&gt;
+&lt;li&gt;何回かに分けてやると良い&lt;/li&gt;
+&lt;li&gt;謙遜せずやったことはやったと自分に言う&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;そんな趣旨のアドバイスを貰った。実際、いつも自分でやる振り返りでは、今年も結局&amp;hellip;みたいな評価になってしまっている。
+仕事を頑張っていないわけではない。今年は自分でも頑張ったと思う。そんな、いつもは謙虚な(?)な自分に今年は前向きな評価をしてあげよう。
+そう思った。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dependency Injectionの実装方法を理解した
+&lt;ul&gt;
+&lt;li&gt;トランザクションマネージャ(DB参照先を捕捉し、rollbackを埋め込んであるmethodを持つinterface)を依存性に注入することでrollback記載不要に。&lt;/li&gt;
+&lt;li&gt;トップダウンで記述するDIでは、DB参照先もあらかじめ記述しておけるが、トランザクション範囲については自身で記載しなければ出来ないという結論に。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ポインタレシーバにはポインタが、値レシーバには値がコピーされる。
+&lt;ul&gt;
+&lt;li&gt;メソッドをinterfaceに指定する際、レシーバにコピーされる値への変更を保持したいか等でポインタ/値レシーバどちらにするかの判断基準になる。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;WebFramework Echoのmiddlewareの作り方。
+&lt;ul&gt;
+&lt;li&gt;Skipperによるecho.Contextの使い回し方。(structメンバーに、echo.Contextを引数に持つ関数を持たせる)&lt;/li&gt;
+&lt;li&gt;Echoのデフォルトログでは、ヘッダーx-request-idに指定した値がrequest idに出る。&lt;/li&gt;
+&lt;li&gt;Echoのmiddlewareに対する理解が深まった。(雑)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;CloudFrontの各項目に対する理解が深まり、通信障害時にどのように調べて、どのメトリクスを見れば良いかがある程度わかるようになった。
+&lt;ul&gt;
+&lt;li&gt;CloudFrontのrequest idをoriginのEchoへ出力したい場合、x-amz-cf-idをEchoロガーで出力すればよい。&lt;/li&gt;
+&lt;li&gt;L@Eの使い方と開発/リリース時の注意点について教訓を得た。
+&lt;ul&gt;
+&lt;li&gt;L@Eへの反映には時間がかかるので、テストの仕方を工夫しなければいけない。&lt;/li&gt;
+&lt;li&gt;L@Eに適用するLambdaのversionはLATESTを指定出来ないので、リリース時にはLambdaのversionを数値指定しなければいけない。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;L@Eを修正するにあたり、Node.js v10.xを少し勉強した。(動的型付け言語は好きになれない。結局、undefinedと向き合わなければならず、動的型付けのメリットが感じられなかった。)&lt;/li&gt;
+&lt;li&gt;その点、TypeScriptはちょっと触った感じ楽しかった。トランスパイルという言葉を知った。(言語のversionがどんどん上がっていくECMAScriptに対して、トランスパイルが追従していけるのかちょっと不安を感じた。)&lt;/li&gt;
+&lt;li&gt;AWS StepFunctionは、Lambdaをjsonというインタフェースで繋げていて、Lambdaのフローをjsonで定義しているだけなんだと理解した。&lt;/li&gt;
+&lt;li&gt;AWS Lambdaをローカルである程度動作確認出来るようにDEBUGフラグを付けた。&lt;/li&gt;
+&lt;li&gt;Go言語の開発環境が自分の中で固まってきた。(Vimで必要なPluginがある程度固定されてきた)&lt;/li&gt;
+&lt;li&gt;Alfredにより、unixtimestamp変換とbase64エンコード/デコードが素早く行えるようになった。&lt;/li&gt;
+&lt;li&gt;CI/CD時にdocker pull rate limitによるエラーを、DockerHubへのログインで解消させた。&lt;/li&gt;
+&lt;li&gt;コネクションプールの生存時間が短すぎることを見つけ、DBstatsからコネクションスパイクに対してプール生存時間を伸ばすことでDBへの負荷とコネクション接続時のlatencyを短くした。&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
-    
   </channel>
 </rss>
